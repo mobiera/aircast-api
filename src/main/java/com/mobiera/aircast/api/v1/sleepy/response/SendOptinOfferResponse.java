@@ -9,15 +9,7 @@ import com.mobiera.aircast.commons.enums.ActionResult;
 
 /**
  * Response to a {@link SendOptinOfferCommand} executed by Applet.
- * <p>
- * <b>flowExecutionCode:</b> {@link ActionResult} action result code of the last executed {@link Action}.
- * <p>
- * <b>lastActionId:</b> id of last executed {@link Action}.
- * <p>
- * <b>outputVarValue:</b> a byte[] representing the binary outputVariable.
- * <p>
- * <b>outputVarValueStr:</b> a String representing the response.
- * <p>
+
  * @author mj
  */
 @JsonInclude(Include.NON_NULL)

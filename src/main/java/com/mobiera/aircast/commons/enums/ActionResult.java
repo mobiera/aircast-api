@@ -2,11 +2,7 @@ package com.mobiera.aircast.commons.enums;
 
 
 
-/**
- * Represents possible {@link Action} applet execution result.
- * <p>
- * @author mj
- */
+
 public enum ActionResult {	
 	ACTION_RESULT_OK((byte)0x81),
 	ACTION_RESULT_BACK((byte)0x82),
