@@ -1,0 +1,6 @@
+package com.mobiera.aircast.commons.enums;
+
+public enum EntityType {
+	ENDPOINT, SMPP_ACCOUNT, SIM_PROFILE, CAMPAIGN_SCHEDULE, CAMPAIGN, 
+	STK_ACTION_DATA, APPLET, TP_RULE, AD, PRICEPOINT, VA_SERVICE, IDENTIFIER, LANDING
+}
