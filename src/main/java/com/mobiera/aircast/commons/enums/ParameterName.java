@@ -233,6 +233,7 @@ public enum ParameterName {
 	INTEGER_VAS_CHARGING_ATTEMPTS_PER_DAY(ParameterType.VAS, "Charging attempts per day", "Charging attempts per day"),
 	
 	STRING_VAS_CHARGING_ALLOWED_HOURS(ParameterType.VAS, "Charging allowed hours", "Charging allowed hours"),
+	STRING_VAS_RENEW_MESSAGE_ALLOWED_HOURS(ParameterType.VAS, "Renew message allowed hours", "Renew message allowed hours"),
 	
 	INTEGER_VAS_CHARGING_TEMP_ERROR_MAX_DAYS(ParameterType.VAS, "Max days with temp error", "Max days with temp error"),
 	

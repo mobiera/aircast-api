@@ -259,14 +259,9 @@ public class VaServiceVO implements Serializable {
 			mode = Mode.READ_WRITE, 
 			label="Amount Decimals", 
 			description="Amount Decimals")
-	@Section(name = "VIETTEL_MPS")
+	@Section(name = "BASIC_INFORMATION")
 	@Required
-	@Validator(minValue="0", maxValue="10")
-	@DisplayWhen({
-		@Conditions({
-			@Condition(field="type", values = {"VIETTEL_MPS"})
-		})
-	})
+	@Validator(minValue="0", maxValue="10", defaultValue="2")
 	private Integer amountDecimals;
 	
 	@UI( widgetType = WidgetType.CHECKBOX, 
