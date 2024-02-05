@@ -31,10 +31,14 @@ SUBSCRIBE(52, "Subscribe", true),
 	NOTIF_ADN(67, "Notif Adn", true),
 	
 	
+	CHARGING_ERROR_PERM(68, "Charging Error Permanent", false),
+	CHARGING_ERROR_DISABLED(69, "Charging Error Disabled Entity", false),
 	CHARGING_ATTEMPT(70, "Charging Attempt", true),
 	CHARGING_OK(71, "Charging OK", true),
 	CHARGING_NO_FUNDS(72, "Charging No Funds", true),
 	CHARGING_ERROR(73, "Charging Error", false),
+	CHARGING_ERROR_CONNECTION(74, "Charging Connection Error", false),
+	CHARGING_ERROR_TEMP(75, "Charging Temp Error", false),
 	
 	SENT_OTP(76, "Sent OTP", false),
 	AUTH_HE(77, "Auth HE", false),
