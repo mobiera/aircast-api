@@ -6,6 +6,7 @@ public enum VaServiceType implements Serializable {
 
 	VIETTEL_MPS(0,"Viettel Mps","Viettel Mps" ),
 	GENERIC(1,"Generic","Generic" ),
+	TELENITY(2,"Telenity","Telenity" ),
 	
 	;
 	
@@ -29,6 +30,7 @@ public enum VaServiceType implements Serializable {
 		switch(index){
 		case 0: return VIETTEL_MPS;
 		case 1: return GENERIC;
+		case 2: return TELENITY;
 		default: return null;
 		}
 	}

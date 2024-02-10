@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public enum PricepointPeriodicity implements Serializable {
 
-	NONE(0),DAY(1),WEEK(2),MONTH(3),EACH_TWO_DAY(4);
+	NONE(0),DAY(1),WEEK(2),MONTH(3),EACH_TWO_DAY(4), QUARTER(5), YEAR(6);
 
 	private PricepointPeriodicity(Integer index){
 		this.index = index;
@@ -26,6 +26,8 @@ public enum PricepointPeriodicity implements Serializable {
 			case 2: return WEEK;
 			case 3: return MONTH;
 			case 4: return EACH_TWO_DAY;
+			case 5: return QUARTER;
+			case 6: return YEAR;
 			default: return null;
 		}
 	}

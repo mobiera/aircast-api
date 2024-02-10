@@ -84,6 +84,11 @@ public class VaServiceVO implements Serializable {
 			description="MNO Service Provider Name")
 	@Section(name = "BASIC_INFORMATION")
 	@Required
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"VIETTEL_MPS", "GENERIC"})
+		})
+	})
 	@Validator(minSize=1, maxSize=100)
 	private String mnoServiceProviderName;
 	
@@ -93,8 +98,27 @@ public class VaServiceVO implements Serializable {
 			description="MNO Service Name")
 	@Section(name = "BASIC_INFORMATION")
 	@Required
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"VIETTEL_MPS", "GENERIC"})
+		})
+	})
 	@Validator(minSize=1, maxSize=100)
 	private String mnoServiceName;
+	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="MNO Service Id", 
+			description="MNO Service Id")
+	@Section(name = "BASIC_INFORMATION")
+	@Required
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"TELENITY"})
+		})
+	})
+	@Validator(minSize=1, maxSize=32)
+	private String mnoServiceId;
 	
 	
 	@UI( widgetType = WidgetType.SELECT, 

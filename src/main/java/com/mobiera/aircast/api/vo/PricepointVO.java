@@ -226,6 +226,34 @@ public class PricepointVO implements Serializable {
 	@Required
 	private String cpPublicKey;
 	
+	
+	@UI( widgetType = WidgetType.TEXTAREA, 
+			mode = Mode.READ_WRITE, 
+			label="Client Id", 
+			description="Client Id")
+	@Section(name = "CHARGING_PROVIDER")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"TELENITY"})
+		})
+	})
+	@Required
+	private String clientId;
+	
+	@UI( widgetType = WidgetType.TEXTAREA, 
+			mode = Mode.READ_WRITE, 
+			label="Client Secret", 
+			description="Client Secret")
+	@Section(name = "CHARGING_PROVIDER")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"TELENITY"})
+		})
+	})
+	@Required
+	private String clientSecret;
+	
+	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
 			label="Test Keyword", 
