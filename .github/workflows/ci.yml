@@ -2,12 +2,8 @@
 
 name: CI
 
-on:
-  pull_request_target:
-    branches: [ main ]
-    
-  workflow_dispatch:
-
+on: workflow_dispatch
+   
 env:
   QUARKUS_CONTAINER_IMAGE_USERNAME: ${{ secrets.DOCKER_HUB_LOGIN }}
   QUARKUS_CONTAINER_IMAGE_PASSWORD: ${{ secrets.DOCKER_HUB_PWD }}
@@ -17,7 +13,7 @@ env:
 
 jobs:
   build:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true  
+#    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true  
     runs-on: ubuntu-latest
     steps:
       - name: Checkout gh-repo
