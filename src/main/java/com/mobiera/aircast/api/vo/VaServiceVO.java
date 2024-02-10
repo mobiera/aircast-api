@@ -860,6 +860,16 @@ public class VaServiceVO implements Serializable {
 	}
 
 
+	public String getMnoServiceId() {
+		return mnoServiceId;
+	}
+
+
+	public void setMnoServiceId(String mnoServiceId) {
+		this.mnoServiceId = mnoServiceId;
+	}
+
+
 	
 	
 	
