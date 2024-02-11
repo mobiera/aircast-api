@@ -461,14 +461,25 @@ public enum ParameterName {
 		BOOLEAN_DEBUG_MS_MESSAGING_API_STAT_PRODUCER(ParameterType.MICROSERVICE_DEBUG, "Debug Messaging API Stat Producer", "Debug Messaging API Stat Producer"),
 
 		
-		BOOLEAN_DEBUG_MS_VIETTEL_MPS_ADAPTER_CONSUMER(ParameterType.MICROSERVICE_DEBUG, "Debug Vittel Mps Adapter Consumer", "Debug Vittel Mps Adapter Consumer"),
-		BOOLEAN_DEBUG_MS_VIETTEL_MPS_ADAPTER_PRODUCER(ParameterType.MICROSERVICE_DEBUG, "Debug Vittel Mps Adapter Producer", "Debug Vittel Mps Adapter Producer"),
-		BOOLEAN_DEBUG_MS_VIETTEL_MPS_CHARGE_SERVICE(ParameterType.MICROSERVICE_DEBUG, "Debug Vittel Mps Charge Service", "Debug Vittel Mps Charge Service"),
-		BOOLEAN_DEBUG_MS_VIETTEL_MPS_NOTIF_SERVICE(ParameterType.MICROSERVICE_DEBUG, "Debug Vittel Mps Notif Service", "Debug Vittel Mps Notif Service"),
+		BOOLEAN_DEBUG_MS_VIETTEL_MPS_ADAPTER_CONSUMER(ParameterType.MICROSERVICE_DEBUG, "Debug Viettel Mps Adapter Consumer", "Debug Viettel Mps Adapter Consumer"),
+		BOOLEAN_DEBUG_MS_VIETTEL_MPS_ADAPTER_PRODUCER(ParameterType.MICROSERVICE_DEBUG, "Debug Viettel Mps Adapter Producer", "Debug Viettel Mps Adapter Producer"),
+		BOOLEAN_DEBUG_MS_VIETTEL_MPS_CHARGE_SERVICE(ParameterType.MICROSERVICE_DEBUG, "Debug Viettel Mps Charge Service", "Debug Viettel Mps Charge Service"),
+		BOOLEAN_DEBUG_MS_VIETTEL_MPS_NOTIF_SERVICE(ParameterType.MICROSERVICE_DEBUG, "Debug Viettel Mps Notif Service", "Debug Viettel Mps Notif Service"),
 		
-		BOOLEAN_DEBUG_MS_VIETTEL_MPS_ADAPTER_CONTROLLER(ParameterType.MICROSERVICE_DEBUG, "Debug Vittel Mps Adapter Controller", "Debug Vittel Mps Adapter Controller"),
+		BOOLEAN_DEBUG_MS_VIETTEL_MPS_ADAPTER_CONTROLLER(ParameterType.MICROSERVICE_DEBUG, "Debug Viettel Mps Adapter Controller", "Debug Viettel Mps Adapter Controller"),
 		
-		BOOLEAN_DEBUG_MS_VIETTEL_MPS_ADAPTER_SERVICE_STATUS_CONSUMER(ParameterType.MICROSERVICE_DEBUG, "Debug Vittel Mps Adapter Service Status Consumer", "Debug Vittel Mps Adapter Service Status Consumer"),
+		BOOLEAN_DEBUG_MS_VIETTEL_MPS_ADAPTER_SERVICE_STATUS_CONSUMER(ParameterType.MICROSERVICE_DEBUG, "Debug Viettel Mps Adapter Service Status Consumer", "Debug Viettel Mps Adapter Service Status Consumer"),
+		
+		
+		BOOLEAN_DEBUG_MS_TELENITY_ADAPTER_CONSUMER(ParameterType.MICROSERVICE_DEBUG, "Debug Telenity Adapter Consumer", "Debug Telenity Adapter Consumer"),
+		BOOLEAN_DEBUG_MS_TELENITY_ADAPTER_PRODUCER(ParameterType.MICROSERVICE_DEBUG, "Debug Telenity Adapter Producer", "Debug Telenity Adapter Producer"),
+		BOOLEAN_DEBUG_MS_TELENITY_CHARGE_SERVICE(ParameterType.MICROSERVICE_DEBUG, "Debug Telenity Charge Service", "Debug Telenity Charge Service"),
+		BOOLEAN_DEBUG_MS_TELENITY_NOTIF_SERVICE(ParameterType.MICROSERVICE_DEBUG, "Debug Telenity Notif Service", "Debug Telenity Notif Service"),
+		
+		BOOLEAN_DEBUG_MS_TELENITY_ADAPTER_CONTROLLER(ParameterType.MICROSERVICE_DEBUG, "Debug Telenity Adapter Controller", "Debug Telenity Adapter Controller"),
+		
+		BOOLEAN_DEBUG_MS_TELENITY_ADAPTER_SERVICE_STATUS_CONSUMER(ParameterType.MICROSERVICE_DEBUG, "Debug Telenity Adapter Service Status Consumer", "Debug Telenity Adapter Service Status Consumer"),
+		
 		
 		
 		
