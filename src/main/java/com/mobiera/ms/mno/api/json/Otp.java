@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class Otp {
 
 	private String otp;
+	private String transactionId;
 
 	public String getOtp() {
 		return otp;
@@ -14,5 +15,13 @@ public class Otp {
 
 	public void setOtp(String otp) {
 		this.otp = otp;
+	}
+
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
 	}
 }
