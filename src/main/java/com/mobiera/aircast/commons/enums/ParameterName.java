@@ -481,6 +481,7 @@ public enum ParameterName {
 		BOOLEAN_DEBUG_MS_TELENITY_ADAPTER_SERVICE_STATUS_CONSUMER(ParameterType.MICROSERVICE_DEBUG, "Debug Telenity Adapter Service Status Consumer", "Debug Telenity Adapter Service Status Consumer"),
 		
 		
+		BOOLEAN_DEBUG_MS_TELENITY_ADAPTER_STAT_PRODUCER(ParameterType.MICROSERVICE_DEBUG, "Debug Telenity Adapter Stat Producer", "Debug Telenity Adapter Stat Producer"),
 		
 		
 		BOOLEAN_DEBUG_MS_GENERIC_VAS_ADAPTER_CP_MO(ParameterType.MICROSERVICE_DEBUG, "Debug Generic Vas Cp MO Queue", "Debug Generic Vas Cp MO Queue"),
