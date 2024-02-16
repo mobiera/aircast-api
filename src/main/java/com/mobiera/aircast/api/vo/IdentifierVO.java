@@ -77,7 +77,7 @@ public class IdentifierVO implements Serializable {
 			label="Type", 
 			description="Identifier Type")
 	@Section(name = "BASIC_INFORMATION")
-	@Validator(allowedValues = {"KEYWORD", "SIM"})
+	@Validator(allowedValues = {"KEYWORD", "SIM", "PM"})
 	@Required
 	private IdentifierType type;
 
