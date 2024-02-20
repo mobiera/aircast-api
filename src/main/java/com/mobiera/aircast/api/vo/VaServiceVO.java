@@ -360,6 +360,13 @@ public class VaServiceVO implements Serializable {
 	private String authInputMsisdn;
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
+			label="MSISDN", 
+			description="MSISDN")
+	@Section(name = "ADSAFE")
+	@Validator(minSize=1, maxSize=512)
+	private String authHeaderEnrichment;
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
 			label="Auth Msisdn Required", 
 			description="Auth Msisdn Required")
 	@Section(name = "ADSAFE")
@@ -737,6 +744,16 @@ public class VaServiceVO implements Serializable {
 
 	public void setAuthInputMsisdn(String authInputMsisdn) {
 		this.authInputMsisdn = authInputMsisdn;
+	}
+
+
+	public String getAuthHeaderEnrichment() {
+		return authHeaderEnrichment;
+	}
+
+
+	public void setAuthHeaderEnrichment(String authHeaderEnrichment) {
+		this.authHeaderEnrichment = authHeaderEnrichment;
 	}
 
 

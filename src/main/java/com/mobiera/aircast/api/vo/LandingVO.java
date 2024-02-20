@@ -195,6 +195,7 @@ public class LandingVO implements Serializable {
 	private String authFootIcon3;
 	private String authDisabledLanding;
 	private String authInputMsisdn;
+	private String authHeaderEnrichment;
 	private String authMsisdnRequired;
 	private String authMsisdnLengthError;
 	private String authSubmitMsisdn;
@@ -427,6 +428,14 @@ public class LandingVO implements Serializable {
 
 	public void setAuthInputMsisdn(String authInputMsisdn) {
 		this.authInputMsisdn = authInputMsisdn;
+	}
+
+	public String getAuthHeaderEnrichment() {
+		return authHeaderEnrichment;
+	}
+
+	public void setAuthHeaderEnrichment(String authHeaderEnrichment) {
+		this.authHeaderEnrichment = authHeaderEnrichment;
 	}
 
 	public String getAuthMsisdnRequired() {
