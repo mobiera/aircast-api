@@ -48,6 +48,7 @@ public enum ParameterName {
 	STRING_ADSAFE_AUTH_FOOT_ICON3_DEFAULT(ParameterType.VAS, "Adsafe Auth Foot Icon3 Default", "Adsafe Auth Foot Icon3 Default"),
 	STRING_ADSAFE_AUTH_DISABLED_LANDING_DEFAULT(ParameterType.VAS, "Adsafe Auth Disabled Landing Default", "Adsafe Auth Disabled Landing Default"),
 	STRING_ADSAFE_AUTH_INPUT_MSISDN_DEFAULT(ParameterType.VAS, "Adsafe Auth Input Msisdn Default", "Adsafe Auth Input Msisdn Default"),
+	STRING_ADSAFE_AUTH_HEADER_ENRICHMENT_DEFAULT(ParameterType.VAS, "Adsafe Auth Header Enrichment Default", "Adsafe Auth Header Enrichment Default"),
 	STRING_ADSAFE_AUTH_MSISDN_REQUIRED_DEFAULT(ParameterType.VAS, "Adsafe Auth Msisdn Required Default", "Adsafe Auth Msisdn Required Default"),
 	STRING_ADSAFE_AUTH_MSISDN_LENGTH_ERROR_DEFAULT(ParameterType.VAS, "Adsafe Auth Msisdn Length Error Default", "Adsafe Auth Msisdn Length Error Default"),
 	STRING_ADSAFE_AUTH_SUBMIT_MSISDN_DEFAULT(ParameterType.VAS, "Adsafe Auth Submit Msisdn Default", "Adsafe Auth Submit Msisdn Default"),
