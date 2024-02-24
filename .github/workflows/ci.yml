@@ -2,7 +2,10 @@
 
 name: CI
 
-on: workflow_dispatch
+on:
+  push:
+    branches: [ main, dev ]
+  workflow_dispatch:
    
 env:
   QUARKUS_CONTAINER_IMAGE_USERNAME: ${{ secrets.DOCKER_HUB_LOGIN }}
