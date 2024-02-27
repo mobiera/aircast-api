@@ -18,7 +18,7 @@ public class AmountTransaction {
 	private String transactionOperationStatus; // CHARGED or NO_FUNDS
 	private String chargingServiceException;
 	private String chargingPolicyException;
-	private Instant subscriptionExporeTs;
+	private Instant subscriptionExpireTs;
 	
 	public PaymentAmount getPaymentAmount() {
 		return paymentAmount;
@@ -87,11 +87,11 @@ public class AmountTransaction {
 	public void setServiceIdentifierId(String serviceIdentifierId) {
 		this.serviceIdentifierId = serviceIdentifierId;
 	}
-	public Instant getSubscriptionExporeTs() {
-		return subscriptionExporeTs;
+	public Instant getSubscriptionExpireTs() {
+		return subscriptionExpireTs;
 	}
-	public void setSubscriptionExporeTs(Instant subscriptionExporeTs) {
-		this.subscriptionExporeTs = subscriptionExporeTs;
+	public void setSubscriptionExpireTs(Instant subscriptionExpireTs) {
+		this.subscriptionExpireTs = subscriptionExpireTs;
 	}
 	
 	
