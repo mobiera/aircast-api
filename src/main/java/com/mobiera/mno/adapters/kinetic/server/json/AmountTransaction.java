@@ -1,5 +1,7 @@
 package com.mobiera.mno.adapters.kinetic.server.json;
 
+import java.time.Instant;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -16,6 +18,8 @@ public class AmountTransaction {
 	private String transactionOperationStatus; // CHARGED or NO_FUNDS
 	private String chargingServiceException;
 	private String chargingPolicyException;
+	private Instant subscriptionExporeTs;
+	
 	public PaymentAmount getPaymentAmount() {
 		return paymentAmount;
 	}
@@ -82,6 +86,12 @@ public class AmountTransaction {
 	}
 	public void setServiceIdentifierId(String serviceIdentifierId) {
 		this.serviceIdentifierId = serviceIdentifierId;
+	}
+	public Instant getSubscriptionExporeTs() {
+		return subscriptionExporeTs;
+	}
+	public void setSubscriptionExporeTs(Instant subscriptionExporeTs) {
+		this.subscriptionExporeTs = subscriptionExporeTs;
 	}
 	
 	
