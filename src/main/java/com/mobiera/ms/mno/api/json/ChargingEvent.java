@@ -41,6 +41,8 @@ public class ChargingEvent implements Serializable, Event {
 	private ChargingEventType chargingEventType;
 	private Double amount;
 	
+	private Instant subscriptionExpireTs;
+	
 	
 	public UUID getChargeId() {
 		return chargeId;
@@ -168,6 +170,12 @@ public class ChargingEvent implements Serializable, Event {
 	}
 	public void setPricepointCode(String pricepointCode) {
 		this.pricepointCode = pricepointCode;
+	}
+	public Instant getSubscriptionExpireTs() {
+		return subscriptionExpireTs;
+	}
+	public void setSubscriptionExpireTs(Instant subscriptionExpireTs) {
+		this.subscriptionExpireTs = subscriptionExpireTs;
 	}
 	
 	
