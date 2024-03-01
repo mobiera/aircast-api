@@ -430,6 +430,13 @@ public class VaServiceVO implements Serializable {
 	@Section(name = "ADSAFE")
 	@Validator(minSize=1, maxSize=512)
 	private String authAuthenticated;
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Auth Terms Conditions URL", 
+			description="Auth Terms Conditions URL")
+	@Section(name = "ADSAFE")
+	@Validator(minSize=1, maxSize=512)
+	private String authTermsConditions;
 	
 	
 	
@@ -844,6 +851,16 @@ public class VaServiceVO implements Serializable {
 
 	public void setAuthAuthenticated(String authAuthenticated) {
 		this.authAuthenticated = authAuthenticated;
+	}
+
+
+	public String getAuthTermsConditions() {
+		return authTermsConditions;
+	}
+
+
+	public void setAuthTermsConditions(String authTermsConditions) {
+		this.authTermsConditions = authTermsConditions;
 	}
 
 
