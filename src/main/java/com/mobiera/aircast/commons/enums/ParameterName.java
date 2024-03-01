@@ -58,6 +58,7 @@ public enum ParameterName {
 	STRING_ADSAFE_AUTH_SUBMIT_OTP_DEFAULT(ParameterType.VAS, "Adsafe Auth Submit Otp Default", "Adsafe Auth Submit Otp Default"),
 	STRING_ADSAFE_AUTH_AUTH_FAILED_DEFAULT(ParameterType.VAS, "Adsafe Auth Auth Failed Default", "Adsafe Auth Auth Failed Default"),
 	STRING_ADSAFE_AUTH_AUTHENTICATED_DEFAULT(ParameterType.VAS, "Adsafe Auth Authenticated Default", "Adsafe Auth Authenticated Default"),
+	STRING_ADSAFE_AUTH_TERMS_CONDITIONS_DEFAULT(ParameterType.VAS, "Adsafe Auth Terms Conditions Default", "Adsafe Auth Terms Conditions Default"),
 	
 	
 	

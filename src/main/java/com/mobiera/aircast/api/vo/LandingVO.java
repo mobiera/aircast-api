@@ -205,6 +205,7 @@ public class LandingVO implements Serializable {
 	private String authSubmitOtp;
 	private String authAuthFailed;
 	private String authAuthenticated;
+	private String authTermsConditions;
 	
 	
 	
@@ -508,6 +509,14 @@ public class LandingVO implements Serializable {
 
 	public void setAuthAuthenticated(String authAuthenticated) {
 		this.authAuthenticated = authAuthenticated;
+	}
+
+	public String getAuthTermsConditions() {
+		return authTermsConditions;
+	}
+
+	public void setAuthTermsConditions(String authTermsConditions) {
+		this.authTermsConditions = authTermsConditions;
 	}
 
 	public String getAuthzHead1() {
