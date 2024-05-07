@@ -166,12 +166,26 @@ public class PricepointVO implements Serializable {
 	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
-			label="App Rate Data", 
-			description="App Rate Data")
+			label="Provider Rate Data", 
+			description="Provider Rate Data")
 	@Section(name = "CHARGING_PROVIDER")
 	
 	@Required
 	private String providerRateData;
+	
+	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Provider Service ID", 
+			description="Provider Service ID")
+	@Section(name = "CHARGING_PROVIDER")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"TELENITY"})
+		})
+	})
+	@Required
+	private String providerServiceId;
 	
 	
 	private Instant deletedTs;
@@ -788,6 +802,14 @@ public class PricepointVO implements Serializable {
 
 	public void setClientSecret(String clientSecret) {
 		this.clientSecret = clientSecret;
+	}
+
+	public String getProviderServiceId() {
+		return providerServiceId;
+	}
+
+	public void setProviderServiceId(String providerServiceId) {
+		this.providerServiceId = providerServiceId;
 	}
 
 	
