@@ -123,16 +123,33 @@ public class RoleUtil  {
 	
 	public static Role SUBSCRIPTION_EVENT = new Role("subscription-event", "List Subscriptions and Unsubscribe Users",  new ArrayList<Role>(0));
 	
+	/*
+	 * USERS - ROLES - GROUPS
+	 */
 	
+	 public static Role USER_LIST = new Role("user-list", "List Users",  new ArrayList<Role>(0));
+	 public static Role USER_VIEW = new Role("user-view", "View an User",  new ArrayList<Role>(0));
+	 public static Role USER_SAVE = new Role("user-save", "Save an User",  new ArrayList<Role>(0));
+	 public static Role USER_ADD_PERMISSION = new Role("user-add-permission", "Add permission to the User",  new ArrayList<Role>(0));
+	 
+	 public static Role GROUP_LIST = new Role("group-list", "List Groups",  new ArrayList<Role>(0));
+	 public static Role GROUP_VIEW = new Role("group-view", "View a Group",  new ArrayList<Role>(0));
+	 public static Role GROUP_SAVE = new Role("group-save", "Save a Group",  new ArrayList<Role>(0));
+	 
+	 public static Role ROLE_LIST = new Role("role-list", "List Roles",  new ArrayList<Role>(0));
+	 public static Role ROLE_VIEW = new Role("role-view", "View a Role",  new ArrayList<Role>(0));
+	 public static Role ROLE_SAVE = new Role("role-save", "Save a Role",  new ArrayList<Role>(0));
+	 
+	 public static Role SENDER_LIST = new Role("sender-list", "List Senders",  new ArrayList<Role>(0));
+	 public static Role SENDER_VIEW = new Role("sender-view", "View a Sender",  new ArrayList<Role>(0));
+	 public static Role SENDER_SAVE = new Role("sender-save", "Save a Sender",  new ArrayList<Role>(0));
 	
 	public static Role APPLET_ADMIN = null;
 	public static Role CAMPAIGN_ADMIN = null;
 	
-	
 	public static Role CAMPAIGN_TYPE_ALL_DECIDER = null;
 	public static Role CAMPAIGN_TYPE_ALL_PREPARER = null;
 	public static Role CAMPAIGN_TYPE_ALL_VIEWER = null;
-	
 	
 	public static Role ENDPOINT_ADMIN = null; 
 	public static Role SIM_PROFILE_ADMIN = null; 
@@ -147,6 +164,10 @@ public class RoleUtil  {
 	public static Role PRICEPOINT_ADMIN = null; 
 	public static Role IDENTIFIER_ADMIN = null; 
 	public static Role LANDING_ADMIN = null; 
+	public static Role USER_ADMIN = null; 
+	public static Role GROUP_ADMIN = null; 
+	public static Role ROLE_ADMIN = null; 
+	public static Role SENDER_ADMIN = null; 
 	
 	
 	public static Role SUPER_USER = null; 
@@ -244,6 +265,23 @@ public class RoleUtil  {
 			
 			roles.put(SUBSCRIPTION_EVENT.getName(), SUBSCRIPTION_EVENT);
 
+			roles.put(USER_LIST.getName(), USER_LIST);
+			roles.put(USER_VIEW.getName(), USER_VIEW);
+			roles.put(USER_SAVE.getName(), USER_SAVE);
+			roles.put(USER_ADD_PERMISSION.getName(), USER_ADD_PERMISSION);
+			
+			roles.put(GROUP_LIST.getName(), GROUP_LIST);
+			roles.put(GROUP_VIEW.getName(), GROUP_VIEW);
+			roles.put(GROUP_SAVE.getName(), GROUP_SAVE);
+			
+			roles.put(ROLE_LIST.getName(), ROLE_LIST);
+			roles.put(ROLE_VIEW.getName(), ROLE_VIEW);
+			roles.put(ROLE_SAVE.getName(), ROLE_SAVE);
+
+			roles.put(SENDER_LIST.getName(), SENDER_LIST);
+			roles.put(SENDER_VIEW.getName(), SENDER_VIEW);
+			roles.put(SENDER_SAVE.getName(), SENDER_SAVE);
+
 			roleList.add(UI_USER);
 			roleList.add(APPLET_LIST);
 			roleList.add(APPLET_VIEW);
@@ -251,8 +289,6 @@ public class RoleUtil  {
 			roleList.add(CAMPAIGN_LIST);
 			roleList.add(CAMPAIGN_VIEW);
 			roleList.add(CAMPAIGN_SAVE);
-			
-			
 			
 			roleList.add(CAMPAIGN_TYPE_SYSTEM_DECIDER);
 			roleList.add(CAMPAIGN_TYPE_SYSTEM_PREPARER);
@@ -301,7 +337,6 @@ public class RoleUtil  {
 			roleList.add(VAS_DECIDER);
 			roleList.add(VAS_PREPARER);
 			
-			
 			roleList.add(VA_SERVICE_LIST);
 			roleList.add(VA_SERVICE_VIEW);
 			roleList.add(VA_SERVICE_SAVE);
@@ -320,8 +355,18 @@ public class RoleUtil  {
 			
 			roleList.add(SUBSCRIPTION_EVENT);
 			
+			roleList.add(USER_LIST);
+			roleList.add(USER_VIEW);
+			roleList.add(USER_SAVE);
+			roleList.add(USER_ADD_PERMISSION);
 			
+			roleList.add(GROUP_LIST);
+			roleList.add(GROUP_VIEW);
+			roleList.add(GROUP_SAVE);
 			
+			roleList.add(ROLE_LIST);
+			roleList.add(ROLE_VIEW);
+			roleList.add(ROLE_SAVE);
 			
 			List<Role> appletAdminSubRoles = new ArrayList<Role>();
 			appletAdminSubRoles.add(APPLET_LIST);
@@ -497,6 +542,39 @@ public class RoleUtil  {
 			roles.put(LANDING_ADMIN.getName(), LANDING_ADMIN);
 			roleList.add(LANDING_ADMIN);
 			
+			List<Role> userAdminSubRoles = new ArrayList<Role>();
+			userAdminSubRoles.add(USER_LIST);
+			userAdminSubRoles.add(USER_VIEW);
+			// userAdminSubRoles.add(USER_SAVE);
+			userAdminSubRoles.add(USER_ADD_PERMISSION);
+			USER_ADMIN = new Role("user-admin", "Manage (List, View, Add Permission) Users", userAdminSubRoles);
+			roles.put(USER_ADMIN.getName(), USER_ADMIN);
+			roleList.add(USER_ADMIN);
+
+			List<Role> groupAdminSubRoles = new ArrayList<Role>();
+			groupAdminSubRoles.add(GROUP_LIST);
+			groupAdminSubRoles.add(GROUP_VIEW);
+			// groupAdminSubRoles.add(GROUP_SAVE);
+			GROUP_ADMIN = new Role("role-admin", "Manage (List, View, Save) Groups", groupAdminSubRoles);
+			roles.put(GROUP_ADMIN.getName(), GROUP_ADMIN);
+			roleList.add(GROUP_ADMIN);
+			
+			List<Role> roleAdminSubRoles = new ArrayList<Role>();
+			roleAdminSubRoles.add(ROLE_LIST);
+			roleAdminSubRoles.add(ROLE_VIEW);
+			roleAdminSubRoles.add(ROLE_SAVE);
+			ROLE_ADMIN = new Role("role-admin", "Manage (List, View, Save) Roles", roleAdminSubRoles);
+			roles.put(ROLE_ADMIN.getName(), ROLE_ADMIN);
+			roleList.add(ROLE_ADMIN);
+
+			List<Role> senderAdminSubRoles = new ArrayList<Role>();
+			senderAdminSubRoles.add(SENDER_LIST);
+			senderAdminSubRoles.add(SENDER_VIEW);
+			senderAdminSubRoles.add(SENDER_SAVE);
+			SENDER_ADMIN = new Role("sender-admin", "Manage (List, View, Save) Senders", senderAdminSubRoles);
+			roles.put(SENDER_ADMIN.getName(), SENDER_ADMIN);
+			roleList.add(SENDER_ADMIN);
+
 			/*
 			 * su
 			 */
@@ -517,7 +595,6 @@ public class RoleUtil  {
 			fullAdminSubRoles.add(APPLET_FILE_ADMIN);
 			fullAdminSubRoles.add(SCHEDULER_ADMIN);
 			
-			
 			fullAdminSubRoles.add(VAS_DECIDER);
 			fullAdminSubRoles.add(VA_SERVICE_ADMIN);
 			fullAdminSubRoles.add(PRICEPOINT_ADMIN);
@@ -525,6 +602,10 @@ public class RoleUtil  {
 			fullAdminSubRoles.add(LANDING_ADMIN);
 			fullAdminSubRoles.add(SUBSCRIPTION_EVENT);
 			
+			fullAdminSubRoles.add(USER_ADMIN);
+			fullAdminSubRoles.add(GROUP_ADMIN);
+			fullAdminSubRoles.add(ROLE_ADMIN);
+			fullAdminSubRoles.add(SENDER_ADMIN);
 			
 			SUPER_USER = new Role("00_SUPER_USER", "A Super User is granted everything. Only for Mobiera geeks", fullAdminSubRoles);
 			roles.put(SUPER_USER.getName(), SUPER_USER);

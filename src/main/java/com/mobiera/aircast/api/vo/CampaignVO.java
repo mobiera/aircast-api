@@ -17,7 +17,6 @@ import com.mobiera.aircast.commons.enums.CampaignManagement;
 import com.mobiera.aircast.commons.enums.CampaignPriority;
 import com.mobiera.aircast.commons.enums.CampaignType;
 import com.mobiera.aircast.commons.enums.ImpactPolicy;
-import com.mobiera.aircast.commons.enums.ParameterName;
 import com.mobiera.aircast.commons.enums.RamCommand;
 import com.mobiera.aircast.commons.enums.RfmCommand;
 import com.mobiera.aircast.commons.enums.SleepyFlowType;
@@ -71,8 +70,8 @@ public class CampaignVO implements Serializable {
 	@Section( name = "HEADER")
 	private EntityState state;
 	
-	
-	
+	// Agregar Categoría de Campaña.
+
 	private static final long serialVersionUID = 286608528040069273L;
 	@Section(name = "BASIC_INFORMATION")
 	@UI( widgetType = WidgetType.TEXT, 
@@ -81,6 +80,16 @@ public class CampaignVO implements Serializable {
 			description="id of Entity")
 	private Long id;
 	
+	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_ONLY, label="Creator", description="Creator")
+	@Section( name = "BASIC_INFORMATION")
+	@TargetClass(type=ClassType.VO, name="UserVO")
+	private String user;
+
+	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_ONLY, label="Group", description="Group")
+	@Section( name = "BASIC_INFORMATION")
+	@TargetClass(type=ClassType.VO, name="GroupVO")
+	private String group;
+
 	@JsonSerialize(using = InstantSerializer.class)
 	@JsonDeserialize(using = InstantDeserializer.class)
 	@Section(name = "BASIC_INFORMATION")
@@ -90,7 +99,6 @@ public class CampaignVO implements Serializable {
 			description="Created")
 	private Instant createdTs;
 	
-	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
 			label="Name", 
@@ -99,6 +107,29 @@ public class CampaignVO implements Serializable {
 	@Required
 	@Validator(minSize=1, maxSize=100)
 	private String name;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Description", 
+			description="Description of Campaign")
+	@Section(name = "BASIC_INFORMATION")
+	// @Required
+	@Validator(minSize=0, maxSize=250)
+	private String campaignDescription;
+
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_WRITE, 
+	label="Refusal Reason", 
+	description="Refusal Reason")
+	@Section(name = "BASIC_INFORMATION")
+	// @Required
+	@Validator(minSize=0, maxSize=250)
+	@DisplayWhen({
+	@Conditions({
+		@Condition(field="state", values = {"REFUSED"})
+	})
+	})
+	private String comments;
 	
 	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
@@ -110,14 +141,31 @@ public class CampaignVO implements Serializable {
 	@Validator(allowedValues = {"ADVERTISING", "SLEEPY", "USTK", "RAM", "SMS", "SLEEPY_API", "USTK_API", "SMS_API", "SLEEPY_FLOW", "ADVERTISING", "DISCOVERY"})
 	private CampaignType type;
 	
-	@UI( widgetType = WidgetType.TEXT, 
+	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
+			label="Sender", 
+			description="Sender")
+	@Section(name = "BASIC_INFORMATION")
+	@TargetClass(type=ClassType.VO, name="SenderVO")
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private Long senderFk;
+	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
 			label="Shortcode", 
 			description="Shortcode")
 	@Section(name = "BASIC_INFORMATION")
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private String shortcode;
-	
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Maximum TPS", 
+			description="Maximum TPS")
+	@Section(name = "BASIC_INFORMATION")
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private String maxTPS;
+
 	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
 			label="Smpp Account", 
@@ -1015,15 +1063,21 @@ public class CampaignVO implements Serializable {
 			description="Recalculate available users")
 	@Section(name = "MENU")
 	private Boolean recalcAvailableUsers;
-	
-	
-	
+		
 	@UI( widgetType = WidgetType.SPECIAL, 
 			mode = Mode.READ_ONLY, 
 			label="Refresh", 
 			description="Refresh")
 	@Section(name = "MENU")
 	private Boolean refresh;
+
+	@UI( widgetType = WidgetType.SPECIAL, 
+	mode = Mode.READ_ONLY, 
+	label="To refuse campaign", 
+	description="To refuse campaign")
+	@Section(name = "MENU")
+	private Boolean refuseCampaign;
+
 	
 		/*@UI( widgetType = WidgetType.CHECKBOX, 
 			mode = Mode.READ_WRITE, 
@@ -1056,11 +1110,56 @@ public class CampaignVO implements Serializable {
 	*/
 	
 	
-	
-	
 	private List<EntityState> allowedTransitionStates;
-	
-	
+
+	public String getMaxTPS() {
+		return maxTPS;
+	}
+
+	public void setMaxTPS(String maxTPS) {
+		this.maxTPS = maxTPS;
+	}
+
+	public Boolean getRefuseCampaign() {
+		return refuseCampaign;
+	}
+
+	public void setRefuseCampaign(Boolean refuseCampaign) {
+		this.refuseCampaign = refuseCampaign;
+	}
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
+	public String getCampaignDescription() {
+		return campaignDescription;
+	}
+
+	public void setCampaignDescription(String campaignDescription) {
+		this.campaignDescription = campaignDescription;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
 	public EntityState getState() {
 		return state;
 	}
@@ -1099,6 +1198,14 @@ public class CampaignVO implements Serializable {
 
 	public void setShortcode(String shortcode) {
 		this.shortcode = shortcode;
+	}
+
+	public Long getSenderFk() {
+		return senderFk;
+	}
+
+	public void setSenderFk(Long senderFk) {
+		this.senderFk = senderFk;
 	}
 
 	public Long getSmppAccountFk() {
@@ -1822,7 +1929,6 @@ public class CampaignVO implements Serializable {
 	public void setRefresh(Boolean refresh) {
 		this.refresh = refresh;
 	}
-
 
 	public boolean isStkCampaign() {
 		boolean retval = false;

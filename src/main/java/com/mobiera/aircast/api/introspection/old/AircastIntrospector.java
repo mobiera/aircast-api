@@ -63,6 +63,9 @@ public class AircastIntrospector extends Introspector {
 			
 			defaultVOPackages.add(com.mobiera.ms.mno.api.json.SubscriptionEvent.class.getPackage().getName());
 			
+			defaultVOPackages.add(com.mobiera.aircast.api.v3.user.ListUsersRequest.class.getPackage().getName());
+			defaultVOPackages.add(com.mobiera.aircast.api.v3.role.ListRolesRequest.class.getPackage().getName());
+			defaultVOPackages.add(com.mobiera.aircast.api.v3.group.ListGroupsRequest.class.getPackage().getName());
 			
 		}
 		return defaultVOPackages;

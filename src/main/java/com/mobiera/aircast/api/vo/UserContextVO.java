@@ -3,7 +3,6 @@ package com.mobiera.aircast.api.vo;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.mobiera.aircast.commons.enums.CampaignFilter;
@@ -22,7 +21,14 @@ public class UserContextVO implements Serializable
 	private Set<String> roles;
 	private List<CampaignFilter> allowedCampaignFilters;
 	private String remoteAddr;
+	private String workingGroup;
 	
+	public String getWorkingGroup() {
+		return workingGroup;
+	}
+	public void setWorkingGroup(String workingGroup) {
+		this.workingGroup = workingGroup;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -76,8 +82,4 @@ public class UserContextVO implements Serializable
 		return (email == null);
 	}
 
-	
-
-
-	
 }

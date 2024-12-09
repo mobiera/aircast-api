@@ -22,6 +22,10 @@ public enum UIMenuEntry implements Serializable {
 	STATS("Stats", "View Statistics"),
 	SIM_STATS("Sim Stats", "View Sim Statistics"),
 	PARAMETER("Aircast Settings", "Configure Aircast Settings"),
+	USER("Users", "Manage Users"),
+	GROUP("Groups", "Manage Groups"),
+	ROLE("Roles", "Manage Roles"),
+	SENDER("Senders", "Manage Senders"),
 	;
 	private UIMenuEntry(String label, String description){
 		this.label = label;

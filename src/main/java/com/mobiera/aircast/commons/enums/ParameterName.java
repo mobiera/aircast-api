@@ -578,7 +578,9 @@ public enum ParameterName {
 	BOOLEAN_DEBUG_USTK_API(ParameterType.API_DEBUG, "Debug USTK API", "Debug USTK API"),
 	BOOLEAN_DEBUG_VA_SERVICE_API(ParameterType.API_DEBUG, "Debug VaService API", "Debug VaService API"),
 	BOOLEAN_DEBUG_PRICEPOINT_API(ParameterType.API_DEBUG, "Debug Pricepoint API", "Debug Pricepoint API"),
-	
+	BOOLEAN_DEBUG_KEYCLOAK_USER_MANAGEMENT_API(ParameterType.API_DEBUG, "Debug KEYCLOAK USER MANAGEMENT API", "Debug KEYCLOAK USER MANAGEMENT API"),
+	BOOLEAN_DEBUG_SENDER_API(ParameterType.API_DEBUG, "Debug Sender API", "Debug Sender API"),
+
 	/*
 	 * REMOTE SERVICE DEBUG
 	 */
@@ -598,6 +600,7 @@ public enum ParameterName {
 	BOOLEAN_DEBUG_VA_SERVICE_REMOTE_SERVICE(ParameterType.REMOTE_SERVICE_DEBUG, "Debug Va Service Remote Service", "Enable log messages for Va Service remote service"),
 	BOOLEAN_DEBUG_PRICEPOINT_REMOTE_SERVICE(ParameterType.REMOTE_SERVICE_DEBUG, "Debug Pricepoint Remote Service", "Enable log messages for Pricepoint remote service"),
 	BOOLEAN_DEBUG_IDENTIFIER_REMOTE_SERVICE(ParameterType.REMOTE_SERVICE_DEBUG, "Debug Identifier Remote Service", "Enable log messages for Identifier remote service"),
+	BOOLEAN_DEBUG_SENDER_REMOTE_SERVICE(ParameterType.REMOTE_SERVICE_DEBUG, "Debug Sender Remote Service", "Enable log messages for Sender remote service"),
 	
 	
 	/*

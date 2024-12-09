@@ -24,7 +24,6 @@ public class AircastIntrospector extends Introspector {
 	@Override
 	public List<String> getEnumPackages() {
 		
-		
 		if (defaultEnumPackages  == null) {
 			defaultEnumPackages = new ArrayList<String>();
 			defaultEnumPackages.add(com.mobiera.aircast.commons.enums.AppletImpl.class.getPackage().getName());
@@ -64,7 +63,11 @@ public class AircastIntrospector extends Introspector {
 			defaultVOPackages.add(com.mobiera.ms.mno.api.json.SubscriptionEvent.class.getPackage().getName());
 			defaultVOPackages.add(com.mobiera.ms.mno.aircast.api.SimStatVO.class.getPackage().getName());
 			
-			
+			defaultVOPackages.add(com.mobiera.aircast.api.v3.user.ListUsersRequest.class.getPackage().getName());
+			defaultVOPackages.add(com.mobiera.aircast.api.v3.role.ListRolesRequest.class.getPackage().getName());
+			defaultVOPackages.add(com.mobiera.aircast.api.v3.group.ListGroupsRequest.class.getPackage().getName());
+			defaultVOPackages.add(com.mobiera.aircast.api.v3.sender.ListSendersRequest.class.getPackage().getName());
+
 		}
 		return defaultVOPackages;
 	}
