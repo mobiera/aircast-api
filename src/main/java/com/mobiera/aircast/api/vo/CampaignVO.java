@@ -164,7 +164,7 @@ public class CampaignVO implements Serializable {
 			description="Maximum TPS")
 	@Section(name = "BASIC_INFORMATION")
 	@Expertise(knowledge = Knowledge.CONFIRMED)
-	private String maxTPS;
+	private Long maxTPS;
 
 	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
@@ -1112,11 +1112,11 @@ public class CampaignVO implements Serializable {
 	
 	private List<EntityState> allowedTransitionStates;
 
-	public String getMaxTPS() {
+	public Long getMaxTPS() {
 		return maxTPS;
 	}
 
-	public void setMaxTPS(String maxTPS) {
+	public void setMaxTPS(Long maxTPS) {
 		this.maxTPS = maxTPS;
 	}
 

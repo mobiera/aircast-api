@@ -91,7 +91,7 @@ public class GroupVO implements Serializable {
 			description="Maximum TPS")
 	@Section(name = "BASIC_INFORMATION")
 	@Expertise(knowledge = Knowledge.CONFIRMED)
-	private String maxTPS;
+	private Long maxTPS;
 
 	
 	public String getParentId() {
@@ -166,11 +166,11 @@ public class GroupVO implements Serializable {
 		this.allowedTransitionStates = allowedTransitionStates;
 	}
 
-	public String getMaxTPS() {
+	public Long getMaxTPS() {
 		return maxTPS;
 	}
 
-	public void setMaxTPS(String maxTPS) {
+	public void setMaxTPS(Long maxTPS) {
 		this.maxTPS = maxTPS;
 	}
 
