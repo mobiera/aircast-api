@@ -85,7 +85,14 @@ public class GroupVO implements Serializable {
 	private List<String> members;
 
 	
-	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Max Granted Sent Per Day", 
+			description="Max Granted Sent Per Day")
+	@Section(name = "BASIC_INFORMATION")
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private Long maxGrantedSentPerDay;
+
 	
 	public String getParentId() {
 		return parentId;
@@ -157,6 +164,14 @@ public class GroupVO implements Serializable {
 
 	public void setAllowedTransitionStates(List<EntityState> allowedTransitionStates) {
 		this.allowedTransitionStates = allowedTransitionStates;
+	}
+
+	public Long getMaxGrantedSentPerDay() {
+		return maxGrantedSentPerDay;
+	}
+
+	public void setMaxGrantedSentPerDay(Long maxGrantedSentPerDay) {
+		this.maxGrantedSentPerDay = maxGrantedSentPerDay;
 	}
 
 	
