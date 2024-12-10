@@ -7,9 +7,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.mobiera.commons.enums.ClassType;
 import com.mobiera.commons.enums.EntityState;
+import com.mobiera.commons.enums.Knowledge;
 import com.mobiera.commons.enums.Mode;
 import com.mobiera.commons.enums.WidgetType;
 import com.mobiera.commons.introspection.Description;
+import com.mobiera.commons.introspection.Expertise;
 import com.mobiera.commons.introspection.Label;
 import com.mobiera.commons.introspection.Required;
 import com.mobiera.commons.introspection.Section;
@@ -82,6 +84,16 @@ public class GroupVO implements Serializable {
 	// @Required
 	private List<String> members;
 
+	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Maximum TPS", 
+			description="Maximum TPS")
+	@Section(name = "BASIC_INFORMATION")
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private String maxTPS;
+
+	
 	public String getParentId() {
 		return parentId;
 	}
@@ -152,6 +164,14 @@ public class GroupVO implements Serializable {
 
 	public void setAllowedTransitionStates(List<EntityState> allowedTransitionStates) {
 		this.allowedTransitionStates = allowedTransitionStates;
+	}
+
+	public String getMaxTPS() {
+		return maxTPS;
+	}
+
+	public void setMaxTPS(String maxTPS) {
+		this.maxTPS = maxTPS;
 	}
 
 }
