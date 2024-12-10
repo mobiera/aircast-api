@@ -19,6 +19,8 @@ public class CmSchedule implements Serializable {
 	private Integer missing;
 	private Integer registeredCmInstances;
 	private Boolean onlyIfNoPa;
+	private String userId;
+	private String groupId;
 	
 	public Long getCampaignFk() {
 		return campaignFk;
@@ -55,6 +57,18 @@ public class CmSchedule implements Serializable {
 	}
 	public void setOnlyIfNoPa(Boolean onlyIfNoPa) {
 		this.onlyIfNoPa = onlyIfNoPa;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getGroupId() {
+		return groupId;
+	}
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 	
 }

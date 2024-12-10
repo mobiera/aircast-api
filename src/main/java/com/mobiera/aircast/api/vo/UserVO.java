@@ -6,9 +6,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.mobiera.commons.enums.ClassType;
 import com.mobiera.commons.enums.EntityState;
+import com.mobiera.commons.enums.Knowledge;
 import com.mobiera.commons.enums.Mode;
 import com.mobiera.commons.enums.WidgetType;
 import com.mobiera.commons.introspection.Description;
+import com.mobiera.commons.introspection.Expertise;
 import com.mobiera.commons.introspection.Label;
 import com.mobiera.commons.introspection.Required;
 import com.mobiera.commons.introspection.Section;
@@ -103,6 +105,17 @@ public class UserVO implements Serializable {
 	// @Required
 	private List<String> groups;	
 
+	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Max Granted Sent Per Day", 
+			description="Max Granted Sent Per Day")
+	@Section(name = "BASIC_INFORMATION")
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private Long maxGrantedSentPerDay;
+
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -197,6 +210,14 @@ public class UserVO implements Serializable {
 
 	public void setAllowedTransitionStates(List<EntityState> allowedTransitionStates) {
 		this.allowedTransitionStates = allowedTransitionStates;
+	}
+
+	public Long getMaxGrantedSentPerDay() {
+		return maxGrantedSentPerDay;
+	}
+
+	public void setMaxGrantedSentPerDay(Long maxGrantedSentPerDay) {
+		this.maxGrantedSentPerDay = maxGrantedSentPerDay;
 	}
 
 }
