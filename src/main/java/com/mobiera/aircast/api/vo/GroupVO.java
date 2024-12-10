@@ -85,14 +85,7 @@ public class GroupVO implements Serializable {
 	private List<String> members;
 
 	
-	@UI( widgetType = WidgetType.TEXT, 
-			mode = Mode.READ_WRITE, 
-			label="Maximum TPS", 
-			description="Maximum TPS")
-	@Section(name = "BASIC_INFORMATION")
-	@Expertise(knowledge = Knowledge.CONFIRMED)
-	private Long maxTPS;
-
+	
 	
 	public String getParentId() {
 		return parentId;
@@ -166,12 +159,5 @@ public class GroupVO implements Serializable {
 		this.allowedTransitionStates = allowedTransitionStates;
 	}
 
-	public Long getMaxTPS() {
-		return maxTPS;
-	}
-
-	public void setMaxTPS(Long maxTPS) {
-		this.maxTPS = maxTPS;
-	}
-
+	
 }
