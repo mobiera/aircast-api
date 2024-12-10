@@ -173,7 +173,7 @@ public class PricepointVO implements Serializable {
 	@Required
 	private String providerRateData;
 	
-	
+	/*
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
 			label="Provider Service ID", 
@@ -187,7 +187,7 @@ public class PricepointVO implements Serializable {
 	@Required
 	private String providerServiceId;
 	
-	
+	*/
 	private Instant deletedTs;
 	
 	@UI( widgetType = WidgetType.SELECT, 
@@ -804,16 +804,12 @@ public class PricepointVO implements Serializable {
 		this.clientSecret = clientSecret;
 	}
 
-	public String getProviderServiceId() {
-		return providerServiceId;
-	}
-
-	public void setProviderServiceId(String providerServiceId) {
-		this.providerServiceId = providerServiceId;
-	}
+	
 
 	
 	
 	
 	
 }
+
+
