@@ -135,6 +135,7 @@ public enum ParameterName {
 	STRING_SMS_API_ALLOWED_HOURS(ParameterType.SMS, "Sms API Allowed Hours", "Hours allowed for SMS API"),
 
 	
+	
 	/*
 	 * Campaign Policies
 	 */
@@ -349,6 +350,19 @@ public enum ParameterName {
 	/*
 	 * MICROSERVICES (NEW)
 	 */
+	
+	
+	/*
+	 * MM7
+	 */
+	
+	BOOLEAN_DEBUG_MS_MM7_CONTROLLER(ParameterType.MMS, "Debug MM7 Controller", "Debug MM7 Controller"),
+	BOOLEAN_DEBUG_MS_MM7_STAT_PRODUCER(ParameterType.MMS, "Debug MM7 Stat Producer", "Debug MM7 Stat Producer"),
+	BOOLEAN_DEBUG_MS_MM7_SERVICE_STATUS_CONSUMER(ParameterType.MMS, "Debug MM7 Service Status Consumer", "Debug MM7 Service Status Consumer"),
+	BOOLEAN_DEBUG_MS_MM7_CONSUMER(ParameterType.MMS, "Debug MM7 Consumer", "Debug MM7 Consumer"),
+	BOOLEAN_DEBUG_MS_MM7_PRODUCER(ParameterType.MMS, "Debug MM7 Producer", "Debug MM7 Producer"),
+	BOOLEAN_DEBUG_MS_MM7_SERVICE(ParameterType.MMS, "Debug MM7 Service", "Debug MM7 Service"),
+	
 	
 	
 		BOOLEAN_DEBUG_MS_SMPP_CLIENT_LMBD_SERVICE(ParameterType.MICROSERVICE_DEBUG, "Debug Smpp Client LMBD Service", "Debug Smpp Client LMBD Service"),

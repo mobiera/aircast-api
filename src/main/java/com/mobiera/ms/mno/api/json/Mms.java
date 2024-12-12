@@ -16,7 +16,7 @@ public class Mms implements Serializable {
 	
 	
 	private String subject;
-	private String testMsg;
+	private String textMsg;
 	private Boolean dlrRequested;
 	private Long validityPeriod;
 	
@@ -38,12 +38,7 @@ public class Mms implements Serializable {
 	public void setServiceTpda(String serviceTpda) {
 		this.serviceTpda = serviceTpda;
 	}
-	public String getTestMsg() {
-		return testMsg;
-	}
-	public void setTestMsg(String testMsg) {
-		this.testMsg = testMsg;
-	}
+	
 	public List<MmsMedia> getMedias() {
 		return medias;
 	}
@@ -67,6 +62,12 @@ public class Mms implements Serializable {
 	}
 	public void setTo(String to) {
 		this.to = to;
+	}
+	public String getTextMsg() {
+		return textMsg;
+	}
+	public void setTextMsg(String textMsg) {
+		this.textMsg = textMsg;
 	}
 	
 	
