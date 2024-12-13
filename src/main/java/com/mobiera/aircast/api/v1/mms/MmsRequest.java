@@ -5,11 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
-import com.mobiera.aircast.commons.enums.Dcs;
+
 import com.mobiera.ms.mno.api.json.MmsMedia;
 
 @JsonInclude(Include.NON_NULL)
@@ -88,6 +84,12 @@ public abstract class MmsRequest implements Serializable
 	}
 	public void setTo(String to) {
 		this.to = to;
+	}
+	public Long getCampaignScheduleId() {
+		return campaignScheduleId;
+	}
+	public void setCampaignScheduleId(Long campaignScheduleId) {
+		this.campaignScheduleId = campaignScheduleId;
 	}
 	
 	
