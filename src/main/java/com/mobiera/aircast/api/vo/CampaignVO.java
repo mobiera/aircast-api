@@ -355,6 +355,22 @@ public class CampaignVO implements Serializable {
 	private String mmsText;
 	
 	
+	@UI( widgetType = WidgetType.SELECT, 
+			mode = Mode.READ_WRITE, 
+			label="Mms Client Endpoint", 
+			description="Mms Client Endpoint")
+	@Section(name = "MMS_CONFIGURATION")
+	@TargetClass(type=ClassType.VO, name="EndpointVO")
+	@Filter(field="type", values = { "MM7" })
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MMS", "MMS_API"})
+		})
+	})
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private Long mmsClientEndpointFk;
+	
+	
 	/*
 	 * SMS
 	 */
@@ -1982,6 +1998,30 @@ public class CampaignVO implements Serializable {
 			}
 		}
 		return retval;
+	}
+
+	public String getMmsSubject() {
+		return mmsSubject;
+	}
+
+	public void setMmsSubject(String mmsSubject) {
+		this.mmsSubject = mmsSubject;
+	}
+
+	public String getMmsText() {
+		return mmsText;
+	}
+
+	public void setMmsText(String mmsText) {
+		this.mmsText = mmsText;
+	}
+
+	public Long getMmsClientEndpointFk() {
+		return mmsClientEndpointFk;
+	}
+
+	public void setMmsClientEndpointFk(Long mmsClientEndpointFk) {
+		this.mmsClientEndpointFk = mmsClientEndpointFk;
 	}
 	
 	
