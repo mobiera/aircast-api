@@ -44,6 +44,7 @@ import com.mobiera.commons.introspection.Validator;
 import com.mobiera.commons.util.InstantDeserializer;
 import com.mobiera.commons.util.InstantSerializer;
 import com.mobiera.ms.mno.aircast.api.util.FileUtil;
+import com.mobiera.ms.mno.api.json.MmsMedia;
 
 @JsonInclude(Include.NON_NULL)
 
@@ -325,6 +326,22 @@ public class CampaignVO implements Serializable {
 	 * MMS
 	 */
 	
+	@UI( widgetType = WidgetType.SELECT, 
+			mode = Mode.READ_WRITE, 
+			label="Mms Client Endpoint", 
+			description="Mms Client Endpoint")
+	@Section(name = "MMS_CONFIGURATION")
+	@TargetClass(type=ClassType.VO, name="EndpointVO")
+	@Filter(field="type", values = { "MM7" })
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MMS", "MMS_API"})
+		})
+	})
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	@Required
+	private Long mmsClientEndpointFk;
+
 	
 	@UI( widgetType = WidgetType.TEXTAREA, 
 			mode = Mode.READ_WRITE, 
@@ -355,20 +372,21 @@ public class CampaignVO implements Serializable {
 	private String mmsText;
 	
 	
-	@UI( widgetType = WidgetType.SELECT, 
+	
+	@UI( widgetType = WidgetType.SPECIAL, 
 			mode = Mode.READ_WRITE, 
-			label="Mms Client Endpoint", 
-			description="Mms Client Endpoint")
+			label="Medias", 
+			description="Medias")
 	@Section(name = "MMS_CONFIGURATION")
-	@TargetClass(type=ClassType.VO, name="EndpointVO")
 	@Filter(field="type", values = { "MM7" })
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"MMS", "MMS_API"})
+			@Condition(field="type", values = {"MMS"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
-	private Long mmsClientEndpointFk;
+	@Validator(minSize=0, maxSize=5)
+	private List<MmsMedia> medias;
 	
 	
 	/*
@@ -2022,6 +2040,14 @@ public class CampaignVO implements Serializable {
 
 	public void setMmsClientEndpointFk(Long mmsClientEndpointFk) {
 		this.mmsClientEndpointFk = mmsClientEndpointFk;
+	}
+
+	public List<MmsMedia> getMedias() {
+		return medias;
+	}
+
+	public void setMedias(List<MmsMedia> medias) {
+		this.medias = medias;
 	}
 	
 	
