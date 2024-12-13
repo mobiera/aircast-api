@@ -12,6 +12,7 @@ public enum CampaignSection {
 	RFM_CONFIGURATION("Rfm Configuration", "Rfm Configuration"),
 	SMS_API_CONFIGURATION("Sms Api Configuration", "Sms Api Configuration"),
 	SMS_CONFIGURATION("Sms Configuration", "Sms Configuration"),
+	MMS_CONFIGURATION("Mms Configuration", "Mms Configuration"),
 	CAMPAIGN_FLOW("Campaign Flow", "Campaign Flow"),
 	ADS("Ads", "Ads"),
 	KPIS("Kpis", "Kpis"),
