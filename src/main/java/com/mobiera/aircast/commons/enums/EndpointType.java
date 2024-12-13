@@ -13,7 +13,8 @@ public enum EndpointType implements Serializable {
 	MO_CALLBACK(6, "MO Callback", "Produces a USTK triggered MO message to a target KW/SC"),
 	API(7, "API", "Produces a USTK triggered MO message to a target KW/SC"),
 	KINETIC(8, "Third Party Kinetic Server", "Third Party Kinetic Server, for VaServices"),
-	SMPP_SERVER(9, "Smpp Server", "Smpp Server"),;
+	SMPP_SERVER(9, "Smpp Server", "Smpp Server"),
+	MM7(10, "MM7 Client", "MM7 Client"),;
 	
 	private EndpointType(Integer index, String label, String description){
 		this.index = index;
@@ -43,6 +44,7 @@ public enum EndpointType implements Serializable {
 			case 7: return API;
 			case 8: return KINETIC;
 			case 9: return SMPP_SERVER;
+			case 10: return MM7;
 			default: return null;
 		}
 	}
