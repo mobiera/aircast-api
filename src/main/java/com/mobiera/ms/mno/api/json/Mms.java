@@ -23,7 +23,7 @@ public class Mms implements Serializable {
 	private Long requestId;
 	private Long campaignId;
 	private Long campaignScheduleId;
-	
+	private Long endpointId;
 	
 	
 	private List<MmsMedia> medias;
@@ -92,6 +92,12 @@ public class Mms implements Serializable {
 	}
 	public void setCampaignScheduleId(Long campaignScheduleId) {
 		this.campaignScheduleId = campaignScheduleId;
+	}
+	public Long getEndpointId() {
+		return endpointId;
+	}
+	public void setEndpointId(Long endpointId) {
+		this.endpointId = endpointId;
 	}
 	
 	
