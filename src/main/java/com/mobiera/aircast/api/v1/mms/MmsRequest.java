@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.mobiera.ms.mno.api.json.MmsMedia;
 
 @JsonInclude(Include.NON_NULL)
-public abstract class MmsRequest implements Serializable
+public class MmsRequest implements Serializable
 {
 	private static final long serialVersionUID = 1241060010966633233L;
 	private Long requestId;
@@ -24,7 +24,6 @@ public abstract class MmsRequest implements Serializable
 	private List<MmsMedia> medias;
 	
 	private String serviceTpda;
-	private String to;
 	public Long getRequestId() {
 		return requestId;
 	}
@@ -79,12 +78,7 @@ public abstract class MmsRequest implements Serializable
 	public void setServiceTpda(String serviceTpda) {
 		this.serviceTpda = serviceTpda;
 	}
-	public String getTo() {
-		return to;
-	}
-	public void setTo(String to) {
-		this.to = to;
-	}
+	
 	public Long getCampaignScheduleId() {
 		return campaignScheduleId;
 	}
