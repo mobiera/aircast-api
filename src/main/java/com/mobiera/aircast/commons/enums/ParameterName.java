@@ -363,6 +363,7 @@ public enum ParameterName {
 	BOOLEAN_DEBUG_MS_MM7_PRODUCER(ParameterType.MMS, "Debug MM7 Producer", "Debug MM7 Producer"),
 	BOOLEAN_DEBUG_MS_MM7_SERVICE(ParameterType.MMS, "Debug MM7 Service", "Debug MM7 Service"),
 	
+	BOOLEAN_DEBUG_MS_MESSAGING_API_MMS_PRODUCER(ParameterType.MICROSERVICE_DEBUG, "Debug Messaging API Mms Producer", "Debug Messaging API Mms Producer"),
 	
 	
 		BOOLEAN_DEBUG_MS_SMPP_CLIENT_LMBD_SERVICE(ParameterType.MICROSERVICE_DEBUG, "Debug Smpp Client LMBD Service", "Debug Smpp Client LMBD Service"),

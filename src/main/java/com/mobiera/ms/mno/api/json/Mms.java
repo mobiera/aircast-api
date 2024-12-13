@@ -20,6 +20,12 @@ public class Mms implements Serializable {
 	private Boolean dlrRequested;
 	private Long validityPeriod;
 	
+	private Long requestId;
+	private Long campaignId;
+	private Long campaignScheduleId;
+	
+	
+	
 	private List<MmsMedia> medias;
 	
 	private String serviceTpda;
@@ -68,6 +74,24 @@ public class Mms implements Serializable {
 	}
 	public void setTextMsg(String textMsg) {
 		this.textMsg = textMsg;
+	}
+	public Long getRequestId() {
+		return requestId;
+	}
+	public void setRequestId(Long requestId) {
+		this.requestId = requestId;
+	}
+	public Long getCampaignId() {
+		return campaignId;
+	}
+	public void setCampaignId(Long campaignId) {
+		this.campaignId = campaignId;
+	}
+	public Long getCampaignScheduleId() {
+		return campaignScheduleId;
+	}
+	public void setCampaignScheduleId(Long campaignScheduleId) {
+		this.campaignScheduleId = campaignScheduleId;
 	}
 	
 	
