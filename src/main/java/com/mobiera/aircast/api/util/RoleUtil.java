@@ -368,6 +368,10 @@ public class RoleUtil  {
 			roleList.add(ROLE_VIEW);
 			roleList.add(ROLE_SAVE);
 			
+			roleList.add(SENDER_LIST);
+			roleList.add(SENDER_VIEW);
+			roleList.add(SENDER_SAVE);
+
 			List<Role> appletAdminSubRoles = new ArrayList<Role>();
 			appletAdminSubRoles.add(APPLET_LIST);
 			appletAdminSubRoles.add(APPLET_VIEW);
@@ -555,7 +559,7 @@ public class RoleUtil  {
 			groupAdminSubRoles.add(GROUP_LIST);
 			groupAdminSubRoles.add(GROUP_VIEW);
 			// groupAdminSubRoles.add(GROUP_SAVE);
-			GROUP_ADMIN = new Role("role-admin", "Manage (List, View, Save) Groups", groupAdminSubRoles);
+			GROUP_ADMIN = new Role("group-admin", "Manage (List, View, Save) Groups", groupAdminSubRoles);
 			roles.put(GROUP_ADMIN.getName(), GROUP_ADMIN);
 			roleList.add(GROUP_ADMIN);
 			

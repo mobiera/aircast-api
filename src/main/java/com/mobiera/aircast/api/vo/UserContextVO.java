@@ -2,6 +2,7 @@ package com.mobiera.aircast.api.vo;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -22,6 +23,7 @@ public class UserContextVO implements Serializable
 	private List<CampaignFilter> allowedCampaignFilters;
 	private String remoteAddr;
 	private String workingGroup;
+	private List<Map.Entry<String,String>> headers;
 	
 	public String getWorkingGroup() {
 		return workingGroup;
@@ -77,7 +79,12 @@ public class UserContextVO implements Serializable
 	public void setRemoteAddr(String remoteAddr) {
 		this.remoteAddr = remoteAddr;
 	}
-	
+	public List<Map.Entry<String, String>> getHeaders() {
+		return headers;
+	}
+	public void setHeaders(List<Map.Entry<String, String>> headers) {
+		this.headers = headers;
+	}
 	public boolean isAnonymous() {
 		return (email == null);
 	}
