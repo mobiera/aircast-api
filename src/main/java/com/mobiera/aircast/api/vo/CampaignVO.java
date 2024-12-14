@@ -44,6 +44,7 @@ import com.mobiera.commons.introspection.Validator;
 import com.mobiera.commons.util.InstantDeserializer;
 import com.mobiera.commons.util.InstantSerializer;
 import com.mobiera.ms.mno.aircast.api.util.FileUtil;
+import com.mobiera.ms.mno.api.json.MmsMedia;
 
 @JsonInclude(Include.NON_NULL)
 
@@ -138,7 +139,7 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@Required
 	@Expertise(knowledge = Knowledge.CONFIRMED)
-	@Validator(allowedValues = {"ADVERTISING", "SLEEPY", "USTK", "RAM", "SMS", "SLEEPY_API", "USTK_API", "SMS_API", "SLEEPY_FLOW", "ADVERTISING", "DISCOVERY"})
+	@Validator(allowedValues = {"ADVERTISING", "SLEEPY", "USTK", "RAM", "SMS", "MMS", "SLEEPY_API", "USTK_API", "SMS_API", "MMS_API", "SLEEPY_FLOW", "ADVERTISING", "DISCOVERY"})
 	private CampaignType type;
 	
 	@UI( widgetType = WidgetType.SELECT, 
@@ -182,7 +183,7 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAW", "SMS", "SLEEPY_FLOW", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAW", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -230,7 +231,7 @@ public class CampaignVO implements Serializable {
 	@Validator(allowedValues = {"HIGH", "LOW"})
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "SMS", "RAW", "SLEEPY_FLOW", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "SMS", "MMS", "RAW", "SLEEPY_FLOW", "ADVERTISING"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -247,7 +248,7 @@ public class CampaignVO implements Serializable {
 	@Filter(field="type", values = { "CAMPAIGN" })
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SMS_API", "SLEEPY_API", "USTK_API"})
+			@Condition(field="type", values = {"SMS_API", "MMS_API", "SLEEPY_API", "USTK_API"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -261,7 +262,7 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "RAW", "RFM", "SMS", "SLEEPY_FLOW", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "RAW", "RFM", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"})
 		})
 	})
 	private String testKeyword;
@@ -274,7 +275,7 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "RAW", "RFM", "SMS", "SLEEPY_FLOW", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "RAW", "RFM", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -305,6 +306,7 @@ public class CampaignVO implements Serializable {
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Boolean moForwarding;
+	
 	@UI( widgetType = WidgetType.CHECKBOX, 
 			mode = Mode.READ_WRITE, 
 			label="Treat Dcs 04 As Gsm8 Text", 
@@ -318,6 +320,73 @@ public class CampaignVO implements Serializable {
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Boolean moForwardingTreatDcs04AsGsm8Text;
+	
+	
+	/*
+	 * MMS
+	 */
+	
+	@UI( widgetType = WidgetType.SELECT, 
+			mode = Mode.READ_WRITE, 
+			label="Mms Client Endpoint", 
+			description="Mms Client Endpoint")
+	@Section(name = "MMS_CONFIGURATION")
+	@TargetClass(type=ClassType.VO, name="EndpointVO")
+	@Filter(field="type", values = { "MM7" })
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MMS", "MMS_API"})
+		})
+	})
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	@Required
+	private Long mmsClientEndpointFk;
+
+	
+	@UI( widgetType = WidgetType.TEXTAREA, 
+			mode = Mode.READ_WRITE, 
+			label="Mms Subject", 
+			description="Mms Subject")
+	@Section(name = "MMS_CONFIGURATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MMS"})
+		})
+	})
+	@Required
+	@Validator(minSize=1, maxSize=40)
+	private String mmsSubject;
+	
+	@UI( widgetType = WidgetType.TEXTAREA, 
+			mode = Mode.READ_WRITE, 
+			label="Mms Text", 
+			description="Mms Text")
+	@Section(name = "MMS_CONFIGURATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MMS"})
+		})
+	})
+	@Required
+	@Validator(minSize=1, maxSize=40)
+	private String mmsText;
+	
+	
+	
+	@UI( widgetType = WidgetType.SPECIAL, 
+			mode = Mode.READ_WRITE, 
+			label="Medias", 
+			description="Medias")
+	@Section(name = "MMS_CONFIGURATION")
+	@Filter(field="type", values = { "MM7" })
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MMS"})
+		})
+	})
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	@Validator(minSize=0, maxSize=5)
+	private List<MmsMedia> medias;
 	
 	
 	/*
@@ -411,7 +480,7 @@ public class CampaignVO implements Serializable {
 	//@Validator(defaultValue="false")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"ADVERTISING"})
+			@Condition(field="type", values = {"ADVERTISING", "SMS", "MMS"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -442,7 +511,7 @@ public class CampaignVO implements Serializable {
 	@Section(name = "ADVANCED")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAW", "SMS", "SLEEPY_FLOW"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAW", "SMS", "MMS", "SLEEPY_FLOW"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -471,7 +540,7 @@ public class CampaignVO implements Serializable {
 	@Section(name = "ADVANCED")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAW", "SMS", "SLEEPY_FLOW"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAW", "SMS", "MMS", "SLEEPY_FLOW"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -519,7 +588,7 @@ public class CampaignVO implements Serializable {
 	@Section(name = "ADVANCED")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "SMS", "SLEEPY_FLOW"})
+			@Condition(field="type", values = {"SLEEPY", "SMS", "MMS", "SLEEPY_FLOW"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -532,7 +601,7 @@ public class CampaignVO implements Serializable {
 	@Section(name = "ADVANCED")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "SMS", "SLEEPY_FLOW"})
+			@Condition(field="type", values = {"SLEEPY", "SMS", "MMS", "SLEEPY_FLOW"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -553,7 +622,7 @@ public class CampaignVO implements Serializable {
 		@Conditions({
 			@Condition(field="management", values = {"SCHEDULED"})
 			,
-			@Condition(field="type", values = {"SLEEPY_FLOW", "SMS", "USTK", "SLEEPY", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY_FLOW", "SMS", "MMS", "USTK", "SLEEPY", "ADVERTISING"})
 		})
 	})
 	private CampaignListType listType;
@@ -1947,6 +2016,38 @@ public class CampaignVO implements Serializable {
 			}
 		}
 		return retval;
+	}
+
+	public String getMmsSubject() {
+		return mmsSubject;
+	}
+
+	public void setMmsSubject(String mmsSubject) {
+		this.mmsSubject = mmsSubject;
+	}
+
+	public String getMmsText() {
+		return mmsText;
+	}
+
+	public void setMmsText(String mmsText) {
+		this.mmsText = mmsText;
+	}
+
+	public Long getMmsClientEndpointFk() {
+		return mmsClientEndpointFk;
+	}
+
+	public void setMmsClientEndpointFk(Long mmsClientEndpointFk) {
+		this.mmsClientEndpointFk = mmsClientEndpointFk;
+	}
+
+	public List<MmsMedia> getMedias() {
+		return medias;
+	}
+
+	public void setMedias(List<MmsMedia> medias) {
+		this.medias = medias;
 	}
 	
 	

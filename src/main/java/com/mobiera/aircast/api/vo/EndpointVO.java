@@ -272,7 +272,7 @@ public class EndpointVO implements Serializable {
 	@Section( name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SMPP_SERVER", "KINETIC"})
+			@Condition(field="type", values = {"SMPP_SERVER", "KINETIC", "MM7"})
 		})
 	})
 	@Required
@@ -289,6 +289,86 @@ public class EndpointVO implements Serializable {
 	})
 	@Required
 	private String allowedTpIps;
+	
+	
+	
+	
+	@UI( widgetType = WidgetType.TEXT, mode = Mode.READ_WRITE, 
+			label="MM7 Version", description="MM7 Version")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MM7"})
+		})
+	})
+	private String mm7Version;
+	
+	@UI( widgetType = WidgetType.TEXT, mode = Mode.READ_WRITE, 
+			label="vaspid", description="vaspid")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MM7"})
+		})
+	})
+	@Required
+	private String vaspid;
+	
+	@UI( widgetType = WidgetType.TEXT, mode = Mode.READ_WRITE, 
+			label="vasid", description="vasid")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MM7"})
+		})
+	})
+	@Required
+	private String vasid;
+	
+	@UI( widgetType = WidgetType.TEXT, mode = Mode.READ_WRITE, 
+			label="mm7url", description="mm7url")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MM7"})
+		})
+	})
+	@Required
+	private String mm7url;
+	
+	@UI( widgetType = WidgetType.TEXT, mode = Mode.READ_WRITE, 
+			label="username", description="username")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MM7"})
+		})
+	})
+	@Required
+	private String username;
+	
+	@UI( widgetType = WidgetType.TEXT, mode = Mode.READ_WRITE, 
+			label="namespaceprefix", description="namespaceprefix")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MM7"})
+		})
+	})
+	private String namespaceprefix;
+	
+	@UI( widgetType = WidgetType.TEXT, mode = Mode.READ_WRITE, 
+			label="xmlns", description="xmlns")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"MM7"})
+		})
+	})
+	private String xmlns;
+	
+	
+	
 	
 	public final EndpointType getType() {
 		return type;
@@ -454,6 +534,48 @@ public class EndpointVO implements Serializable {
 	}
 	public void setAllowedTpIps(String allowedTpIps) {
 		this.allowedTpIps = allowedTpIps;
+	}
+	public String getMm7Version() {
+		return mm7Version;
+	}
+	public void setMm7Version(String mm7Version) {
+		this.mm7Version = mm7Version;
+	}
+	public String getVaspid() {
+		return vaspid;
+	}
+	public void setVaspid(String vaspid) {
+		this.vaspid = vaspid;
+	}
+	public String getVasid() {
+		return vasid;
+	}
+	public void setVasid(String vasid) {
+		this.vasid = vasid;
+	}
+	public String getMm7url() {
+		return mm7url;
+	}
+	public void setMm7url(String mm7url) {
+		this.mm7url = mm7url;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getNamespaceprefix() {
+		return namespaceprefix;
+	}
+	public void setNamespaceprefix(String namespaceprefix) {
+		this.namespaceprefix = namespaceprefix;
+	}
+	public String getXmlns() {
+		return xmlns;
+	}
+	public void setXmlns(String xmlns) {
+		this.xmlns = xmlns;
 	}
 	
 	

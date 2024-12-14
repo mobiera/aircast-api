@@ -10,7 +10,10 @@ public enum CampaignType implements Serializable {
 	SMS(6, "SMS_DECIDER", "SMS_PREPARER"), AUTH_API(7,"OTA_DECIDER","OTA_DECIDER"),
 	RAW(8,"OTA_DECIDER","OTA_DECIDER"), USTK_API(9, "API_DECIDER", "API_PREPARER"),
 	DISCOVERY(10,"OTA_DECIDER", "OTA_PREPARER"), USTK(11,"OTA_DECIDER", "OTA_PREPARER"),
-	SLEEPY_FLOW(12,"OTA_DECIDER", "OTA_PREPARER"), ADVERTISING(13, "PM_DECIDER", "PM_PREPARER");
+	SLEEPY_FLOW(12,"OTA_DECIDER", "OTA_PREPARER"), ADVERTISING(13, "PM_DECIDER", "PM_PREPARER"),
+	MMS(13,"SMS_DECIDER", "SMS_PREPARER"), MMS_API(14, "API_DECIDER", "API_PREPARER"),
+	
+	;
 
 	private CampaignType(Integer index, String deciderRoleName, String preparerRoleName){
 		this.index = index;
@@ -46,6 +49,8 @@ public enum CampaignType implements Serializable {
 			case 11: return USTK;
 			case 12: return SLEEPY_FLOW;
 			case 13: return ADVERTISING;
+			case 14: return MMS;
+			case 15: return MMS_API;
 			default: return null;
 		}
 	}

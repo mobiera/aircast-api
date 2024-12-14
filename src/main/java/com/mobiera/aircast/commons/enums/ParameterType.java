@@ -18,6 +18,7 @@ public enum ParameterType implements Serializable {
 	PONDERATION("Ponderation", "Ponderation"),
 	USTK("Ustk", "Ustk"),
 	SMS("Sms", "Sms"),
+	MMS("Mms", "Mms"),
 	
 	RUN_TUNING("Run Tuning", "Run Tuning"),
 	
