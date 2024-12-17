@@ -18,7 +18,7 @@ import com.mobiera.commons.introspection.UI;
 import com.mobiera.commons.introspection.Validator;
 
 @SectionEnum(name="SenderSection")
-@Label(singular="User", plural="Senders", newEntityLabel="New Sender", newEntityDescription="Create a New Sender")
+@Label(singular="Sender", plural="Senders", newEntityLabel="New Sender", newEntityDescription="Create a New Sender")
 @Description(data="Aircast Senders")
 @JsonInclude(Include.NON_NULL)
 public class SenderVO implements Serializable {

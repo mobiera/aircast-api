@@ -668,6 +668,7 @@ public class RoleUtil  {
 			campaignManagerSubRoles.add(SCHEDULER_ADMIN);
 			campaignManagerSubRoles.add(LIST_FILE_ADMIN);
 			campaignManagerSubRoles.add(PARAMETER_VIEW);
+			campaignManagerSubRoles.add(SENDER_ADMIN);
 			
 			CAMPAIGN_MANAGER = new Role("15_PM_ADVERTISING_CAMPAIGN_DECIDER", "Push Marketing Assignable Role: For teams that need to prepare, approve and schedule Advertising Campaigns, see statistics of Advertising, API and Sim Menu Campaigns", campaignManagerSubRoles);
 			roles.put(CAMPAIGN_MANAGER.getName(), CAMPAIGN_MANAGER);
@@ -694,7 +695,9 @@ public class RoleUtil  {
 			campaignPreparerSubRolesSubRoles.add(SCHEDULER_ADMIN);
 			campaignPreparerSubRolesSubRoles.add(LIST_FILE_ADMIN);
 			campaignPreparerSubRolesSubRoles.add(PARAMETER_VIEW);
-			
+			campaignPreparerSubRolesSubRoles.add(SENDER_LIST);
+			campaignPreparerSubRolesSubRoles.add(SENDER_VIEW);
+
 			CAMPAIGN_PREPARER = new Role("20_PM_ADVERTISING_CAMPAIGN_EDITOR", "Push Marketing Assignable Role: For teams that need to prepare and schedule Advertising Campaigns (no approval), see statistics of Advertising, API and Sim Menu Campaigns", campaignPreparerSubRolesSubRoles);
 			roles.put(CAMPAIGN_PREPARER.getName(), CAMPAIGN_PREPARER);
 			roleList.add(CAMPAIGN_PREPARER);
@@ -711,13 +714,13 @@ public class RoleUtil  {
 			statsSubRolesSubRoles.add(CAMPAIGN_TYPE_API_VIEWER);
 			statsSubRolesSubRoles.add(CAMPAIGN_TYPE_SIM_MENU_VIEWER);
 			statsSubRolesSubRoles.add(PARAMETER_VIEW);
+			statsSubRolesSubRoles.add(SENDER_LIST);
+			statsSubRolesSubRoles.add(SENDER_VIEW);
 
 			STATS = new Role("25_PM_ADVERTISING_CAMPAIGN_VIEWER", "Push Marketing Assignable Role: For teams that need to see statistics of Advertising, API and Sim Menu Campaigns", statsSubRolesSubRoles);
 			roles.put(STATS.getName(), STATS);
 			roleList.add(STATS);
-			
-			
-			
+						
 			List<Role> vasManagerSubRoles = new ArrayList<Role>();
 			vasManagerSubRoles.add(UI_USER);
 			vasManagerSubRoles.add(VAS_DECIDER);
