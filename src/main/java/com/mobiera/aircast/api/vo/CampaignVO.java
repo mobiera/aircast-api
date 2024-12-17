@@ -473,7 +473,7 @@ public class CampaignVO implements Serializable {
 	 */
 	
 	@UI( widgetType = WidgetType.CHECKBOX, 
-			mode = Mode.READ_WRITE, 
+			mode = Mode.READ_ONLY, 
 			label="Template", 
 			description="Flag this campaign as template")
 	@Section(name = "ADVANCED")
