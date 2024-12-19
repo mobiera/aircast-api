@@ -87,6 +87,15 @@ public class UserVO implements Serializable {
 	// @Validator(minSize=1, maxSize=100)
 	private String lastName;
 
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="Phone", 
+			description="Phone of User")
+	@Section(name = "BASIC_INFORMATION")
+	// @Required
+	// @Validator(minSize=1, maxSize=100)
+	private String phone;
+
 	@Section(name = "AUTHORIZATION")
 	@UI( widgetType = WidgetType.BAG, 
 	mode = Mode.READ_WRITE, 
@@ -105,7 +114,6 @@ public class UserVO implements Serializable {
 	// @Required
 	private List<String> groups;	
 
-	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
 			label="Max Granted Sent Per Day", 
@@ -113,8 +121,6 @@ public class UserVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long maxGrantedSentPerDay;
-
-	
 	
 	public String getName() {
 		return name;
@@ -154,6 +160,14 @@ public class UserVO implements Serializable {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public List<String> getRoles() {

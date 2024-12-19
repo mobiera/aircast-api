@@ -119,17 +119,17 @@ public class CampaignVO implements Serializable {
 	private String campaignDescription;
 
 	@UI( widgetType = WidgetType.TEXT, 
-	mode = Mode.READ_WRITE, 
+	mode = Mode.READ_ONLY, 
 	label="Refusal Reason", 
 	description="Refusal Reason")
 	@Section(name = "BASIC_INFORMATION")
 	// @Required
 	@Validator(minSize=0, maxSize=250)
-	@DisplayWhen({
-	@Conditions({
-		@Condition(field="state", values = {"REFUSED"})
-	})
-	})
+	// @DisplayWhen({
+	// @Conditions({
+	// 	@Condition(field="state", values = {"REFUSED"})
+	// })
+	// })
 	private String comments;
 	
 	@UI( widgetType = WidgetType.SELECT, 
