@@ -21,7 +21,7 @@ public enum ParameterName {
 	STRING_REGISTERY_UUID(ParameterType.GLOBAL, "Registry UUID", "Registry UUID."),
 	
 	STRING_MSISDN_COUNTRY_PREFIX(ParameterType.GLOBAL, "Msisdn Country Prefix", "Msisdn Country Prefix"),
-	STRING_MSISDN_DISCARD_UNKNOWN(ParameterType.GLOBAL, "Discard MSISDNs that are not in db", "Discard MSISDNs that are not in db"),
+	BOOLEAN_MSISDN_DISCARD_UNKNOWN(ParameterType.GLOBAL, "Discard MSISDNs that are not in db", "Discard MSISDNs that are not in db"),
 	
 	/*
 	 * KEYCLOAK
