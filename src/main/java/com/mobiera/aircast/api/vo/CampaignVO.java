@@ -378,7 +378,6 @@ public class CampaignVO implements Serializable {
 			label="Medias", 
 			description="Medias")
 	@Section(name = "MMS_CONFIGURATION")
-	@Filter(field="type", values = { "MM7" })
 	@DisplayWhen({
 		@Conditions({
 			@Condition(field="type", values = {"MMS"})
