@@ -148,6 +148,7 @@ public class CampaignVO implements Serializable {
 			description="Sender")
 	@Section(name = "BASIC_INFORMATION")
 	@TargetClass(type=ClassType.VO, name="SenderVO")
+	@Filter(field="state", values = { "ENABLED" })
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long senderFk;
 	
