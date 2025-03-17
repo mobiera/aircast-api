@@ -1111,10 +1111,6 @@ public class CampaignVO implements Serializable {
 	private Float todayEfficiency; // percent
 	private Float allTimeEfficiency; // percent
 
-	
-	
-	
-	
 	private Long countedImpactables;
 	private Long countedAlives;
 	private Long countedDone;
@@ -1180,6 +1176,15 @@ public class CampaignVO implements Serializable {
 	
 	
 	private List<EntityState> allowedTransitionStates;
+	private List<SenderVO> allowedSenders;
+
+	public List<SenderVO> getAllowedSenders() {
+		return allowedSenders;
+	}
+
+	public void setAllowedSenders(List<SenderVO> allowedSenders) {
+		this.allowedSenders = allowedSenders;
+	}
 
 	public Long getMaxTPS() {
 		return maxTPS;
