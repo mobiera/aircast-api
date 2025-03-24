@@ -22,7 +22,10 @@ public enum ParameterName {
 	
 	STRING_MSISDN_COUNTRY_PREFIX(ParameterType.GLOBAL, "Msisdn Country Prefix", "Msisdn Country Prefix"),
 	BOOLEAN_MSISDN_DISCARD_UNKNOWN(ParameterType.GLOBAL, "Discard MSISDNs that are not in db", "Discard MSISDNs that are not in db"),
-	
+
+	BOOLEAN_GROUPS_MANAGEMENT_ENABLED(ParameterType.GLOBAL, "Groups Managemet Enabled", "Groups Managemet Enabled"),
+	BOOLEAN_SENDERS_MANAGEMENT_ENABLED(ParameterType.GLOBAL, "Senders Managemet Enabled", "Senders Managemet Enabled"),
+
 	/*
 	 * KEYCLOAK
 	 */
