@@ -149,14 +149,24 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@TargetClass(type=ClassType.VO, name="SenderVO")
 	@Filter(field="state", values = { "ENABLED" })
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="sendersEnabled", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long senderFk;
 	
 	@UI( widgetType = WidgetType.TEXT, 
-			mode = Mode.READ_ONLY, 
+			mode = Mode.READ_WRITE, 
 			label="Shortcode", 
 			description="Shortcode")
 	@Section(name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="sendersEnabled", values = {"false"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private String shortcode;
 
@@ -165,6 +175,11 @@ public class CampaignVO implements Serializable {
 			label="Maximum TPS", 
 			description="Maximum TPS")
 	@Section(name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long maxTPS;
 
@@ -174,6 +189,11 @@ public class CampaignVO implements Serializable {
 			description="Smpp Account")
 	@Section(name = "BASIC_INFORMATION")
 	@TargetClass(type=ClassType.VO, name="SmppAccountVO")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long smppAccountFk;
 	
@@ -184,7 +204,8 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAW", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAW", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"}),
+			@Condition(field="fullConfiguration", values = {"true"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -201,7 +222,8 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="management", values = {"PERMANENT", "SCHEDULED"})
+			@Condition(field="management", values = {"PERMANENT", "SCHEDULED"}),
+			@Condition(field="fullConfiguration", values = {"true"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -215,7 +237,8 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="management", values = {"PERMANENT", "SCHEDULED"})
+			@Condition(field="management", values = {"PERMANENT", "SCHEDULED"}),
+			@Condition(field="fullConfiguration", values = {"true"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -232,7 +255,8 @@ public class CampaignVO implements Serializable {
 	@Validator(allowedValues = {"HIGH", "LOW"})
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "SMS", "MMS", "RAW", "SLEEPY_FLOW", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "SMS", "MMS", "RAW", "SLEEPY_FLOW", "ADVERTISING"}),
+			@Condition(field="fullConfiguration", values = {"true"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -263,7 +287,8 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "RAW", "RFM", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "RAW", "RFM", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"}),
+			@Condition(field="fullConfiguration", values = {"true"})
 		})
 	})
 	private String testKeyword;
@@ -276,7 +301,8 @@ public class CampaignVO implements Serializable {
 	@Section(name = "BASIC_INFORMATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "RAW", "RFM", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"})
+			@Condition(field="type", values = {"SLEEPY", "USTK", "RAM", "RAW", "RFM", "SMS", "MMS", "SLEEPY_FLOW", "ADVERTISING"}),
+			@Condition(field="fullConfiguration", values = {"true"})
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
@@ -288,6 +314,11 @@ public class CampaignVO implements Serializable {
 			label="Validity Period", 
 			description="Optional SMS validity period. Will work only if SMSC supports it")
 	@Section(name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long validityPeriod;
 	
@@ -735,10 +766,6 @@ public class CampaignVO implements Serializable {
 	})
 	private Long listPosition;
 	
-	
-	
-	
-	
 	@UI( widgetType = WidgetType.SELECT_MULTIPLE, 
 			mode = Mode.READ_WRITE, 
 			label="Subscriber Plan Exclude", 
@@ -753,16 +780,24 @@ public class CampaignVO implements Serializable {
 			label="Subscriber Type Exclude", 
 			description="Users with these Subscriber Type would be excluded from campaign")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private List<SubscriberType> subscriberTypeExclude;
-	
-	
 	
 	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
 			label="Tp Ad Allowed Condition", 
 			description="Third Party advertising flag must be set to this Condition for a given User to qualify for this Campaign.")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private com.mobiera.commons.enums.Condition tpAdAllowedCondition;
 	
@@ -772,6 +807,11 @@ public class CampaignVO implements Serializable {
 			label="MNO Ad Allowed Condition", 
 			description="MNO advertising flag must be set to this Condition for a given User to qualify for this Campaign.")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private com.mobiera.commons.enums.Condition mnoAdAllowedCondition;
 	
@@ -780,6 +820,11 @@ public class CampaignVO implements Serializable {
 			label="State1 Condition", 
 			description="State1 flag must be set to this Condition for a given User to qualify for this Campaign.")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private com.mobiera.commons.enums.Condition state1Condition;
 	
@@ -788,6 +833,11 @@ public class CampaignVO implements Serializable {
 			label="State2 Condition", 
 			description="State2 flag must be set to this Condition for a given User to qualify for this Campaign.")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private com.mobiera.commons.enums.Condition state2Condition;
 	
@@ -797,6 +847,11 @@ public class CampaignVO implements Serializable {
 			label="TP Ad Exclude Conditions", 
 			description="TP advertising flag must NOT be set to these Conditions for a given User to qualify for this Campaign.")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private List<com.mobiera.commons.enums.Condition> tpAdExclude;
 	
@@ -805,6 +860,11 @@ public class CampaignVO implements Serializable {
 			label="MNO Ad Exclude Conditions", 
 			description="MNO advertising flag must NOT be set to these Conditions for a given User to qualify for this Campaign.")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private List<com.mobiera.commons.enums.Condition> mnoAdExclude;
 	
@@ -813,6 +873,11 @@ public class CampaignVO implements Serializable {
 			label="State1 Exclude Conditions", 
 			description="State1 flag must NOT be set to these Conditions for a given User to qualify for this Campaign.")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private List<com.mobiera.commons.enums.Condition> state1Exclude;
 	
@@ -821,6 +886,11 @@ public class CampaignVO implements Serializable {
 			label="State2 Exclude Conditions", 
 			description="State2 flag must NOT be set to these Conditions for a given User to qualify for this Campaign.")
 	@Section(name = "TARGET_USERS")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullTargetConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private List<com.mobiera.commons.enums.Condition> state2Exclude;
 	
@@ -1174,9 +1244,52 @@ public class CampaignVO implements Serializable {
 	private Integer minIntervalBwTwoImpacts;
 	*/
 	
-	
 	private List<EntityState> allowedTransitionStates;
 	private List<SenderVO> allowedSenders;
+
+	@Section(name = "BASIC_INFORMATION")
+	private Boolean groupsEnabled;
+
+	@Section(name = "BASIC_INFORMATION")
+	private Boolean sendersEnabled;
+	
+	@Section(name = "BASIC_INFORMATION")
+	private Boolean fullConfiguration;
+
+	@Section(name = "TARGET_USERS")
+	private Boolean fullTargetConfiguration;
+	
+	public Boolean getFullTargetConfiguration() {
+		return fullTargetConfiguration;
+	}
+
+	public void setFullTargetConfiguration(Boolean fullTargetConfiguration) {
+		this.fullTargetConfiguration = fullTargetConfiguration;
+	}
+
+	public Boolean getFullConfiguration() {
+		return fullConfiguration;
+	}
+
+	public void setFullConfiguration(Boolean fullConfiguration) {
+		this.fullConfiguration = fullConfiguration;
+	}
+
+	public Boolean getGroupsEnabled() {
+		return groupsEnabled;
+	}
+
+	public void setGroupsEnabled(Boolean groupsEnabled) {
+		this.groupsEnabled = groupsEnabled;
+	}
+
+	public Boolean getSendersEnabled() {
+		return sendersEnabled;
+	}
+
+	public void setSendersEnabled(Boolean sendersEnabled) {
+		this.sendersEnabled = sendersEnabled;
+	}
 
 	public List<SenderVO> getAllowedSenders() {
 		return allowedSenders;
