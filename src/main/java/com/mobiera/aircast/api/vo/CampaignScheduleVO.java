@@ -8,11 +8,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.mobiera.aircast.commons.enums.CampaignPriority;
 import com.mobiera.commons.enums.ClassType;
 import com.mobiera.commons.enums.EntityState;
+import com.mobiera.commons.enums.Knowledge;
 import com.mobiera.commons.enums.Mode;
 import com.mobiera.commons.enums.WidgetType;
+import com.mobiera.commons.introspection.Condition;
+import com.mobiera.commons.introspection.Conditions;
 import com.mobiera.commons.introspection.Description;
+import com.mobiera.commons.introspection.DisplayWhen;
+import com.mobiera.commons.introspection.Expertise;
 import com.mobiera.commons.introspection.Filter;
 import com.mobiera.commons.introspection.Label;
 import com.mobiera.commons.introspection.Required;
@@ -20,10 +26,9 @@ import com.mobiera.commons.introspection.Section;
 import com.mobiera.commons.introspection.SectionEnum;
 import com.mobiera.commons.introspection.TargetClass;
 import com.mobiera.commons.introspection.UI;
+import com.mobiera.commons.introspection.Validator;
 import com.mobiera.commons.util.InstantDeserializer;
 import com.mobiera.commons.util.InstantSerializer;
-
-
 
 @JsonInclude(Include.NON_NULL)
 @Label(singular="Schedule", plural="Schedules", newEntityLabel="New Schedule", newEntityDescription="Create a new Schedule")
@@ -32,7 +37,6 @@ import com.mobiera.commons.util.InstantSerializer;
 public class CampaignScheduleVO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	
 	@UI( widgetType = WidgetType.TEXT, mode = Mode.READ_ONLY)
 	@Section( name = "HEADER")
 	private String description;
@@ -55,12 +59,17 @@ public class CampaignScheduleVO implements Serializable {
 			description="id of Entity")
 	@Section( name = "BASIC_INFORMATION")
 	private Long id;
-	
-	
-	
-	
-	
-	
+
+	@UI( widgetType = WidgetType.CHECKBOX, 
+		mode = Mode.READ_WRITE, 
+		label="Simple Schedule", 
+		description="Simple Schedule")
+	@Section(name = "BASIC_INFORMATION")
+	@Validator(defaultValue="FALSE")
+	@Required
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private Boolean simpleSchedule;
+
 	@TargetClass(type=ClassType.VO, name="CampaignVO")
 	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_WRITE, label="Campaign", description="Campaign")
 	@Required
@@ -74,12 +83,49 @@ public class CampaignScheduleVO implements Serializable {
 	@JsonDeserialize(using = InstantDeserializer.class)
 	@Section( name = "BASIC_INFORMATION")
 	private Instant fromTs;
+
+	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_WRITE, label="Hours", description="Hours")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="simpleSchedule", values = {"true"})
+		})
+	})
+	private Long fromHh;
+
+	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_WRITE, label="Minutes", description="Minutes")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="simpleSchedule", values = {"true"})
+		})
+	})
+	private Long fromMm;
+
 	@UI( widgetType = WidgetType.DATE, mode = Mode.READ_WRITE, label="To", description="To")
 	@Required
 	@JsonSerialize(using = InstantSerializer.class)
 	@JsonDeserialize(using = InstantDeserializer.class)
 	@Section( name = "BASIC_INFORMATION")
 	private Instant toTs;
+	
+	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_WRITE, label="Hours", description="Hours")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="simpleSchedule", values = {"true"})
+		})
+	})
+	private Long toHh;
+
+	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_WRITE, label="Minutes", description="Minutes")
+	@Section( name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="simpleSchedule", values = {"true"})
+		})
+	})
+	private Long toMm;
 	
 	@UI( widgetType = WidgetType.CHECKBOX, mode = Mode.READ_WRITE, label="Monday", description="Monday")
 	@Required
@@ -312,6 +358,46 @@ public class CampaignScheduleVO implements Serializable {
 	
 	//private List<EntityState> allowedTransitionStates;
 	
+	public Boolean getSimpleSchedule() {
+		return simpleSchedule;
+	}
+
+	public void setSimpleSchedule(Boolean simpleSchedule) {
+		this.simpleSchedule = simpleSchedule;
+	}
+
+	public Long getFromHh() {
+		return fromHh;
+	}
+
+	public void setFromHh(Long fromHh) {
+		this.fromHh = fromHh;
+	}
+
+	public Long getFromMm() {
+		return fromMm;
+	}
+
+	public void setFromMm(Long fromMm) {
+		this.fromMm = fromMm;
+	}
+
+	public Long getToHh() {
+		return toHh;
+	}
+
+	public void setToHh(Long toHh) {
+		this.toHh = toHh;
+	}
+
+	public Long getToMm() {
+		return toMm;
+	}
+
+	public void setToMm(Long toMm) {
+		this.toMm = toMm;
+	}
+
 	public Long getId() {
 		return id;
 	}
