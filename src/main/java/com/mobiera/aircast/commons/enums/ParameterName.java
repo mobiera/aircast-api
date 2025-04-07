@@ -226,8 +226,7 @@ public enum ParameterName {
 	BOOLEAN_SMSC_KEEP_DLRS(ParameterType.MESSAGING, "Keep SMSC msgId information", "Keep row in DLR table for audit purpose."),
 	BOOLEAN_API_ALLOW_OUTGOING_BINARY_MESSAGES(ParameterType.MESSAGING, "Allow sending of binary MT SMS with API", "Allow outgoing binary SMS with API (dangerous)"),
 	INTEGER_SMSC_MAX_CONCATENATED_MSGS(ParameterType.MESSAGING, "SMSC max concatenated messages", "SMSC max concatenated messages"),
-	
-	
+	INTEGER_SMSC_MAX_LENGTH_MSGS(ParameterType.MESSAGING, "SMSC messages max length", "SMSC messages max length"),	
 	
 	STRING_VAS_UNSUBSCRIBED_CONFIRMATION_MT(ParameterType.VAS, "Unsubscribed Confirmation MT", "Unsubscribed Confirmation MT"),
 	STRING_VAS_SUBSCRIBED_CONFIRMATION_MT(ParameterType.VAS, "Subscribed Confirmation MT", "Subscribed Confirmation MT"),

@@ -175,11 +175,12 @@ public class CampaignVO implements Serializable {
 			label="Maximum TPS", 
 			description="Maximum TPS")
 	@Section(name = "BASIC_INFORMATION")
-	@DisplayWhen({
-		@Conditions({
-			@Condition(field="fullConfiguration", values = {"true"})
-		})
-	})
+	// @DisplayWhen({
+	// 	@Conditions({
+	// 		@Condition(field="fullConfiguration", values = {"true"})
+	// 	})
+	// })
+	@Validator(minValue="2", maxValue="10")
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long maxTPS;
 
@@ -228,6 +229,7 @@ public class CampaignVO implements Serializable {
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Instant runFromTs;
+
 	@JsonSerialize(using = InstantSerializer.class)
 	@JsonDeserialize(using = InstantDeserializer.class)
 	@UI( widgetType = WidgetType.DATE, 
@@ -242,9 +244,7 @@ public class CampaignVO implements Serializable {
 		})
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
-	private Instant runUntilTs;
-	
-	
+	private Instant runUntilTs;	
 	
 	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
@@ -262,8 +262,6 @@ public class CampaignVO implements Serializable {
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private CampaignPriority priority;
 	
-	
-	
 	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
 			label="Endpoint", 
@@ -278,7 +276,6 @@ public class CampaignVO implements Serializable {
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long endpointFk;
-	
 	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
@@ -307,7 +304,6 @@ public class CampaignVO implements Serializable {
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private TriggeredAction keywordAction;
-	
 	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
@@ -774,7 +770,6 @@ public class CampaignVO implements Serializable {
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private List<SubscriberPlan> subscriberPlanExclude;
 	
-	
 	@UI( widgetType = WidgetType.SELECT_MULTIPLE, 
 			mode = Mode.READ_WRITE, 
 			label="Subscriber Type Exclude", 
@@ -800,7 +795,6 @@ public class CampaignVO implements Serializable {
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private com.mobiera.commons.enums.Condition tpAdAllowedCondition;
-	
 	
 	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
@@ -840,7 +834,6 @@ public class CampaignVO implements Serializable {
 	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private com.mobiera.commons.enums.Condition state2Condition;
-	
 	
 	@UI( widgetType = WidgetType.SELECT_MULTIPLE, 
 			mode = Mode.READ_WRITE, 
