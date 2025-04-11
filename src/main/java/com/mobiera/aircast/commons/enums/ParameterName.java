@@ -326,12 +326,12 @@ public enum ParameterName {
 	INTEGER_POLICY_P4_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days between 2 impacts for P4 Policy", "Number of days between 2 impacts when looking for msisdn in full database for P4 Policy"),// 
 	INTEGER_POLICY_P5_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days between 2 impacts for P5 Policy", "Number of days between 2 impacts when looking for msisdn in full database for P5 Policy"),// 
 	
-	INTEGER_POLICY_P0_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P0 Policy", "Max number of impacts per periodicity for P0 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
-	INTEGER_POLICY_P1_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P1 Policy", "Max number of impacts per periodicity for P1 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
-	INTEGER_POLICY_P2_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P2 Policy", "Max number of impacts per periodicity for P2 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
-	INTEGER_POLICY_P3_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P3 Policy", "Max number of impacts per periodicity for P3 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
-	INTEGER_POLICY_P4_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P4 Policy", "Max number of impacts per periodicity for P4 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
-	INTEGER_POLICY_P5_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P5 Policy", "Max number of impacts per periodicity for P5 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P0_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P0 Policy", "Max number of impacts per periodicity for P0 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P1_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P1 Policy", "Max number of impacts per periodicity for P1 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P2_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P2 Policy", "Max number of impacts per periodicity for P2 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P3_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P3 Policy", "Max number of impacts per periodicity for P3 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P4_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P4 Policy", "Max number of impacts per periodicity for P4 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P5_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P5 Policy", "Max number of impacts per periodicity for P5 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
 	
 	/*
 	 * Device API & TAC DB Update
