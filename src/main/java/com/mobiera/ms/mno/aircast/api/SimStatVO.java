@@ -27,6 +27,9 @@ public class SimStatVO implements Serializable {
 	private Long p0AvUsers = 0l;
 	private Long p1AvUsers = 0l;
 	private Long p2AvUsers = 0l;
+	private Long p3AvUsers = 0l;
+	private Long p4AvUsers = 0l;
+	private Long p5AvUsers = 0l;
 	
 	private Long p0AvUsers_mnoAdTrue = 0l;
 	private Long p0AvUsers_mnoAdFalse = 0l;
@@ -1132,6 +1135,24 @@ public class SimStatVO implements Serializable {
 	}
 	public void setSleepy_p5AvUsers_tpAdNull(Long sleepy_p5AvUsers_tpAdNull) {
 		this.sleepy_p5AvUsers_tpAdNull = sleepy_p5AvUsers_tpAdNull;
+	}
+	public Long getP3AvUsers() {
+		return p3AvUsers;
+	}
+	public void setP3AvUsers(Long p3AvUsers) {
+		this.p3AvUsers = p3AvUsers;
+	}
+	public Long getP4AvUsers() {
+		return p4AvUsers;
+	}
+	public void setP4AvUsers(Long p4AvUsers) {
+		this.p4AvUsers = p4AvUsers;
+	}
+	public Long getP5AvUsers() {
+		return p5AvUsers;
+	}
+	public void setP5AvUsers(Long p5AvUsers) {
+		this.p5AvUsers = p5AvUsers;
 	}
 	
 	
