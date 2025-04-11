@@ -341,6 +341,71 @@ public class SimVO implements Serializable {
 	private Instant nextP2ScheduleTs;
 	
 	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_ONLY, 
+			label="Last P3 Sent Ts", 
+			description="Last P3 Sent Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant lastP3SentTs;
+	
+	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_WRITE, 
+			label="Next P3 Schedule Ts", 
+			description="Next P3 Schedule Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant nextP3ScheduleTs;
+	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_ONLY, 
+			label="Last P4 Sent Ts", 
+			description="Last P4 Sent Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant lastP4SentTs;
+	
+	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_WRITE, 
+			label="Next P4 Schedule Ts", 
+			description="Next P4 Schedule Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant nextP4ScheduleTs;
+	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_ONLY, 
+			label="Last P5 Sent Ts", 
+			description="Last P5 Sent Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant lastP5SentTs;
+	
+	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_WRITE, 
+			label="Next P5 Schedule Ts", 
+			description="Next P5 Schedule Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant nextP5ScheduleTs;
+	
+	
+	
 	
 	
 	@UI( widgetType = WidgetType.DATETIME, 
@@ -352,6 +417,40 @@ public class SimVO implements Serializable {
 	@JsonSerialize(using = InstantSerializer.class)
 	@JsonDeserialize(using = InstantDeserializer.class)
 	private Instant lastP2SuccessTs;
+	
+	
+	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_ONLY, 
+			label="Last P3 Success Ts", 
+			description="Last P3 Success Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant lastP3SuccessTs;
+	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_ONLY, 
+			label="Last P4 Success Ts", 
+			description="Last P4 Success Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant lastP4SuccessTs;
+	
+	
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_ONLY, 
+			label="Last P5 Success Ts", 
+			description="Last P5 Success Ts")
+			@Section(name = "OTA")
+			
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant lastP5SuccessTs;
+	
 	
 	
 	
@@ -754,6 +853,60 @@ public class SimVO implements Serializable {
 	}
 	public void setLastP2SuccessTs(Instant lastP2SuccessTs) {
 		this.lastP2SuccessTs = lastP2SuccessTs;
+	}
+	public Instant getLastP3SentTs() {
+		return lastP3SentTs;
+	}
+	public void setLastP3SentTs(Instant lastP3SentTs) {
+		this.lastP3SentTs = lastP3SentTs;
+	}
+	public Instant getNextP3ScheduleTs() {
+		return nextP3ScheduleTs;
+	}
+	public void setNextP3ScheduleTs(Instant nextP3ScheduleTs) {
+		this.nextP3ScheduleTs = nextP3ScheduleTs;
+	}
+	public Instant getLastP4SentTs() {
+		return lastP4SentTs;
+	}
+	public void setLastP4SentTs(Instant lastP4SentTs) {
+		this.lastP4SentTs = lastP4SentTs;
+	}
+	public Instant getNextP4ScheduleTs() {
+		return nextP4ScheduleTs;
+	}
+	public void setNextP4ScheduleTs(Instant nextP4ScheduleTs) {
+		this.nextP4ScheduleTs = nextP4ScheduleTs;
+	}
+	public Instant getLastP5SentTs() {
+		return lastP5SentTs;
+	}
+	public void setLastP5SentTs(Instant lastP5SentTs) {
+		this.lastP5SentTs = lastP5SentTs;
+	}
+	public Instant getNextP5ScheduleTs() {
+		return nextP5ScheduleTs;
+	}
+	public void setNextP5ScheduleTs(Instant nextP5ScheduleTs) {
+		this.nextP5ScheduleTs = nextP5ScheduleTs;
+	}
+	public Instant getLastP3SuccessTs() {
+		return lastP3SuccessTs;
+	}
+	public void setLastP3SuccessTs(Instant lastP3SuccessTs) {
+		this.lastP3SuccessTs = lastP3SuccessTs;
+	}
+	public Instant getLastP4SuccessTs() {
+		return lastP4SuccessTs;
+	}
+	public void setLastP4SuccessTs(Instant lastP4SuccessTs) {
+		this.lastP4SuccessTs = lastP4SuccessTs;
+	}
+	public Instant getLastP5SuccessTs() {
+		return lastP5SuccessTs;
+	}
+	public void setLastP5SuccessTs(Instant lastP5SuccessTs) {
+		this.lastP5SuccessTs = lastP5SuccessTs;
 	}
 	
 	

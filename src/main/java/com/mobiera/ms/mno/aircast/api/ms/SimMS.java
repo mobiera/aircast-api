@@ -99,6 +99,18 @@ public class SimMS implements Serializable {
 	
 	
 	
+	private Instant lastP3SentTs;
+	private Instant nextP3ScheduleTs;
+	private Instant lastP3SuccessTs;
+	private Instant lastP4SentTs;
+	private Instant nextP4ScheduleTs;
+	private Instant lastP4SuccessTs;
+	private Instant lastP5SentTs;
+	private Instant nextP5ScheduleTs;
+	private Instant lastP5SuccessTs;
+	
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -411,6 +423,60 @@ public class SimMS implements Serializable {
 	}
 	public void setSleepyCipherDiscovery(Boolean sleepyCipherDiscovery) {
 		this.sleepyCipherDiscovery = sleepyCipherDiscovery;
+	}
+	public Instant getLastP3SentTs() {
+		return lastP3SentTs;
+	}
+	public void setLastP3SentTs(Instant lastP3SentTs) {
+		this.lastP3SentTs = lastP3SentTs;
+	}
+	public Instant getNextP3ScheduleTs() {
+		return nextP3ScheduleTs;
+	}
+	public void setNextP3ScheduleTs(Instant nextP3ScheduleTs) {
+		this.nextP3ScheduleTs = nextP3ScheduleTs;
+	}
+	public Instant getLastP3SuccessTs() {
+		return lastP3SuccessTs;
+	}
+	public void setLastP3SuccessTs(Instant lastP3SuccessTs) {
+		this.lastP3SuccessTs = lastP3SuccessTs;
+	}
+	public Instant getLastP4SentTs() {
+		return lastP4SentTs;
+	}
+	public void setLastP4SentTs(Instant lastP4SentTs) {
+		this.lastP4SentTs = lastP4SentTs;
+	}
+	public Instant getNextP4ScheduleTs() {
+		return nextP4ScheduleTs;
+	}
+	public void setNextP4ScheduleTs(Instant nextP4ScheduleTs) {
+		this.nextP4ScheduleTs = nextP4ScheduleTs;
+	}
+	public Instant getLastP4SuccessTs() {
+		return lastP4SuccessTs;
+	}
+	public void setLastP4SuccessTs(Instant lastP4SuccessTs) {
+		this.lastP4SuccessTs = lastP4SuccessTs;
+	}
+	public Instant getLastP5SentTs() {
+		return lastP5SentTs;
+	}
+	public void setLastP5SentTs(Instant lastP5SentTs) {
+		this.lastP5SentTs = lastP5SentTs;
+	}
+	public Instant getNextP5ScheduleTs() {
+		return nextP5ScheduleTs;
+	}
+	public void setNextP5ScheduleTs(Instant nextP5ScheduleTs) {
+		this.nextP5ScheduleTs = nextP5ScheduleTs;
+	}
+	public Instant getLastP5SuccessTs() {
+		return lastP5SuccessTs;
+	}
+	public void setLastP5SuccessTs(Instant lastP5SuccessTs) {
+		this.lastP5SuccessTs = lastP5SuccessTs;
 	}
 	
 	

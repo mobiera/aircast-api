@@ -315,10 +315,23 @@ public enum ParameterName {
 	STRING_POLICY_P0_NAME(ParameterType.CAMPAIGN_POLICIES, "Name of P0 Policy", "Name of P0 Policy"),// 
 	STRING_POLICY_P1_NAME(ParameterType.CAMPAIGN_POLICIES, "Name of P1 Policy", "Name of P1 Policy"),// 
 	STRING_POLICY_P2_NAME(ParameterType.CAMPAIGN_POLICIES, "Name of P2 Policy", "Name of P2 Policy"),// 
+	STRING_POLICY_P3_NAME(ParameterType.CAMPAIGN_POLICIES, "Name of P3 Policy", "Name of P3 Policy"),// 
+	STRING_POLICY_P4_NAME(ParameterType.CAMPAIGN_POLICIES, "Name of P4 Policy", "Name of P4 Policy"),// 
+	STRING_POLICY_P5_NAME(ParameterType.CAMPAIGN_POLICIES, "Name of P5 Policy", "Name of P5 Policy"),// 
 	
-	INTEGER_POLICY_P0_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days for P0 Policy", "Number of days for P0 Policy"),// 
-	INTEGER_POLICY_P1_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days for P1 Policy", "Number of days for P1 Policy"),// 
-	INTEGER_POLICY_P2_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days for P2 Policy", "Number of days for P2 Policy"),// 
+	INTEGER_POLICY_P0_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days between 2 impacts for P0 Policy", "Number of days between 2 impacts when looking for msisdn in full database for P0 Policy"),// 
+	INTEGER_POLICY_P1_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days between 2 impacts for P1 Policy", "Number of days between 2 impacts when looking for msisdn in full database for P1 Policy"),// 
+	INTEGER_POLICY_P2_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days between 2 impacts for P2 Policy", "Number of days between 2 impacts when looking for msisdn in full database for P2 Policy"),// 
+	INTEGER_POLICY_P3_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days between 2 impacts for P3 Policy", "Number of days between 2 impacts when looking for msisdn in full database for P3 Policy"),// 
+	INTEGER_POLICY_P4_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days between 2 impacts for P4 Policy", "Number of days between 2 impacts when looking for msisdn in full database for P4 Policy"),// 
+	INTEGER_POLICY_P5_DAYS(ParameterType.CAMPAIGN_POLICIES, "Number of days between 2 impacts for P5 Policy", "Number of days between 2 impacts when looking for msisdn in full database for P5 Policy"),// 
+	
+	STRING_POLICY_P0_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P0 Policy", "Max number of impacts per periodicity for P0 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P1_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P1 Policy", "Max number of impacts per periodicity for P1 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P2_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P2 Policy", "Max number of impacts per periodicity for P2 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P3_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P3 Policy", "Max number of impacts per periodicity for P3 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P4_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P4 Policy", "Max number of impacts per periodicity for P4 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
+	STRING_POLICY_P5_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P5 Policy", "Max number of impacts per periodicity for P5 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
 	
 	/*
 	 * Device API & TAC DB Update
