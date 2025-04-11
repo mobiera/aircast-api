@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public enum ImpactPolicy implements Serializable {
 
-	P0(0),P1(1),P2(2);
+	P0(0),P1(1),P2(2),P3(4),P4(4),P5(5);
 
 	private ImpactPolicy(Integer index){
 		this.index = index;
@@ -24,6 +24,9 @@ public enum ImpactPolicy implements Serializable {
 			case 0: return P0;
 			case 1: return P1;
 			case 2: return P2;
+			case 3: return P3;
+			case 4: return P4;
+			case 5: return P5;
 			default: return null;
 		}
 	}
