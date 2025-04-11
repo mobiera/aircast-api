@@ -50,6 +50,28 @@ public class SimStatVO implements Serializable {
 	private Long p2AvUsers_tpAdNull = 0l;
 	
 	
+	private Long p3AvUsers_mnoAdTrue = 0l;
+	private Long p3AvUsers_mnoAdFalse = 0l;
+	private Long p3AvUsers_mnoAdNull = 0l;
+	private Long p3AvUsers_tpAdTrue = 0l;
+	private Long p3AvUsers_tpAdFalse = 0l;
+	private Long p3AvUsers_tpAdNull = 0l;
+	
+	private Long p4AvUsers_mnoAdTrue = 0l;
+	private Long p4AvUsers_mnoAdFalse = 0l;
+	private Long p4AvUsers_mnoAdNull = 0l;
+	private Long p4AvUsers_tpAdTrue = 0l;
+	private Long p4AvUsers_tpAdFalse = 0l;
+	private Long p4AvUsers_tpAdNull = 0l;
+	
+	private Long p5AvUsers_mnoAdTrue = 0l;
+	private Long p5AvUsers_mnoAdFalse = 0l;
+	private Long p5AvUsers_mnoAdNull = 0l;
+	private Long p5AvUsers_tpAdTrue = 0l;
+	private Long p5AvUsers_tpAdFalse = 0l;
+	private Long p5AvUsers_tpAdNull = 0l;
+	
+	
 	private Long mnoAdAllowed_true = 0l;
 	private Long mnoAdAllowed_false = 0l;
 	private Long mnoAdAllowed_null = 0l;
@@ -72,6 +94,9 @@ public class SimStatVO implements Serializable {
 	private Long stk_p0AvUsers = 0l;
 	private Long stk_p1AvUsers = 0l;
 	private Long stk_p2AvUsers = 0l;
+	private Long stk_p3AvUsers = 0l;
+	private Long stk_p4AvUsers = 0l;
+	private Long stk_p5AvUsers = 0l;
 	
 	private Long stk_p0AvUsers_mnoAdTrue = 0l;
 	private Long stk_p0AvUsers_mnoAdFalse = 0l;
@@ -94,6 +119,26 @@ public class SimStatVO implements Serializable {
 	private Long stk_p2AvUsers_tpAdFalse = 0l;
 	private Long stk_p2AvUsers_tpAdNull = 0l;
 	
+	private Long stk_p3AvUsers_mnoAdTrue = 0l;
+	private Long stk_p3AvUsers_mnoAdFalse = 0l;
+	private Long stk_p3AvUsers_mnoAdNull = 0l;
+	private Long stk_p3AvUsers_tpAdTrue = 0l;
+	private Long stk_p3AvUsers_tpAdFalse = 0l;
+	private Long stk_p3AvUsers_tpAdNull = 0l;
+	
+	private Long stk_p4AvUsers_mnoAdTrue = 0l;
+	private Long stk_p4AvUsers_mnoAdFalse = 0l;
+	private Long stk_p4AvUsers_mnoAdNull = 0l;
+	private Long stk_p4AvUsers_tpAdTrue = 0l;
+	private Long stk_p4AvUsers_tpAdFalse = 0l;
+	private Long stk_p4AvUsers_tpAdNull = 0l;
+	
+	private Long stk_p5AvUsers_mnoAdTrue = 0l;
+	private Long stk_p5AvUsers_mnoAdFalse = 0l;
+	private Long stk_p5AvUsers_mnoAdNull = 0l;
+	private Long stk_p5AvUsers_tpAdTrue = 0l;
+	private Long stk_p5AvUsers_tpAdFalse = 0l;
+	private Long stk_p5AvUsers_tpAdNull = 0l;
 	
 	
 	private Long stk_mnoAdAllowed_true = 0l;
@@ -110,6 +155,9 @@ public class SimStatVO implements Serializable {
 	private Long sleepy_p0AvUsers = 0l;
 	private Long sleepy_p1AvUsers = 0l;
 	private Long sleepy_p2AvUsers = 0l;
+	private Long sleepy_p3AvUsers = 0l;
+	private Long sleepy_p4AvUsers = 0l;
+	private Long sleepy_p5AvUsers = 0l;
 	
 	private Long sleepy_p0AvUsers_mnoAdTrue = 0l;
 	private Long sleepy_p0AvUsers_mnoAdFalse = 0l;
@@ -132,6 +180,26 @@ public class SimStatVO implements Serializable {
 	private Long sleepy_p2AvUsers_tpAdFalse = 0l;
 	private Long sleepy_p2AvUsers_tpAdNull = 0l;
 	
+	private Long sleepy_p3AvUsers_mnoAdTrue = 0l;
+	private Long sleepy_p3AvUsers_mnoAdFalse = 0l;
+	private Long sleepy_p3AvUsers_mnoAdNull = 0l;
+	private Long sleepy_p3AvUsers_tpAdTrue = 0l;
+	private Long sleepy_p3AvUsers_tpAdFalse = 0l;
+	private Long sleepy_p3AvUsers_tpAdNull = 0l;
+	
+	private Long sleepy_p4AvUsers_mnoAdTrue = 0l;
+	private Long sleepy_p4AvUsers_mnoAdFalse = 0l;
+	private Long sleepy_p4AvUsers_mnoAdNull = 0l;
+	private Long sleepy_p4AvUsers_tpAdTrue = 0l;
+	private Long sleepy_p4AvUsers_tpAdFalse = 0l;
+	private Long sleepy_p4AvUsers_tpAdNull = 0l;
+	
+	private Long sleepy_p5AvUsers_mnoAdTrue = 0l;
+	private Long sleepy_p5AvUsers_mnoAdFalse = 0l;
+	private Long sleepy_p5AvUsers_mnoAdNull = 0l;
+	private Long sleepy_p5AvUsers_tpAdTrue = 0l;
+	private Long sleepy_p5AvUsers_tpAdFalse = 0l;
+	private Long sleepy_p5AvUsers_tpAdNull = 0l;
 	
 	
 	private Long sleepy_mnoAdAllowed_true = 0l;
@@ -704,6 +772,366 @@ public class SimStatVO implements Serializable {
 	}
 	public void setSleepy_tpAdAllowed_null(Long sleepy_tpAdAllowed_null) {
 		this.sleepy_tpAdAllowed_null = sleepy_tpAdAllowed_null;
+	}
+	public Long getP3AvUsers_mnoAdTrue() {
+		return p3AvUsers_mnoAdTrue;
+	}
+	public void setP3AvUsers_mnoAdTrue(Long p3AvUsers_mnoAdTrue) {
+		this.p3AvUsers_mnoAdTrue = p3AvUsers_mnoAdTrue;
+	}
+	public Long getP3AvUsers_mnoAdFalse() {
+		return p3AvUsers_mnoAdFalse;
+	}
+	public void setP3AvUsers_mnoAdFalse(Long p3AvUsers_mnoAdFalse) {
+		this.p3AvUsers_mnoAdFalse = p3AvUsers_mnoAdFalse;
+	}
+	public Long getP3AvUsers_mnoAdNull() {
+		return p3AvUsers_mnoAdNull;
+	}
+	public void setP3AvUsers_mnoAdNull(Long p3AvUsers_mnoAdNull) {
+		this.p3AvUsers_mnoAdNull = p3AvUsers_mnoAdNull;
+	}
+	public Long getP3AvUsers_tpAdTrue() {
+		return p3AvUsers_tpAdTrue;
+	}
+	public void setP3AvUsers_tpAdTrue(Long p3AvUsers_tpAdTrue) {
+		this.p3AvUsers_tpAdTrue = p3AvUsers_tpAdTrue;
+	}
+	public Long getP3AvUsers_tpAdFalse() {
+		return p3AvUsers_tpAdFalse;
+	}
+	public void setP3AvUsers_tpAdFalse(Long p3AvUsers_tpAdFalse) {
+		this.p3AvUsers_tpAdFalse = p3AvUsers_tpAdFalse;
+	}
+	public Long getP3AvUsers_tpAdNull() {
+		return p3AvUsers_tpAdNull;
+	}
+	public void setP3AvUsers_tpAdNull(Long p3AvUsers_tpAdNull) {
+		this.p3AvUsers_tpAdNull = p3AvUsers_tpAdNull;
+	}
+	public Long getP4AvUsers_mnoAdTrue() {
+		return p4AvUsers_mnoAdTrue;
+	}
+	public void setP4AvUsers_mnoAdTrue(Long p4AvUsers_mnoAdTrue) {
+		this.p4AvUsers_mnoAdTrue = p4AvUsers_mnoAdTrue;
+	}
+	public Long getP4AvUsers_mnoAdFalse() {
+		return p4AvUsers_mnoAdFalse;
+	}
+	public void setP4AvUsers_mnoAdFalse(Long p4AvUsers_mnoAdFalse) {
+		this.p4AvUsers_mnoAdFalse = p4AvUsers_mnoAdFalse;
+	}
+	public Long getP4AvUsers_mnoAdNull() {
+		return p4AvUsers_mnoAdNull;
+	}
+	public void setP4AvUsers_mnoAdNull(Long p4AvUsers_mnoAdNull) {
+		this.p4AvUsers_mnoAdNull = p4AvUsers_mnoAdNull;
+	}
+	public Long getP4AvUsers_tpAdTrue() {
+		return p4AvUsers_tpAdTrue;
+	}
+	public void setP4AvUsers_tpAdTrue(Long p4AvUsers_tpAdTrue) {
+		this.p4AvUsers_tpAdTrue = p4AvUsers_tpAdTrue;
+	}
+	public Long getP4AvUsers_tpAdFalse() {
+		return p4AvUsers_tpAdFalse;
+	}
+	public void setP4AvUsers_tpAdFalse(Long p4AvUsers_tpAdFalse) {
+		this.p4AvUsers_tpAdFalse = p4AvUsers_tpAdFalse;
+	}
+	public Long getP4AvUsers_tpAdNull() {
+		return p4AvUsers_tpAdNull;
+	}
+	public void setP4AvUsers_tpAdNull(Long p4AvUsers_tpAdNull) {
+		this.p4AvUsers_tpAdNull = p4AvUsers_tpAdNull;
+	}
+	public Long getP5AvUsers_mnoAdTrue() {
+		return p5AvUsers_mnoAdTrue;
+	}
+	public void setP5AvUsers_mnoAdTrue(Long p5AvUsers_mnoAdTrue) {
+		this.p5AvUsers_mnoAdTrue = p5AvUsers_mnoAdTrue;
+	}
+	public Long getP5AvUsers_mnoAdFalse() {
+		return p5AvUsers_mnoAdFalse;
+	}
+	public void setP5AvUsers_mnoAdFalse(Long p5AvUsers_mnoAdFalse) {
+		this.p5AvUsers_mnoAdFalse = p5AvUsers_mnoAdFalse;
+	}
+	public Long getP5AvUsers_mnoAdNull() {
+		return p5AvUsers_mnoAdNull;
+	}
+	public void setP5AvUsers_mnoAdNull(Long p5AvUsers_mnoAdNull) {
+		this.p5AvUsers_mnoAdNull = p5AvUsers_mnoAdNull;
+	}
+	public Long getP5AvUsers_tpAdTrue() {
+		return p5AvUsers_tpAdTrue;
+	}
+	public void setP5AvUsers_tpAdTrue(Long p5AvUsers_tpAdTrue) {
+		this.p5AvUsers_tpAdTrue = p5AvUsers_tpAdTrue;
+	}
+	public Long getP5AvUsers_tpAdFalse() {
+		return p5AvUsers_tpAdFalse;
+	}
+	public void setP5AvUsers_tpAdFalse(Long p5AvUsers_tpAdFalse) {
+		this.p5AvUsers_tpAdFalse = p5AvUsers_tpAdFalse;
+	}
+	public Long getP5AvUsers_tpAdNull() {
+		return p5AvUsers_tpAdNull;
+	}
+	public void setP5AvUsers_tpAdNull(Long p5AvUsers_tpAdNull) {
+		this.p5AvUsers_tpAdNull = p5AvUsers_tpAdNull;
+	}
+	public Long getStk_p3AvUsers() {
+		return stk_p3AvUsers;
+	}
+	public void setStk_p3AvUsers(Long stk_p3AvUsers) {
+		this.stk_p3AvUsers = stk_p3AvUsers;
+	}
+	public Long getStk_p4AvUsers() {
+		return stk_p4AvUsers;
+	}
+	public void setStk_p4AvUsers(Long stk_p4AvUsers) {
+		this.stk_p4AvUsers = stk_p4AvUsers;
+	}
+	public Long getStk_p5AvUsers() {
+		return stk_p5AvUsers;
+	}
+	public void setStk_p5AvUsers(Long stk_p5AvUsers) {
+		this.stk_p5AvUsers = stk_p5AvUsers;
+	}
+	public Long getStk_p3AvUsers_mnoAdTrue() {
+		return stk_p3AvUsers_mnoAdTrue;
+	}
+	public void setStk_p3AvUsers_mnoAdTrue(Long stk_p3AvUsers_mnoAdTrue) {
+		this.stk_p3AvUsers_mnoAdTrue = stk_p3AvUsers_mnoAdTrue;
+	}
+	public Long getStk_p3AvUsers_mnoAdFalse() {
+		return stk_p3AvUsers_mnoAdFalse;
+	}
+	public void setStk_p3AvUsers_mnoAdFalse(Long stk_p3AvUsers_mnoAdFalse) {
+		this.stk_p3AvUsers_mnoAdFalse = stk_p3AvUsers_mnoAdFalse;
+	}
+	public Long getStk_p3AvUsers_mnoAdNull() {
+		return stk_p3AvUsers_mnoAdNull;
+	}
+	public void setStk_p3AvUsers_mnoAdNull(Long stk_p3AvUsers_mnoAdNull) {
+		this.stk_p3AvUsers_mnoAdNull = stk_p3AvUsers_mnoAdNull;
+	}
+	public Long getStk_p3AvUsers_tpAdTrue() {
+		return stk_p3AvUsers_tpAdTrue;
+	}
+	public void setStk_p3AvUsers_tpAdTrue(Long stk_p3AvUsers_tpAdTrue) {
+		this.stk_p3AvUsers_tpAdTrue = stk_p3AvUsers_tpAdTrue;
+	}
+	public Long getStk_p3AvUsers_tpAdFalse() {
+		return stk_p3AvUsers_tpAdFalse;
+	}
+	public void setStk_p3AvUsers_tpAdFalse(Long stk_p3AvUsers_tpAdFalse) {
+		this.stk_p3AvUsers_tpAdFalse = stk_p3AvUsers_tpAdFalse;
+	}
+	public Long getStk_p3AvUsers_tpAdNull() {
+		return stk_p3AvUsers_tpAdNull;
+	}
+	public void setStk_p3AvUsers_tpAdNull(Long stk_p3AvUsers_tpAdNull) {
+		this.stk_p3AvUsers_tpAdNull = stk_p3AvUsers_tpAdNull;
+	}
+	public Long getStk_p4AvUsers_mnoAdTrue() {
+		return stk_p4AvUsers_mnoAdTrue;
+	}
+	public void setStk_p4AvUsers_mnoAdTrue(Long stk_p4AvUsers_mnoAdTrue) {
+		this.stk_p4AvUsers_mnoAdTrue = stk_p4AvUsers_mnoAdTrue;
+	}
+	public Long getStk_p4AvUsers_mnoAdFalse() {
+		return stk_p4AvUsers_mnoAdFalse;
+	}
+	public void setStk_p4AvUsers_mnoAdFalse(Long stk_p4AvUsers_mnoAdFalse) {
+		this.stk_p4AvUsers_mnoAdFalse = stk_p4AvUsers_mnoAdFalse;
+	}
+	public Long getStk_p4AvUsers_mnoAdNull() {
+		return stk_p4AvUsers_mnoAdNull;
+	}
+	public void setStk_p4AvUsers_mnoAdNull(Long stk_p4AvUsers_mnoAdNull) {
+		this.stk_p4AvUsers_mnoAdNull = stk_p4AvUsers_mnoAdNull;
+	}
+	public Long getStk_p4AvUsers_tpAdTrue() {
+		return stk_p4AvUsers_tpAdTrue;
+	}
+	public void setStk_p4AvUsers_tpAdTrue(Long stk_p4AvUsers_tpAdTrue) {
+		this.stk_p4AvUsers_tpAdTrue = stk_p4AvUsers_tpAdTrue;
+	}
+	public Long getStk_p4AvUsers_tpAdFalse() {
+		return stk_p4AvUsers_tpAdFalse;
+	}
+	public void setStk_p4AvUsers_tpAdFalse(Long stk_p4AvUsers_tpAdFalse) {
+		this.stk_p4AvUsers_tpAdFalse = stk_p4AvUsers_tpAdFalse;
+	}
+	public Long getStk_p4AvUsers_tpAdNull() {
+		return stk_p4AvUsers_tpAdNull;
+	}
+	public void setStk_p4AvUsers_tpAdNull(Long stk_p4AvUsers_tpAdNull) {
+		this.stk_p4AvUsers_tpAdNull = stk_p4AvUsers_tpAdNull;
+	}
+	public Long getStk_p5AvUsers_mnoAdTrue() {
+		return stk_p5AvUsers_mnoAdTrue;
+	}
+	public void setStk_p5AvUsers_mnoAdTrue(Long stk_p5AvUsers_mnoAdTrue) {
+		this.stk_p5AvUsers_mnoAdTrue = stk_p5AvUsers_mnoAdTrue;
+	}
+	public Long getStk_p5AvUsers_mnoAdFalse() {
+		return stk_p5AvUsers_mnoAdFalse;
+	}
+	public void setStk_p5AvUsers_mnoAdFalse(Long stk_p5AvUsers_mnoAdFalse) {
+		this.stk_p5AvUsers_mnoAdFalse = stk_p5AvUsers_mnoAdFalse;
+	}
+	public Long getStk_p5AvUsers_mnoAdNull() {
+		return stk_p5AvUsers_mnoAdNull;
+	}
+	public void setStk_p5AvUsers_mnoAdNull(Long stk_p5AvUsers_mnoAdNull) {
+		this.stk_p5AvUsers_mnoAdNull = stk_p5AvUsers_mnoAdNull;
+	}
+	public Long getStk_p5AvUsers_tpAdTrue() {
+		return stk_p5AvUsers_tpAdTrue;
+	}
+	public void setStk_p5AvUsers_tpAdTrue(Long stk_p5AvUsers_tpAdTrue) {
+		this.stk_p5AvUsers_tpAdTrue = stk_p5AvUsers_tpAdTrue;
+	}
+	public Long getStk_p5AvUsers_tpAdFalse() {
+		return stk_p5AvUsers_tpAdFalse;
+	}
+	public void setStk_p5AvUsers_tpAdFalse(Long stk_p5AvUsers_tpAdFalse) {
+		this.stk_p5AvUsers_tpAdFalse = stk_p5AvUsers_tpAdFalse;
+	}
+	public Long getStk_p5AvUsers_tpAdNull() {
+		return stk_p5AvUsers_tpAdNull;
+	}
+	public void setStk_p5AvUsers_tpAdNull(Long stk_p5AvUsers_tpAdNull) {
+		this.stk_p5AvUsers_tpAdNull = stk_p5AvUsers_tpAdNull;
+	}
+	public Long getSleepy_p3AvUsers() {
+		return sleepy_p3AvUsers;
+	}
+	public void setSleepy_p3AvUsers(Long sleepy_p3AvUsers) {
+		this.sleepy_p3AvUsers = sleepy_p3AvUsers;
+	}
+	public Long getSleepy_p4AvUsers() {
+		return sleepy_p4AvUsers;
+	}
+	public void setSleepy_p4AvUsers(Long sleepy_p4AvUsers) {
+		this.sleepy_p4AvUsers = sleepy_p4AvUsers;
+	}
+	public Long getSleepy_p5AvUsers() {
+		return sleepy_p5AvUsers;
+	}
+	public void setSleepy_p5AvUsers(Long sleepy_p5AvUsers) {
+		this.sleepy_p5AvUsers = sleepy_p5AvUsers;
+	}
+	public Long getSleepy_p3AvUsers_mnoAdTrue() {
+		return sleepy_p3AvUsers_mnoAdTrue;
+	}
+	public void setSleepy_p3AvUsers_mnoAdTrue(Long sleepy_p3AvUsers_mnoAdTrue) {
+		this.sleepy_p3AvUsers_mnoAdTrue = sleepy_p3AvUsers_mnoAdTrue;
+	}
+	public Long getSleepy_p3AvUsers_mnoAdFalse() {
+		return sleepy_p3AvUsers_mnoAdFalse;
+	}
+	public void setSleepy_p3AvUsers_mnoAdFalse(Long sleepy_p3AvUsers_mnoAdFalse) {
+		this.sleepy_p3AvUsers_mnoAdFalse = sleepy_p3AvUsers_mnoAdFalse;
+	}
+	public Long getSleepy_p3AvUsers_mnoAdNull() {
+		return sleepy_p3AvUsers_mnoAdNull;
+	}
+	public void setSleepy_p3AvUsers_mnoAdNull(Long sleepy_p3AvUsers_mnoAdNull) {
+		this.sleepy_p3AvUsers_mnoAdNull = sleepy_p3AvUsers_mnoAdNull;
+	}
+	public Long getSleepy_p3AvUsers_tpAdTrue() {
+		return sleepy_p3AvUsers_tpAdTrue;
+	}
+	public void setSleepy_p3AvUsers_tpAdTrue(Long sleepy_p3AvUsers_tpAdTrue) {
+		this.sleepy_p3AvUsers_tpAdTrue = sleepy_p3AvUsers_tpAdTrue;
+	}
+	public Long getSleepy_p3AvUsers_tpAdFalse() {
+		return sleepy_p3AvUsers_tpAdFalse;
+	}
+	public void setSleepy_p3AvUsers_tpAdFalse(Long sleepy_p3AvUsers_tpAdFalse) {
+		this.sleepy_p3AvUsers_tpAdFalse = sleepy_p3AvUsers_tpAdFalse;
+	}
+	public Long getSleepy_p3AvUsers_tpAdNull() {
+		return sleepy_p3AvUsers_tpAdNull;
+	}
+	public void setSleepy_p3AvUsers_tpAdNull(Long sleepy_p3AvUsers_tpAdNull) {
+		this.sleepy_p3AvUsers_tpAdNull = sleepy_p3AvUsers_tpAdNull;
+	}
+	public Long getSleepy_p4AvUsers_mnoAdTrue() {
+		return sleepy_p4AvUsers_mnoAdTrue;
+	}
+	public void setSleepy_p4AvUsers_mnoAdTrue(Long sleepy_p4AvUsers_mnoAdTrue) {
+		this.sleepy_p4AvUsers_mnoAdTrue = sleepy_p4AvUsers_mnoAdTrue;
+	}
+	public Long getSleepy_p4AvUsers_mnoAdFalse() {
+		return sleepy_p4AvUsers_mnoAdFalse;
+	}
+	public void setSleepy_p4AvUsers_mnoAdFalse(Long sleepy_p4AvUsers_mnoAdFalse) {
+		this.sleepy_p4AvUsers_mnoAdFalse = sleepy_p4AvUsers_mnoAdFalse;
+	}
+	public Long getSleepy_p4AvUsers_mnoAdNull() {
+		return sleepy_p4AvUsers_mnoAdNull;
+	}
+	public void setSleepy_p4AvUsers_mnoAdNull(Long sleepy_p4AvUsers_mnoAdNull) {
+		this.sleepy_p4AvUsers_mnoAdNull = sleepy_p4AvUsers_mnoAdNull;
+	}
+	public Long getSleepy_p4AvUsers_tpAdTrue() {
+		return sleepy_p4AvUsers_tpAdTrue;
+	}
+	public void setSleepy_p4AvUsers_tpAdTrue(Long sleepy_p4AvUsers_tpAdTrue) {
+		this.sleepy_p4AvUsers_tpAdTrue = sleepy_p4AvUsers_tpAdTrue;
+	}
+	public Long getSleepy_p4AvUsers_tpAdFalse() {
+		return sleepy_p4AvUsers_tpAdFalse;
+	}
+	public void setSleepy_p4AvUsers_tpAdFalse(Long sleepy_p4AvUsers_tpAdFalse) {
+		this.sleepy_p4AvUsers_tpAdFalse = sleepy_p4AvUsers_tpAdFalse;
+	}
+	public Long getSleepy_p4AvUsers_tpAdNull() {
+		return sleepy_p4AvUsers_tpAdNull;
+	}
+	public void setSleepy_p4AvUsers_tpAdNull(Long sleepy_p4AvUsers_tpAdNull) {
+		this.sleepy_p4AvUsers_tpAdNull = sleepy_p4AvUsers_tpAdNull;
+	}
+	public Long getSleepy_p5AvUsers_mnoAdTrue() {
+		return sleepy_p5AvUsers_mnoAdTrue;
+	}
+	public void setSleepy_p5AvUsers_mnoAdTrue(Long sleepy_p5AvUsers_mnoAdTrue) {
+		this.sleepy_p5AvUsers_mnoAdTrue = sleepy_p5AvUsers_mnoAdTrue;
+	}
+	public Long getSleepy_p5AvUsers_mnoAdFalse() {
+		return sleepy_p5AvUsers_mnoAdFalse;
+	}
+	public void setSleepy_p5AvUsers_mnoAdFalse(Long sleepy_p5AvUsers_mnoAdFalse) {
+		this.sleepy_p5AvUsers_mnoAdFalse = sleepy_p5AvUsers_mnoAdFalse;
+	}
+	public Long getSleepy_p5AvUsers_mnoAdNull() {
+		return sleepy_p5AvUsers_mnoAdNull;
+	}
+	public void setSleepy_p5AvUsers_mnoAdNull(Long sleepy_p5AvUsers_mnoAdNull) {
+		this.sleepy_p5AvUsers_mnoAdNull = sleepy_p5AvUsers_mnoAdNull;
+	}
+	public Long getSleepy_p5AvUsers_tpAdTrue() {
+		return sleepy_p5AvUsers_tpAdTrue;
+	}
+	public void setSleepy_p5AvUsers_tpAdTrue(Long sleepy_p5AvUsers_tpAdTrue) {
+		this.sleepy_p5AvUsers_tpAdTrue = sleepy_p5AvUsers_tpAdTrue;
+	}
+	public Long getSleepy_p5AvUsers_tpAdFalse() {
+		return sleepy_p5AvUsers_tpAdFalse;
+	}
+	public void setSleepy_p5AvUsers_tpAdFalse(Long sleepy_p5AvUsers_tpAdFalse) {
+		this.sleepy_p5AvUsers_tpAdFalse = sleepy_p5AvUsers_tpAdFalse;
+	}
+	public Long getSleepy_p5AvUsers_tpAdNull() {
+		return sleepy_p5AvUsers_tpAdNull;
+	}
+	public void setSleepy_p5AvUsers_tpAdNull(Long sleepy_p5AvUsers_tpAdNull) {
+		this.sleepy_p5AvUsers_tpAdNull = sleepy_p5AvUsers_tpAdNull;
 	}
 	
 	
