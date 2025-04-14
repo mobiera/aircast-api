@@ -338,7 +338,6 @@ public class CampaignScheduleVO implements Serializable {
 	description="All Time PA")
 	private String allTimePa;
 
-	
 	@Section(name = "KPIS")
 	@UI( widgetType = WidgetType.TEXT, 
 	mode = Mode.READ_ONLY, 
@@ -348,18 +347,39 @@ public class CampaignScheduleVO implements Serializable {
 
 	private String allTimeCtrPercentColor;
 
-	
-	
 	private Float todayEfficiency; // percent
 	private Float allTimeEfficiency; // percent
 
+	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_ONLY, label="Creator", description="Creator")
+	@Section( name = "BASIC_INFORMATION")
+	@TargetClass(type=ClassType.VO, name="UserVO")
+	private String user;
 
-	
-	
+	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_ONLY, label="Group", description="Group")
+	@Section( name = "BASIC_INFORMATION")
+	@TargetClass(type=ClassType.VO, name="GroupVO")
+	private String group;
+
 	//private List<EntityState> allowedTransitionStates;
 	
 	public Boolean getSimpleSchedule() {
 		return simpleSchedule;
+	}
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getGroup() {
+		return group;
+	}
+
+	public void setGroup(String group) {
+		this.group = group;
 	}
 
 	public void setSimpleSchedule(Boolean simpleSchedule) {
