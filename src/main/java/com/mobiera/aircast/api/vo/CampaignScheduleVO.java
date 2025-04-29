@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.mobiera.aircast.commons.enums.CampaignPriority;
+import com.mobiera.aircast.commons.enums.CampaignType;
 import com.mobiera.commons.enums.ClassType;
 import com.mobiera.commons.enums.EntityState;
 import com.mobiera.commons.enums.Knowledge;
@@ -52,6 +53,7 @@ public class CampaignScheduleVO implements Serializable {
 	private List<EntityState> allowedTransitionStates;
 	
 	private String campaignName;
+	private CampaignType campaignType;
 	
 	@UI( widgetType = WidgetType.HIDDEN, 
 			mode = Mode.READ_ONLY, 
@@ -303,11 +305,51 @@ public class CampaignScheduleVO implements Serializable {
 	description="Today Ctr")
 	private String todayCtr;
 
+	@Section(name = "KPIS")
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_ONLY, 
+	label="dr", 
+	description="Today Delivery Rate")
+	private String todayDr;
+
 	
 	private String todayCtrPercentColor;
+	private String todayDrPercentColor;
 
 	
 	
+	public String getTodayDr() {
+		return todayDr;
+	}
+
+	public void setTodayDr(String todayDr) {
+		this.todayDr = todayDr;
+	}
+
+	public String getTodayDrPercentColor() {
+		return todayDrPercentColor;
+	}
+
+	public void setTodayDrPercentColor(String todayDrPercentColor) {
+		this.todayDrPercentColor = todayDrPercentColor;
+	}
+
+	public String getAllTimeDr() {
+		return allTimeDr;
+	}
+
+	public void setAllTimeDr(String allTimeDr) {
+		this.allTimeDr = allTimeDr;
+	}
+
+	public String getAllTimeDrPercentColor() {
+		return allTimeDrPercentColor;
+	}
+
+	public void setAllTimeDrPercentColor(String allTimeDrPercentColor) {
+		this.allTimeDrPercentColor = allTimeDrPercentColor;
+	}
+
 	@Section(name = "KPIS")
 	@UI( widgetType = WidgetType.TEXT, 
 	mode = Mode.READ_ONLY, 
@@ -345,11 +387,24 @@ public class CampaignScheduleVO implements Serializable {
 	description="All Time Ctr")
 	private String allTimeCtr;
 
+	@Section(name = "KPIS")
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_ONLY, 
+	label="dr", 
+	description="All Time Dr")
+	private String allTimeDr;
+
+	
 	private String allTimeCtrPercentColor;
+	private String allTimeDrPercentColor;
 
 	private Float todayEfficiency; // percent
 	private Float allTimeEfficiency; // percent
 
+	private Float todayDrEfficiency; // percent
+	private Float allTimeDrEfficiency; // percent
+
+	
 	@UI( widgetType = WidgetType.SELECT, mode = Mode.READ_ONLY, label="Creator", description="Creator")
 	@Section( name = "BASIC_INFORMATION")
 	@TargetClass(type=ClassType.VO, name="UserVO")
@@ -873,6 +928,30 @@ public class CampaignScheduleVO implements Serializable {
 
 	public String getAllTimeCtrPercentColor() {
 		return allTimeCtrPercentColor;
+	}
+
+	public CampaignType getCampaignType() {
+		return campaignType;
+	}
+
+	public void setCampaignType(CampaignType campaignType) {
+		this.campaignType = campaignType;
+	}
+
+	public Float getTodayDrEfficiency() {
+		return todayDrEfficiency;
+	}
+
+	public void setTodayDrEfficiency(Float todayDrEfficiency) {
+		this.todayDrEfficiency = todayDrEfficiency;
+	}
+
+	public Float getAllTimeDrEfficiency() {
+		return allTimeDrEfficiency;
+	}
+
+	public void setAllTimeDrEfficiency(Float allTimeDrEfficiency) {
+		this.allTimeDrEfficiency = allTimeDrEfficiency;
 	}
 
 	
