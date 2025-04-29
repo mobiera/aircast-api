@@ -25,6 +25,8 @@ public abstract class SmsRequest implements Serializable
 	private String imsi;
 	private Dcs dcs;
 	private Long campaignId;
+	private Long campaignScheduleId;
+	
 	
 	private Boolean dlr;
 	private Boolean requestDeliveryReport;
@@ -87,6 +89,12 @@ public abstract class SmsRequest implements Serializable
 	}
 	public void setTesting(Boolean testing) {
 		this.testing = testing;
+	}
+	public Long getCampaignScheduleId() {
+		return campaignScheduleId;
+	}
+	public void setCampaignScheduleId(Long campaignScheduleId) {
+		this.campaignScheduleId = campaignScheduleId;
 	}
 	
 	
