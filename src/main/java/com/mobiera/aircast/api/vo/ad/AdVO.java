@@ -267,13 +267,27 @@ public class AdVO implements Serializable
 			)
 	private Float efficiency; // percent
 
+	@UI( widgetType = WidgetType.HIDDEN, 
+			mode = Mode.READ_ONLY
+			)
+	private Float drEfficiency; // percent
 
+	
+	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
 			label="ctr", 
 			description="ctr")
 	private String ctr;
 
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="dr", 
+			description="dr")
+	private String dr;
+
+	
+	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
 			label="all time sent", 
@@ -306,7 +320,13 @@ public class AdVO implements Serializable
 	private Float allTimeEfficiency; // percent
 
 
+	@UI( widgetType = WidgetType.HIDDEN, 
+			mode = Mode.READ_ONLY
+			)
+	private Float allTimeDrEfficiency; // percent
 
+
+	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
 			label="all time ctr", 
@@ -314,10 +334,19 @@ public class AdVO implements Serializable
 	private String allTimeCtr;
 
 
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="all time dr", 
+			description="all time dr")
+	private String allTimeDr;
+
 
 
 	private String allTimeCtrColor;
 	private String todayCtrColor;
+
+	private String allTimeDrColor;
+	private String todayDrColor;
 
 
 
@@ -343,6 +372,27 @@ public class AdVO implements Serializable
 	}
 	
 	
+	public String getTodayDrColor() {
+		
+		Float e = getDrEfficiency();
+		todayDrColor = BLACK;
+		
+			if (e != null) {
+				
+				if (e > 0.75f) {
+					todayDrColor = GREEN;
+				} else if (e > 0.50f) {
+					todayDrColor = ORANGE;
+				} else if (e == 0) {
+					todayDrColor = BLACK;
+				} else {
+					todayDrColor = RED;
+				}
+			}	
+				
+		return todayDrColor;
+	}
+	
 	public String getAllTimeCtrColor() {
 		
 		Float e = getAllTimeEfficiency();
@@ -362,6 +412,28 @@ public class AdVO implements Serializable
 			}	
 				
 		return allTimeCtrColor;
+	}
+	
+	
+	public String getAllTimeDrColor() {
+		
+		Float e = getAllTimeDrEfficiency();
+		allTimeDrColor = BLACK;
+		
+			if (e != null) {
+				
+				if (e > 0.75f) {
+					allTimeDrColor = GREEN;
+				} else if (e > 0.5f) {
+					allTimeDrColor = ORANGE;
+				} else if (e == 0) {
+					allTimeDrColor = BLACK;
+				} else {
+					allTimeDrColor = RED;
+				}
+			}	
+				
+		return allTimeDrColor;
 	}
 
 	@UI( widgetType = WidgetType.HIDDEN, 
@@ -549,6 +621,20 @@ public class AdVO implements Serializable
 		return efficiency;
 	}
 	
+	public Float getDrEfficiency() {
+		
+		
+		if ((todayDlred != null) && (todaySent != null) && (todaySent != 0)) {
+			
+			drEfficiency = todayDlred.floatValue() / todaySent.floatValue();
+		} else {
+			
+			drEfficiency = 0f;
+		}
+
+		return drEfficiency;
+	}
+	
 	public Float getAllTimeEfficiency() {
 		//logger.info("AAA1 campaignFk: " + campaignFk + " allTimeEfficiency: " + allTimeEfficiency + " allDlred: " + allDlred + " allOk2: " + allOk2);
 		
@@ -567,6 +653,28 @@ public class AdVO implements Serializable
 		//}
 		return allTimeEfficiency;
 	}
+	
+	
+	public Float getAllTimeDrEfficiency() {
+		//logger.info("AAA1 campaignFk: " + campaignFk + " allTimeEfficiency: " + allTimeEfficiency + " allDlred: " + allDlred + " allOk2: " + allOk2);
+		
+		//if (allTimeEfficiency == null) {
+		//	logger.info("AAA2 campaignFk: " + campaignFk + " allTimeEfficiency: " + allTimeEfficiency + " allDlred: " + allDlred + " allOk2: " + allOk2);
+			
+			if ((allDlred != null) && (allSent != null) && (allSent != 0)) {
+		//		logger.info("AAA3 campaignFk: " + campaignFk + " allTimeEfficiency: " + allTimeEfficiency + " allDlred: " + allDlred + " allOk2: " + allOk2);
+				
+				allTimeDrEfficiency = allDlred.floatValue() / allSent.floatValue();
+			} else {
+		//		logger.info("AAA4 campaignFk: " + campaignFk + " allTimeEfficiency: " + allTimeEfficiency + " allDlred: " + allDlred + " allOk2: " + allOk2);
+				
+				allTimeDrEfficiency = 0f;
+			}
+		//}
+		return allTimeDrEfficiency;
+	}
+	
+	
 	public void setEfficiency(Float efficiency) {
 		this.efficiency = efficiency;
 	}
@@ -591,6 +699,16 @@ public class AdVO implements Serializable
 		Float e = this.getEfficiency();
 		if ((e != null) && (e != 0)) {
 			return (decFormat.format(this.getEfficiency()));
+		} else {
+			return "0.0%";
+		}
+		
+	}
+	public String getDr() {
+		
+		Float e = this.getDrEfficiency();
+		if ((e != null) && (e != 0)) {
+			return (decFormat.format(this.getDrEfficiency()));
 		} else {
 			return "0.0%";
 		}
@@ -664,6 +782,19 @@ public class AdVO implements Serializable
 		}
 		
 	}
+	
+	
+	public String getAllTimeDr() {
+		
+		Float e = this.getAllTimeDrEfficiency();
+		if ((e != null) && (e != 0)) {
+			return (decFormat.format(this.getAllTimeDrEfficiency()));
+		} else {
+			return "0.0%";
+		}
+		
+	}
+	
 	
 	public String getAllTimeViewed() {
 		if (this.getAllViewed1() != null) {
@@ -830,6 +961,36 @@ public class AdVO implements Serializable
 
 	public void setTodayCtrColor(String todayCtrColor) {
 		this.todayCtrColor = todayCtrColor;
+	}
+
+
+	public void setDrEfficiency(Float drEfficiency) {
+		this.drEfficiency = drEfficiency;
+	}
+
+
+	public void setDr(String dr) {
+		this.dr = dr;
+	}
+
+
+	public void setAllTimeDrEfficiency(Float allTimeDrEfficiency) {
+		this.allTimeDrEfficiency = allTimeDrEfficiency;
+	}
+
+
+	public void setAllTimeDr(String allTimeDr) {
+		this.allTimeDr = allTimeDr;
+	}
+
+
+	public void setAllTimeDrColor(String allTimeDrColor) {
+		this.allTimeDrColor = allTimeDrColor;
+	}
+
+
+	public void setTodayDrColor(String todayDrColor) {
+		this.todayDrColor = todayDrColor;
 	}
 	
 	
