@@ -36,6 +36,7 @@ public enum ParameterName {
 	STRING_KC_CLIENT_ID(ParameterType.KEYCLOAK, "Keycloak clientId", "Keycloak clientId"),
 	STRING_KC_CLIENT_SECRET(ParameterType.KEYCLOAK, "Keycloak client secret", "Keycloak client secret"),
 	BOOLEAN_REGENERATE_KC_ROLES(ParameterType.KEYCLOAK, "Force Regenerate of Keycloak Roles", "Force Regenerate of Keycloak Roles"),
+	STRING_KC_LDAP_PREFIX(ParameterType.KEYCLOAK, "LDAP Prefix", "LDAP Prefix"),
 	
 	/*
 	 * ADSAFE / VAS
