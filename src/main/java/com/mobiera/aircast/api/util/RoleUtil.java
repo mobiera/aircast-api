@@ -669,6 +669,8 @@ public class RoleUtil  {
 			campaignManagerSubRoles.add(LIST_FILE_ADMIN);
 			campaignManagerSubRoles.add(PARAMETER_VIEW);
 			campaignManagerSubRoles.add(SENDER_ADMIN);
+			campaignManagerSubRoles.add(USER_VIEW);
+			campaignManagerSubRoles.add(GROUP_VIEW);
 			
 			CAMPAIGN_MANAGER = new Role("15_PM_ADVERTISING_CAMPAIGN_DECIDER", "Push Marketing Assignable Role: For teams that need to prepare, approve and schedule Advertising Campaigns, see statistics of Advertising, API and Sim Menu Campaigns", campaignManagerSubRoles);
 			roles.put(CAMPAIGN_MANAGER.getName(), CAMPAIGN_MANAGER);
@@ -697,6 +699,8 @@ public class RoleUtil  {
 			campaignPreparerSubRolesSubRoles.add(PARAMETER_VIEW);
 			campaignPreparerSubRolesSubRoles.add(SENDER_LIST);
 			campaignPreparerSubRolesSubRoles.add(SENDER_VIEW);
+			campaignPreparerSubRolesSubRoles.add(USER_VIEW);
+			campaignPreparerSubRolesSubRoles.add(GROUP_VIEW);
 
 			CAMPAIGN_PREPARER = new Role("20_PM_ADVERTISING_CAMPAIGN_EDITOR", "Push Marketing Assignable Role: For teams that need to prepare and schedule Advertising Campaigns (no approval), see statistics of Advertising, API and Sim Menu Campaigns", campaignPreparerSubRolesSubRoles);
 			roles.put(CAMPAIGN_PREPARER.getName(), CAMPAIGN_PREPARER);
