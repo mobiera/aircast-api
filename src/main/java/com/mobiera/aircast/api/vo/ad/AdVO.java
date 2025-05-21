@@ -717,58 +717,72 @@ public class AdVO implements Serializable
 	public void setCtr(String ctr) {
 		this.ctr = ctr;
 	}
-	public String getViewed() {
+	public String getViewed(boolean abbreviated) {
 		
-		
-		
-		if (this.getTodayViewed1() != null) {
-			if (this.getTodayViewed1() < 1000) {
-				return ("" + this.getTodayViewed1());
-			} else {
-				if (this.getTodayViewed1() < 1000000) {
-					float kViewed = ((float)(this.getTodayViewed1() / 100))/10f;
-					return ("" + kViewed + "k");
-				} else if (this.getTodayViewed1() < 1000000000) {
-					float mViewed = ((float)(this.getTodayViewed1() / 100000))/10f;
-					return ("" + mViewed + "M");
+		if (abbreviated) {
+			if (this.getTodayViewed1() != null) {
+				if (this.getTodayViewed1() < 1000) {
+					return ("" + this.getTodayViewed1());
+				} else {
+					if (this.getTodayViewed1() < 1000000) {
+						float kViewed = ((float)(this.getTodayViewed1() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getTodayViewed1() < 1000000000) {
+						float mViewed = ((float)(this.getTodayViewed1() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
 				}
 			}
+		} else {
+			return ("" + this.getTodayViewed1());
 		}
+		
+		
 		return viewed;
 	}
 	
 	
-	public String getDelivered() {
-		if (this.getTodayDlred() != null) {
-			if (this.getTodayDlred() < 1000) {
-				return ("" + this.getTodayDlred());
-			} else {
-				if (this.getTodayDlred() < 1000000) {
-					float kViewed = ((float)(this.getTodayDlred() / 100))/10f;
-					return ("" + kViewed + "k");
-				} else if (this.getTodayDlred() < 1000000000) {
-					float mViewed = ((float)(this.getTodayDlred() / 100000))/10f;
-					return ("" + mViewed + "M");
+	public String getDelivered(boolean abbreviated) {
+		if (abbreviated) {
+			if (this.getTodayDlred() != null) {
+				if (this.getTodayDlred() < 1000) {
+					return ("" + this.getTodayDlred());
+				} else {
+					if (this.getTodayDlred() < 1000000) {
+						float kViewed = ((float)(this.getTodayDlred() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getTodayDlred() < 1000000000) {
+						float mViewed = ((float)(this.getTodayDlred() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
 				}
 			}
+		} else {
+			return ("" + this.getTodayDlred());
 		}
+		
 		return delivered;
 	}
 	
-	public String getPa() {
-		if (this.getTodayOk2() != null) {
-			if (this.getTodayOk2() < 1000) {
-				return ("" + this.getTodayOk2());
-			} else {
-				if (this.getTodayOk2() < 1000000) {
-					float kViewed = ((float)(this.getTodayOk2() / 100))/10f;
-					return ("" + kViewed + "k");
-				} else if (this.getTodayOk2() < 1000000000) {
-					float mViewed = ((float)(this.getTodayOk2() / 100000))/10f;
-					return ("" + mViewed + "M");
+	public String getPa(boolean abbreviated) {
+		if (abbreviated) {
+			if (this.getTodayOk2() != null) {
+				if (this.getTodayOk2() < 1000) {
+					return ("" + this.getTodayOk2());
+				} else {
+					if (this.getTodayOk2() < 1000000) {
+						float kViewed = ((float)(this.getTodayOk2() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getTodayOk2() < 1000000000) {
+						float mViewed = ((float)(this.getTodayOk2() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
 				}
 			}
+		} else {
+			return ("" + this.getTodayOk2());
 		}
+		
 		return pa;
 	}
 	
@@ -796,90 +810,117 @@ public class AdVO implements Serializable
 	}
 	
 	
-	public String getAllTimeViewed() {
-		if (this.getAllViewed1() != null) {
-			if (this.getAllViewed1() < 1000) {
-				return ("" + this.getAllViewed1());
-			} else {
-				if (this.getAllViewed1() < 1000000) {
-					float kViewed = ((float)(this.getAllViewed1() / 100))/10f;
-					return ("" + kViewed + "k");
-				} else if (this.getAllViewed1() < 1000000000) {
-					float mViewed = ((float)(this.getAllViewed1() / 100000))/10f;
-					return ("" + mViewed + "M");
+	public String getAllTimeViewed(boolean abbreviated) {
+		if (abbreviated) {
+			if (this.getAllViewed1() != null) {
+				if (this.getAllViewed1() < 1000) {
+					return ("" + this.getAllViewed1());
+				} else {
+					if (this.getAllViewed1() < 1000000) {
+						float kViewed = ((float)(this.getAllViewed1() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getAllViewed1() < 1000000000) {
+						float mViewed = ((float)(this.getAllViewed1() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
 				}
 			}
+		} else {
+			return ("" + this.getAllViewed1());
 		}
+		
 		return allTimeViewed;
 	}
 	
 	
-	public String getAllTimeDelivered() {
-		if (this.getAllDlred() != null) {
-			if (this.getAllDlred() < 1000) {
-				return ("" + this.getAllDlred());
-			} else {
-				if (this.getAllDlred() < 1000000) {
-					float kViewed = ((float)(this.getAllDlred() / 100))/10f;
-					return ("" + kViewed + "k");
-				} else if (this.getAllDlred() < 1000000000) {
-					float mViewed = ((float)(this.getAllDlred() / 100000))/10f;
-					return ("" + mViewed + "M");
+	public String getAllTimeDelivered(boolean abbreviated) {
+		if (abbreviated) {
+			if (this.getAllDlred() != null) {
+				if (this.getAllDlred() < 1000) {
+					return ("" + this.getAllDlred());
+				} else {
+					if (this.getAllDlred() < 1000000) {
+						float kViewed = ((float)(this.getAllDlred() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getAllDlred() < 1000000000) {
+						float mViewed = ((float)(this.getAllDlred() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
 				}
 			}
+		} else {
+			return ("" +  this.getAllDlred());
 		}
+		
 		return allTimeDelivered;
 	}
 	
-	public String getAllTimePa() {
-		if (this.getAllOk2() != null) {
-			if (this.getAllOk2() < 1000) {
-				return ("" + this.getAllOk2());
-			} else {
-				if (this.getAllOk2() < 1000000) {
-					float kViewed = ((float)(this.getAllOk2() / 100))/10f;
-					return ("" + kViewed + "k");
-				} else if (this.getAllOk2() < 1000000000) {
-					float mViewed = ((float)(this.getAllOk2() / 100000))/10f;
-					return ("" + mViewed + "M");
+	public String getAllTimePa(boolean abbreviated) {
+		
+		if (abbreviated) {
+			if (this.getAllOk2() != null) {
+				if (this.getAllOk2() < 1000) {
+					return ("" + this.getAllOk2());
+				} else {
+					if (this.getAllOk2() < 1000000) {
+						float kViewed = ((float)(this.getAllOk2() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getAllOk2() < 1000000000) {
+						float mViewed = ((float)(this.getAllOk2() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
 				}
 			}
+		} else {
+			return ("" + this.getAllOk2());
 		}
+		
 		return allTimePa;
 	}
 	
-	public String getSent() {
-		if (this.getTodaySent() != null) {
-			if (this.getTodaySent() < 1000) {
-				return ("" + this.getTodaySent());
-			} else {
-				if (this.getTodaySent() < 1000000) {
-					float kViewed = ((float)(this.getTodaySent() / 100))/10f;
-					return ("" + kViewed + "k");
-				} else if (this.getTodaySent() < 1000000000) {
-					float mViewed = ((float)(this.getTodaySent() / 100000))/10f;
-					return ("" + mViewed + "M");
+	public String getSent(boolean abbreviated) {
+		
+		if (abbreviated) {
+			if (this.getTodaySent() != null) {
+				if (this.getTodaySent() < 1000) {
+					return ("" + this.getTodaySent());
+				} else {
+					if (this.getTodaySent() < 1000000) {
+						float kViewed = ((float)(this.getTodaySent() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getTodaySent() < 1000000000) {
+						float mViewed = ((float)(this.getTodaySent() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
 				}
 			}
+		} else {
+			return ("" + this.getTodaySent());
 		}
+		
 		return sent;
 	}
 	
 	
-	public String getAllTimeSent() {
-		if (this.getAllSent() != null) {
-			if (this.getAllSent() < 1000) {
-				return ("" + this.getAllSent());
-			} else {
-				if (this.getAllSent() < 1000000) {
-					float kViewed = ((float)(this.getAllSent() / 100))/10f;
-					return ("" + kViewed + "k");
-				} else if (this.getAllSent() < 1000000000) {
-					float mViewed = ((float)(this.getAllSent() / 100000))/10f;
-					return ("" + mViewed + "M");
+	public String getAllTimeSent(boolean abbreviated) {
+		if (abbreviated) {
+			if (this.getAllSent() != null) {
+				if (this.getAllSent() < 1000) {
+					return ("" + this.getAllSent());
+				} else {
+					if (this.getAllSent() < 1000000) {
+						float kViewed = ((float)(this.getAllSent() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getAllSent() < 1000000000) {
+						float mViewed = ((float)(this.getAllSent() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
 				}
 			}
+		} else {
+			return ("" + this.getAllSent());
 		}
+		
 		return allTimeSent;
 	}
 	
