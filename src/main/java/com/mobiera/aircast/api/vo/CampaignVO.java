@@ -109,13 +109,13 @@ public class CampaignVO implements Serializable {
 	@Validator(minSize=1, maxSize=100)
 	private String name;
 
-	@UI( widgetType = WidgetType.TEXT, 
+	@UI( widgetType = WidgetType.TEXTAREA, 
 			mode = Mode.READ_WRITE, 
 			label="Description", 
 			description="Description of Campaign")
 	@Section(name = "BASIC_INFORMATION")
 	// @Required
-	@Validator(minSize=0, maxSize=250)
+	@Validator(minSize=0, maxSize=1024)
 	private String campaignDescription;
 
 	@UI( widgetType = WidgetType.TEXT, 
