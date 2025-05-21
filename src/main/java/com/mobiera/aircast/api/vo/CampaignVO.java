@@ -310,11 +310,6 @@ public class CampaignVO implements Serializable {
 			label="Validity Period", 
 			description="Optional SMS validity period. Will work only if SMSC supports it")
 	@Section(name = "BASIC_INFORMATION")
-	@DisplayWhen({
-		@Conditions({
-			@Condition(field="fullConfiguration", values = {"true"})
-		})
-	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long validityPeriod;
 	
