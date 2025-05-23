@@ -213,7 +213,6 @@ public class CampaignVO implements Serializable {
 	@Required
 	private CampaignManagement management;
 	
-	
 	@JsonSerialize(using = InstantSerializer.class)
 	@JsonDeserialize(using = InstantDeserializer.class)
 	@UI( widgetType = WidgetType.DATE, 
@@ -290,7 +289,6 @@ public class CampaignVO implements Serializable {
 	})
 	private String testKeyword;
 	
-	
 	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
 			label="Keyword Action", 
@@ -310,9 +308,28 @@ public class CampaignVO implements Serializable {
 			label="Validity Period", 
 			description="Optional SMS validity period. Will work only if SMSC supports it")
 	@Section(name = "BASIC_INFORMATION")
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="fullConfiguration", values = {"true"})
+		})
+	})
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long validityPeriod;
 	
+	@UI( widgetType = WidgetType.DATE, mode = Mode.READ_ONLY, label="Next Schedule From", description="Next Schedule From")
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	@Section( name = "BASIC_INFORMATION")
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private Instant nextScheduledFromTs;
+
+	@UI( widgetType = WidgetType.DATE, mode = Mode.READ_ONLY, label="Next Schedule To", description="Next Schedule To")
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	@Section( name = "BASIC_INFORMATION")
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private Instant nextScheduledToTs;
+
 	/*
 	 * SMS API
 	 */
@@ -1247,6 +1264,22 @@ public class CampaignVO implements Serializable {
 	@Section(name = "TARGET_USERS")
 	private Boolean fullTargetConfiguration;
 	
+	public Instant getnextScheduledFromTs() {
+		return nextScheduledFromTs;
+	}
+
+	public void setnextScheduledFromTs(Instant nextScheduledFromTs) {
+		this.nextScheduledFromTs = nextScheduledFromTs;
+	}
+
+	public Instant getnextScheduledToTs() {
+		return nextScheduledToTs;
+	}
+
+	public void setnextScheduledToTs(Instant nextScheduledToTs) {
+		this.nextScheduledToTs = nextScheduledToTs;
+	}
+
 	public Boolean getFullTargetConfiguration() {
 		return fullTargetConfiguration;
 	}
