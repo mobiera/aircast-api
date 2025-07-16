@@ -67,7 +67,7 @@ public class EndpointVO implements Serializable {
 	@Required
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="type", values = {"NOTIFICATION", "CAMPAIGN", "DEVICE_DB", "KINETIC_SUBSCRIBE_API",
+			@Condition(field="type", values = {"NOTIFICATION", "CAMPAIGN", "CAMPAIGN_SHORT_URL", "DEVICE_DB", "KINETIC_SUBSCRIBE_API",
 			"TP", "VIETTEL_MPS_SUBSCRIBE_API", 	"MO_CALLBACK", "API", "KINETIC"})})})
 	private String url;
 	
