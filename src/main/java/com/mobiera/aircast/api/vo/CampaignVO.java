@@ -267,7 +267,7 @@ public class CampaignVO implements Serializable {
 			description="Notification Endpoint")
 	@Section(name = "BASIC_INFORMATION")
 	@TargetClass(type=ClassType.VO, name="EndpointVO")
-	@Filter(field="type", values = { "CAMPAIGN" })
+	@Filter(field="type", values = { "CAMPAIGN",  "CAMPAIGN_SHORT_URL" })
 	@DisplayWhen({
 		@Conditions({
 			@Condition(field="type", values = {"SMS_API", "MMS_API", "SLEEPY_API", "USTK_API"})
