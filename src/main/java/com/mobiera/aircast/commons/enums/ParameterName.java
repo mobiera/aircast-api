@@ -336,6 +336,9 @@ public enum ParameterName {
 	STRING_POLICY_P4_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P4 Policy", "Max number of impacts per periodicity for P4 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
 	STRING_POLICY_P5_IMPACT_LIMIT(ParameterType.CAMPAIGN_POLICIES, "Max number of impacts per periodicity for P5 Policy", "Max number of impacts per periodicity for P5 Policy when using lists in campaigns. Ex 3/DAY, 10/WEEK, 5/MONTH"),// 
 	
+	INTEGER_AUTO_ARCHIVE_EXECUTED_CAMPAIGNS_AFTER_DAYS(ParameterType.CAMPAIGN_POLICIES, "Auto archive campaigns after N days", "Auto archive campaigns after N days"),
+	INTEGER_AUTO_PURGE_LISTS_OF_ARCHIVED_CAMPAIGNS_AFTER_DAYS(ParameterType.CAMPAIGN_POLICIES, "Auto purge list of archived campaigns after N days", "Auto purge list of archived campaigns after N days"),
+
 	/*
 	 * Device API & TAC DB Update
 	 */
