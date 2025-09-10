@@ -242,6 +242,13 @@ public class AdVO implements Serializable
 	@Section(name = "STATS")
 	@UI( widgetType = WidgetType.TEXT, 
 	mode = Mode.READ_ONLY, 
+	label="allProcessed", 
+	description="allProcessed")
+	private Long allProcessed;
+
+	@Section(name = "STATS")
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_ONLY, 
 	label="allDlred", 
 	description="allDlred")
 	private Long allDlred;
@@ -1070,6 +1077,16 @@ public class AdVO implements Serializable
 
 	public void setAllTimeProcessed(String allTimeProcessed) {
 		this.allTimeProcessed = allTimeProcessed;
+	}
+
+
+	public Long getAllProcessed() {
+		return allProcessed;
+	}
+
+
+	public void setAllProcessed(Long allProcessed) {
+		this.allProcessed = allProcessed;
 	}
 	
 	
