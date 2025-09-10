@@ -142,6 +142,16 @@ public class AdVO implements Serializable
 	@Section(name = "STATS")
 	@UI( widgetType = WidgetType.TEXT, 
 	mode = Mode.READ_ONLY, 
+	label="todayProcessed", 
+	description="todayProcessed")
+	private Long todayProcessed;
+	
+	
+	
+	
+	@Section(name = "STATS")
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_ONLY, 
 	label="todayDlred", 
 	description="todayDlred")
 	private Long todayDlred;
@@ -294,6 +304,14 @@ public class AdVO implements Serializable
 			description="all time sent")
 	private String allTimeSent;
 
+	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="all time processed", 
+			description="all time processed")
+	private String allTimeProcessed;
+
+	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
 			label="all time delivered", 
@@ -1032,6 +1050,26 @@ public class AdVO implements Serializable
 
 	public void setTodayDrColor(String todayDrColor) {
 		this.todayDrColor = todayDrColor;
+	}
+
+
+	public Long getTodayProcessed() {
+		return todayProcessed;
+	}
+
+
+	public void setTodayProcessed(Long todayProcessed) {
+		this.todayProcessed = todayProcessed;
+	}
+
+
+	public String getAllTimeProcessed() {
+		return allTimeProcessed;
+	}
+
+
+	public void setAllTimeProcessed(String allTimeProcessed) {
+		this.allTimeProcessed = allTimeProcessed;
 	}
 	
 	
