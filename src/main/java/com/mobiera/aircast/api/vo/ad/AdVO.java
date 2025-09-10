@@ -1101,7 +1101,25 @@ public class AdVO implements Serializable
 	}
 
 
-	public String getAllTimeProcessed() {
+	public String getAllTimeProcessed(boolean abbreviated) {
+		if (abbreviated) {
+			if (this.getAllProcessed() != null) {
+				if (this.getAllSent() < 1000) {
+					return ("" + this.getAllProcessed());
+				} else {
+					if (this.getAllProcessed() < 1000000) {
+						float kViewed = ((float)(this.getAllProcessed() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getAllProcessed() < 1000000000) {
+						float mViewed = ((float)(this.getAllProcessed() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
+				}
+			}
+		} else {
+			return ("" + this.getAllProcessed());
+		}
+		
 		return allTimeProcessed;
 	}
 
