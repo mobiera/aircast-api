@@ -256,10 +256,17 @@ public class AdVO implements Serializable
 	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
+			label="processed", 
+			description="processed")
+	private String processed;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
 			label="sent", 
 			description="sent")
 	private String sent;
 
+	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
 			label="delivered", 
@@ -903,6 +910,30 @@ public class AdVO implements Serializable
 		return allTimePa;
 	}
 	
+	
+	public String getProcessed(boolean abbreviated) {
+		
+		if (abbreviated) {
+			if (this.getTodayProcessed() != null) {
+				if (this.getTodayProcessed() < 1000) {
+					return ("" + this.getTodayProcessed());
+				} else {
+					if (this.getTodayProcessed() < 1000000) {
+						float kViewed = ((float)(this.getTodayProcessed() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getTodayProcessed() < 1000000000) {
+						float mViewed = ((float)(this.getTodayProcessed() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
+				}
+			}
+		} else {
+			return ("" + this.getTodayProcessed());
+		}
+		
+		return processed;
+	}
+	
 	public String getSent(boolean abbreviated) {
 		
 		if (abbreviated) {
@@ -1087,6 +1118,11 @@ public class AdVO implements Serializable
 
 	public void setAllProcessed(Long allProcessed) {
 		this.allProcessed = allProcessed;
+	}
+
+
+	public String getProcessed() {
+		return processed;
 	}
 	
 	

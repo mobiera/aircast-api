@@ -265,14 +265,20 @@ public class CampaignScheduleVO implements Serializable {
 	private Instant deletedTs;
 
 	
+	
 	@Section(name = "KPIS")
 	@UI( widgetType = WidgetType.TEXT, 
 	mode = Mode.READ_ONLY, 
-	label="TODAY sent", 
+	label="TODAY processed", 
+	description="Today Processed")
+	private String todayProcessed;
+	
+	@Section(name = "KPIS")
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_ONLY, 
+	label="sent", 
 	description="Today Sent")
 	private String todaySent;
-	
-	
 	
 	@Section(name = "KPIS")
 	@UI( widgetType = WidgetType.TEXT, 
@@ -353,11 +359,17 @@ public class CampaignScheduleVO implements Serializable {
 	@Section(name = "KPIS")
 	@UI( widgetType = WidgetType.TEXT, 
 	mode = Mode.READ_ONLY, 
-	label="ALL TIME Sent", 
+	label="ALL TIME Processed", 
+	description="All Time Processed")
+	private String allTimeProcessed;
+	
+	
+	@Section(name = "KPIS")
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_ONLY, 
+	label="sent", 
 	description="All Time Sent")
 	private String allTimeSent;
-	
-	
 	
 	@Section(name = "KPIS")
 	@UI( widgetType = WidgetType.TEXT, 
@@ -952,6 +964,22 @@ public class CampaignScheduleVO implements Serializable {
 
 	public void setAllTimeDrEfficiency(Float allTimeDrEfficiency) {
 		this.allTimeDrEfficiency = allTimeDrEfficiency;
+	}
+
+	public String getTodayProcessed() {
+		return todayProcessed;
+	}
+
+	public void setTodayProcessed(String todayProcessed) {
+		this.todayProcessed = todayProcessed;
+	}
+
+	public String getAllTimeProcessed() {
+		return allTimeProcessed;
+	}
+
+	public void setAllTimeProcessed(String allTimeProcessed) {
+		this.allTimeProcessed = allTimeProcessed;
 	}
 
 	
