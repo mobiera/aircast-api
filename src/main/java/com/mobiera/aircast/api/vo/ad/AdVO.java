@@ -1104,7 +1104,7 @@ public class AdVO implements Serializable
 	public String getAllTimeProcessed(boolean abbreviated) {
 		if (abbreviated) {
 			if (this.getAllProcessed() != null) {
-				if (this.getAllSent() < 1000) {
+				if (this.getAllProcessed() < 1000) {
 					return ("" + this.getAllProcessed());
 				} else {
 					if (this.getAllProcessed() < 1000000) {
