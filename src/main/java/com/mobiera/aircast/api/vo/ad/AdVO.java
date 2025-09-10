@@ -142,6 +142,16 @@ public class AdVO implements Serializable
 	@Section(name = "STATS")
 	@UI( widgetType = WidgetType.TEXT, 
 	mode = Mode.READ_ONLY, 
+	label="todayProcessed", 
+	description="todayProcessed")
+	private Long todayProcessed;
+	
+	
+	
+	
+	@Section(name = "STATS")
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_ONLY, 
 	label="todayDlred", 
 	description="todayDlred")
 	private Long todayDlred;
@@ -232,6 +242,13 @@ public class AdVO implements Serializable
 	@Section(name = "STATS")
 	@UI( widgetType = WidgetType.TEXT, 
 	mode = Mode.READ_ONLY, 
+	label="allProcessed", 
+	description="allProcessed")
+	private Long allProcessed;
+
+	@Section(name = "STATS")
+	@UI( widgetType = WidgetType.TEXT, 
+	mode = Mode.READ_ONLY, 
 	label="allDlred", 
 	description="allDlred")
 	private Long allDlred;
@@ -239,10 +256,17 @@ public class AdVO implements Serializable
 	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
+			label="processed", 
+			description="processed")
+	private String processed;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
 			label="sent", 
 			description="sent")
 	private String sent;
 
+	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
 			label="delivered", 
@@ -294,6 +318,14 @@ public class AdVO implements Serializable
 			description="all time sent")
 	private String allTimeSent;
 
+	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="all time processed", 
+			description="all time processed")
+	private String allTimeProcessed;
+
+	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_ONLY, 
 			label="all time delivered", 
@@ -878,6 +910,30 @@ public class AdVO implements Serializable
 		return allTimePa;
 	}
 	
+	
+	public String getProcessed(boolean abbreviated) {
+		
+		if (abbreviated) {
+			if (this.getTodayProcessed() != null) {
+				if (this.getTodayProcessed() < 1000) {
+					return ("" + this.getTodayProcessed());
+				} else {
+					if (this.getTodayProcessed() < 1000000) {
+						float kViewed = ((float)(this.getTodayProcessed() / 100))/10f;
+						return ("" + kViewed + "k");
+					} else if (this.getTodayProcessed() < 1000000000) {
+						float mViewed = ((float)(this.getTodayProcessed() / 100000))/10f;
+						return ("" + mViewed + "M");
+					}
+				}
+			}
+		} else {
+			return ("" + this.getTodayProcessed());
+		}
+		
+		return processed;
+	}
+	
 	public String getSent(boolean abbreviated) {
 		
 		if (abbreviated) {
@@ -1032,6 +1088,41 @@ public class AdVO implements Serializable
 
 	public void setTodayDrColor(String todayDrColor) {
 		this.todayDrColor = todayDrColor;
+	}
+
+
+	public Long getTodayProcessed() {
+		return todayProcessed;
+	}
+
+
+	public void setTodayProcessed(Long todayProcessed) {
+		this.todayProcessed = todayProcessed;
+	}
+
+
+	public String getAllTimeProcessed() {
+		return allTimeProcessed;
+	}
+
+
+	public void setAllTimeProcessed(String allTimeProcessed) {
+		this.allTimeProcessed = allTimeProcessed;
+	}
+
+
+	public Long getAllProcessed() {
+		return allProcessed;
+	}
+
+
+	public void setAllProcessed(Long allProcessed) {
+		this.allProcessed = allProcessed;
+	}
+
+
+	public String getProcessed() {
+		return processed;
 	}
 	
 	
