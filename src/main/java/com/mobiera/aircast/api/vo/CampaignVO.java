@@ -180,7 +180,7 @@ public class CampaignVO implements Serializable {
 	// 		@Condition(field="fullConfiguration", values = {"true"})
 	// 	})
 	// })
-	@Validator(minValue="2", maxValue="10")
+	@Validator(minValue="1", maxValue="10000")
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private Long maxTPS;
 
