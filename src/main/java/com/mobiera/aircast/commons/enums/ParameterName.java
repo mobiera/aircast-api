@@ -704,6 +704,8 @@ public enum ParameterName {
 	STRING_MV_BINARY_LOCATION(ParameterType.FILE_MANAGEMENT, "Mv binary location", "Mv binary location"),
 	STRING_FILE_UPLOAD_SEPARATOR(ParameterType.FILE_MANAGEMENT, "File upload separator", "File upload separator"),
 	
+	STRING_FILE_CAMPAIGN_LIST_CAMPAIGN_ALLOWED_STATE(ParameterType.FILE_MANAGEMENT, "File Campaign List allowed campaign state", "\"File Campaign List allowed campaign state"),
+	
 	
 	STRING_FILE_DATE_FORMATTER_PATTERN(ParameterType.FILE_MANAGEMENT, "File Date Formatter Pattern", "File Date Formatter Pattern"),
 	
