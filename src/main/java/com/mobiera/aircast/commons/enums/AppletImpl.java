@@ -11,7 +11,7 @@ public enum AppletImpl implements Serializable {
 	PICO(4),
 	ISMS(5),
 	PICO_SEMPERVIRENT(6),
-	F007(7),
+	DYNAMO(7),
 	F008(8),
 	F009(9),
 	F010(10),
@@ -284,7 +284,7 @@ public enum AppletImpl implements Serializable {
 			case 4: return PICO;
 			case 5: return ISMS;
 			case 6: return PICO_SEMPERVIRENT;
-			case 7: return F007;
+			case 7: return DYNAMO;
 			case 8: return F008;
 			case 9: return F009;
 			case 10: return F010;
