@@ -464,17 +464,17 @@ public class AppletVO implements Serializable {
 		})
 	})
 	private Boolean sleepyUpdateConfig;
-	@UI( widgetType = WidgetType.HEX_TEXT, 
-			mode = Mode.READ_WRITE, 
-			label="Sleepy Key", 
-			description="Sleepy Key")
+	@UI( widgetType = WidgetType.HEX_TEXT,
+			mode = Mode.READ_WRITE,
+			label="Applet Key",
+			description="Applet Key")
 	@Section( name = "APPLET_CONFIGURATION")
 	@DisplayWhen({
 		@Conditions({
 			@Condition(field="appletImpl", values = {"SLEEPY"})
 		})
 	})
-	private byte[] sleepyKey;
+	private byte[] appletKey;
 	
 	
 	@UI( widgetType = WidgetType.CHECKBOX, 
@@ -696,11 +696,11 @@ public class AppletVO implements Serializable {
 	public void setSleepyUpdateConfig(Boolean sleepyUpdateConfig) {
 		this.sleepyUpdateConfig = sleepyUpdateConfig;
 	}
-	public byte[] getSleepyKey() {
-		return sleepyKey;
+	public byte[] getAppletKey() {
+		return appletKey;
 	}
-	public void setSleepyKey(byte[] sleepyKey) {
-		this.sleepyKey = sleepyKey;
+	public void setAppletKey(byte[] appletKey) {
+		this.appletKey = appletKey;
 	}
 	public String getTitle() {
 		return title;
