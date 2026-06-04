@@ -471,7 +471,7 @@ public class AppletVO implements Serializable {
 	@Section( name = "APPLET_CONFIGURATION")
 	@DisplayWhen({
 		@Conditions({
-			@Condition(field="appletImpl", values = {"SLEEPY"})
+			@Condition(field="appletImpl", values = {"SLEEPY", "DYNAMO"})
 		})
 	})
 	private byte[] appletKey;
