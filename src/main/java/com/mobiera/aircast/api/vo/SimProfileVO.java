@@ -265,9 +265,9 @@ public class SimProfileVO implements Serializable {
 	})
 	private SleepyCipheringMode sleepyCipheringMode;
 	
-	@UI( widgetType = WidgetType.HEX_TEXT, 
-			mode = Mode.READ_WRITE, 
-			label="Sleepy Default Key", 
+	@UI( widgetType = WidgetType.HEX_TEXT,
+			mode = Mode.READ_WRITE,
+			label="Default Applet Key",
 			description="If Sleepy Applet has been configured with a default static key for this SIM profile, please enter key here")
 	@Section(name = "SLEEPY_CONFIGURATION")
 	@Validator(minSize=16, maxSize=16)
@@ -276,7 +276,7 @@ public class SimProfileVO implements Serializable {
 			@Condition(field="enableSleepyCampaigns", values = {"true"})
 		})
 	})
-	private byte[] sleepyDefaultKey;
+	private byte[] defaultAppletKey;
 	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
@@ -436,11 +436,11 @@ public class SimProfileVO implements Serializable {
 	public void setSecondsBetweenBlocks(Integer secondsBetweenBlocks) {
 		this.secondsBetweenBlocks = secondsBetweenBlocks;
 	}
-	public byte[] getSleepyDefaultKey() {
-		return sleepyDefaultKey;
+	public byte[] getDefaultAppletKey() {
+		return defaultAppletKey;
 	}
-	public void setSleepyDefaultKey(byte[] sleepyDefaultKey) {
-		this.sleepyDefaultKey = sleepyDefaultKey;
+	public void setDefaultAppletKey(byte[] defaultAppletKey) {
+		this.defaultAppletKey = defaultAppletKey;
 	}
 	public Long getDefaultCounter() {
 		return defaultCounter;

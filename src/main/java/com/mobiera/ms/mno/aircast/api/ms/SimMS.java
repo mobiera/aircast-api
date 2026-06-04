@@ -78,6 +78,7 @@ public class SimMS implements Serializable {
 	private Boolean responseEncryption;
 	private Boolean simOsIccidIncludesLuhnNumber;
 	private byte[] sleepyKey;
+	private byte[] appletKey;
 	private byte[] ekdr;
 	private byte[] sleepyRandom;
 	private Boolean sleepyCipherDiscovery;
@@ -303,6 +304,12 @@ public class SimMS implements Serializable {
 	}
 	public void setSleepyKey(byte[] sleepyKey) {
 		this.sleepyKey = sleepyKey;
+	}
+	public byte[] getAppletKey() {
+		return appletKey;
+	}
+	public void setAppletKey(byte[] appletKey) {
+		this.appletKey = appletKey;
 	}
 	public Boolean getCommandEncryption() {
 		return commandEncryption;
