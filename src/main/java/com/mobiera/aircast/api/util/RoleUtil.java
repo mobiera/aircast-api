@@ -627,6 +627,7 @@ public class RoleUtil  {
 			adminSubRoles.add(APPLET_LIST);
 			adminSubRoles.add(CAMPAIGN_ADMIN);
 			adminSubRoles.add(CAMPAIGN_TYPE_ALL_VIEWER);
+			adminSubRoles.add(CAMPAIGN_TYPE_SYSTEM_DECIDER);
 			adminSubRoles.add(CAMPAIGN_TYPE_API_DECIDER);
 			adminSubRoles.add(CAMPAIGN_TYPE_AD_DECIDER);
 			adminSubRoles.add(CAMPAIGN_TYPE_SLEEPY_FLOW_PREPARER);
