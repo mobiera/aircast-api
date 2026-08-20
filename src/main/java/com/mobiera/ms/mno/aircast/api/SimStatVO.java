@@ -90,7 +90,9 @@ public class SimStatVO implements Serializable {
 	private Long appletImpl_4 = 0l;
 	private Long appletImpl_5 = 0l;
 	private Long appletImpl_6 = 0l;
-	
+	private Long appletImpl_7 = 0l;
+	private Long appletImpl_8 = 0l;
+
 
 	private Long stk_aliveUsers = 0l;
 	
@@ -307,7 +309,19 @@ public class SimStatVO implements Serializable {
 	public void setAppletImpl_6(Long appletImpl_6) {
 		this.appletImpl_6 = appletImpl_6;
 	}
-	
+	public Long getAppletImpl_7() {
+		return appletImpl_7;
+	}
+	public void setAppletImpl_7(Long appletImpl_7) {
+		this.appletImpl_7 = appletImpl_7;
+	}
+	public Long getAppletImpl_8() {
+		return appletImpl_8;
+	}
+	public void setAppletImpl_8(Long appletImpl_8) {
+		this.appletImpl_8 = appletImpl_8;
+	}
+
 	public Long getP0AvUsers() {
 		return p0AvUsers;
 	}
