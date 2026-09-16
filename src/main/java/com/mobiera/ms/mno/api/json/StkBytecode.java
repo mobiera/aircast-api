@@ -17,6 +17,10 @@ public class StkBytecode implements Serializable {
 	private Boolean excluded;
 	private Boolean noSimFound;
 	private Boolean noAppletImpl;
+	/** RAM sessions: total number of command packets of the session **/
+	private Integer totalPackets;
+	/** RAM sessions: index of the packet these MTs belong to **/
+	private Integer packetIndex;
 	
 	public List<Sms> getMts() {
 		return mts;
@@ -57,4 +61,16 @@ public class StkBytecode implements Serializable {
 	
 	
 	
+	public Integer getTotalPackets() {
+		return totalPackets;
+	}
+	public void setTotalPackets(Integer totalPackets) {
+		this.totalPackets = totalPackets;
+	}
+	public Integer getPacketIndex() {
+		return packetIndex;
+	}
+	public void setPacketIndex(Integer packetIndex) {
+		this.packetIndex = packetIndex;
+	}
 }
