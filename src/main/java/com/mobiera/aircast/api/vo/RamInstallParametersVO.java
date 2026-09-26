@@ -9,6 +9,7 @@ import com.mobiera.aircast.commons.enums.AckType;
 import com.mobiera.commons.enums.ClassType;
 import com.mobiera.commons.enums.Mode;
 import com.mobiera.commons.enums.WidgetType;
+import com.mobiera.commons.introspection.Filter;
 import com.mobiera.commons.introspection.Required;
 import com.mobiera.commons.introspection.TargetClass;
 import com.mobiera.commons.introspection.UI;
@@ -40,13 +41,14 @@ public class RamInstallParametersVO implements Serializable {
 	@Required
 	private Long simProfileFk;
 	
-	@UI( widgetType = WidgetType.TEXT, 
+	@UI( widgetType = WidgetType.SELECT, 
 			mode = Mode.READ_WRITE, 
-			label="Cap File URL", 
-			description="Cap File URL")
+			label="Cap File", 
+			description="Applet (CAP) file uploaded in Files, installed by this campaign on the sims of this Sim Profile")
+	@TargetClass(type=ClassType.VO, name="UploadedFileVO")
+	@Filter(field="type", values = { "APPLET" })
 	@Required
-	@Validator(minSize=5, maxSize=100)
-	private String capFileUrl;
+	private Long capFileFk;
 	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
@@ -208,13 +210,12 @@ public class RamInstallParametersVO implements Serializable {
 	}
 
 
-	public String getCapFileUrl() {
-		return capFileUrl;
+	public Long getCapFileFk() {
+		return capFileFk;
 	}
 
-
-	public void setCapFileUrl(String capFileUrl) {
-		this.capFileUrl = capFileUrl;
+	public void setCapFileFk(Long capFileFk) {
+		this.capFileFk = capFileFk;
 	}
 
 
