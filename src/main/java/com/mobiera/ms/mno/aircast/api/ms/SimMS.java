@@ -27,6 +27,10 @@ public class SimMS implements Serializable {
 	
 	private Long id;
 	private Long counter;
+	private Instant nextPermanentScheduleTs;
+	private Instant nextOtaScheduleTs;
+	private Instant lockedUntilTs;
+	private Long lockedByCampaignFk;
 	private String iccid;
 	private String imsi;
 	private String msisdn;
@@ -490,4 +494,28 @@ public class SimMS implements Serializable {
 	
 	
 	
+	public Instant getNextPermanentScheduleTs() {
+		return nextPermanentScheduleTs;
+	}
+	public void setNextPermanentScheduleTs(Instant nextPermanentScheduleTs) {
+		this.nextPermanentScheduleTs = nextPermanentScheduleTs;
+	}
+	public Instant getNextOtaScheduleTs() {
+		return nextOtaScheduleTs;
+	}
+	public void setNextOtaScheduleTs(Instant nextOtaScheduleTs) {
+		this.nextOtaScheduleTs = nextOtaScheduleTs;
+	}
+	public Instant getLockedUntilTs() {
+		return lockedUntilTs;
+	}
+	public void setLockedUntilTs(Instant lockedUntilTs) {
+		this.lockedUntilTs = lockedUntilTs;
+	}
+	public Long getLockedByCampaignFk() {
+		return lockedByCampaignFk;
+	}
+	public void setLockedByCampaignFk(Long lockedByCampaignFk) {
+		this.lockedByCampaignFk = lockedByCampaignFk;
+	}
 }

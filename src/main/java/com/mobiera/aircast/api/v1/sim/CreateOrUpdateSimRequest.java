@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.mobiera.aircast.commons.enums.SimIdentifier;
 import com.mobiera.aircast.commons.enums.SubscriberPlan;
 import com.mobiera.aircast.commons.enums.SubscriberType;
 import com.mobiera.commons.util.InstantDeserializer;
@@ -21,7 +20,6 @@ public class CreateOrUpdateSimRequest implements Serializable
 	private String iccid;
 	private String imsi;
 	private String roamingImsi;
-	private String imei;
 	private String kic;
 	private String kid;
 	private String kik;
@@ -30,7 +28,6 @@ public class CreateOrUpdateSimRequest implements Serializable
 	private Boolean setNullIccid;
 	private Boolean setNullImsi;
 	private Boolean setNullMsisdn;
-	private Boolean setNullImei;
 	private Boolean mnoAdAllowed;
 	private Boolean tpAdAllowed;
 	@JsonSerialize(using = InstantSerializer.class)
@@ -40,30 +37,6 @@ public class CreateOrUpdateSimRequest implements Serializable
 	@JsonDeserialize(using = InstantDeserializer.class)
 	private Instant lastSeenAliveTs;
 	
-	private Boolean alwaysNotify;
-	
-	public final Boolean getSetNullImei() {
-		return setNullImei;
-	}
-	public final void setSetNullImei(Boolean setNullImei) {
-		this.setNullImei = setNullImei;
-	}
-	private SimIdentifier identifier;
-	private Instant msisdnValidUntil;
-	private Long simProfileId;
-	
-	public Long getSimProfileId() {
-		return simProfileId;
-	}
-	public void setSimProfileId(Long simProfileId) {
-		this.simProfileId = simProfileId;
-	}
-	public Instant getMsisdnValidUntil() {
-		return msisdnValidUntil;
-	}
-	public void setMsisdnValidUntil(Instant msisdnValidUntil) {
-		this.msisdnValidUntil = msisdnValidUntil;
-	}
 	public String getMsisdn() {
 		return msisdn;
 	}
@@ -100,18 +73,6 @@ public class CreateOrUpdateSimRequest implements Serializable
 	}
 	public final void setSetNullMsisdn(Boolean setNullMsisdn) {
 		this.setNullMsisdn = setNullMsisdn;
-	}
-	public final SimIdentifier getIdentifier() {
-		return identifier;
-	}
-	public final void setIdentifier(SimIdentifier identifier) {
-		this.identifier = identifier;
-	}
-	public final String getImei() {
-		return imei;
-	}
-	public final void setImei(String imei) {
-		this.imei = imei;
 	}
 	public final String getKic() {
 		return kic;
@@ -160,12 +121,6 @@ public class CreateOrUpdateSimRequest implements Serializable
 	}
 	public void setSubscriberSinceTs(Instant subscriberSinceTs) {
 		this.subscriberSinceTs = subscriberSinceTs;
-	}
-	public Boolean getAlwaysNotify() {
-		return alwaysNotify;
-	}
-	public void setAlwaysNotify(Boolean alwaysNotify) {
-		this.alwaysNotify = alwaysNotify;
 	}
 	public String getRoamingImsi() {
 		return roamingImsi;

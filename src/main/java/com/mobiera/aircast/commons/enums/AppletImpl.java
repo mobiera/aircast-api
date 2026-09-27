@@ -272,6 +272,24 @@ public enum AppletImpl implements Serializable {
 	}
 	
 	
+	/**
+	 * Default of Applet.providesStk when the attribute is not set on the applet: every
+	 * implementation provides SIM Toolkit features except the card management ones (RAM, RFM)
+	 * and the plain SMS pseudo applets.
+	 */
+	public boolean providesStkByDefault() {
+		switch (this) {
+			case RAM:
+			case RFM:
+			case BINARY_SMS:
+			case TEXT_SMS:
+				return false;
+			default:
+				return true;
+		}
+	}
+	
+	
 	public static AppletImpl getEnum(Integer index){
 		if (index == null)
 	return null;
