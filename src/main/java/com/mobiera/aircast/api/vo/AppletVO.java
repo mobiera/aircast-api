@@ -336,6 +336,13 @@ public class AppletVO implements Serializable {
 			description="Version")
 	@Section( name = "APPLET_CONFIGURATION")
 	private Integer version;
+
+	@UI( widgetType = WidgetType.CHECKBOX, 
+			mode = Mode.READ_WRITE, 
+			label="Provides STK", 
+			description="The applet provides SIM Toolkit features (pushes, menus). After a successful over the air install of such an applet the sim is scheduled for discovery. Leave unset to use the default of the applet implementation.")
+	@Section( name = "APPLET_CONFIGURATION")
+	private Boolean providesStk;
 	
 	
 	@UI( widgetType = WidgetType.CHECKBOX, 
@@ -753,4 +760,12 @@ public class AppletVO implements Serializable {
 	
 	
 	
+	public Boolean getProvidesStk() {
+		return providesStk;
+	}
+
+	public void setProvidesStk(Boolean providesStk) {
+		this.providesStk = providesStk;
+	}
+
 }

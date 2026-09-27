@@ -514,6 +514,31 @@ public class SimVO implements Serializable {
 	@JsonSerialize(using = InstantSerializer.class)
 	@JsonDeserialize(using = InstantDeserializer.class)
 	private Instant nextPermanentScheduleTs;
+
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_ONLY, 
+			label="Next OTA Schedule Ts", 
+			description="When the sim is offered again to the permanent RAM (applet management) campaigns")
+			@Section(name = "OTA")
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant nextOtaScheduleTs;
+
+	@UI( widgetType = WidgetType.DATETIME, 
+			mode = Mode.READ_ONLY, 
+			label="Locked Until Ts", 
+			description="A campaign is running on the sim until this instant, no other permanent or scheduled STK campaign is started meanwhile")
+			@Section(name = "OTA")
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant lockedUntilTs;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="Locked By Campaign", 
+			description="Id of the campaign holding the lock")
+			@Section(name = "OTA")
+	private Long lockedByCampaignFk;
 	
 	
 	
@@ -912,4 +937,22 @@ public class SimVO implements Serializable {
 	
 	
 	
+	public Instant getNextOtaScheduleTs() {
+		return nextOtaScheduleTs;
+	}
+	public void setNextOtaScheduleTs(Instant nextOtaScheduleTs) {
+		this.nextOtaScheduleTs = nextOtaScheduleTs;
+	}
+	public Instant getLockedUntilTs() {
+		return lockedUntilTs;
+	}
+	public void setLockedUntilTs(Instant lockedUntilTs) {
+		this.lockedUntilTs = lockedUntilTs;
+	}
+	public Long getLockedByCampaignFk() {
+		return lockedByCampaignFk;
+	}
+	public void setLockedByCampaignFk(Long lockedByCampaignFk) {
+		this.lockedByCampaignFk = lockedByCampaignFk;
+	}
 }
