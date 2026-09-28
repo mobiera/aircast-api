@@ -68,28 +68,10 @@ public class RamInstallParametersVO implements Serializable {
 	private String instanceAid;
 	
 	
-	@UI( widgetType = WidgetType.HEX_TEXT, 
-			mode = Mode.READ_WRITE, 
-			label="Ping Bytecode", 
-			description="Ping Bytecode")
-	@Validator(minSize=0, maxSize=140)
-	private String pingBytecode;
 	
 	
-	@UI( widgetType = WidgetType.HEX_TEXT, 
-			mode = Mode.READ_WRITE, 
-			label="Ping response pattern", 
-			description="Ping response pattern")
-	@Validator(minSize=0, maxSize=20)
-	private String pingResponsePattern;
 	
 	
-	@UI( widgetType = WidgetType.TEXT, 
-			mode = Mode.READ_WRITE, 
-			label="Ping shortcode", 
-			description="Ping shortcode")
-	@Validator(minSize=0, maxSize=8)
-	private String pingShortcode;
 	
 	
 	@UI( widgetType = WidgetType.TEXT, 
@@ -278,36 +260,6 @@ public class RamInstallParametersVO implements Serializable {
 
 	public void setInstanceAid(String instanceAid) {
 		this.instanceAid = instanceAid;
-	}
-
-
-	public String getPingBytecode() {
-		return pingBytecode;
-	}
-
-
-	public void setPingBytecode(String pingBytecode) {
-		this.pingBytecode = pingBytecode;
-	}
-
-
-	public String getPingResponsePattern() {
-		return pingResponsePattern;
-	}
-
-
-	public void setPingResponsePattern(String pingResponsePattern) {
-		this.pingResponsePattern = pingResponsePattern;
-	}
-
-
-	public String getPingShortcode() {
-		return pingShortcode;
-	}
-
-
-	public void setPingShortcode(String pingShortcode) {
-		this.pingShortcode = pingShortcode;
 	}
 
 
