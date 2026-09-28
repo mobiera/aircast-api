@@ -539,6 +539,44 @@ public class SimVO implements Serializable {
 			description="Id of the campaign holding the lock")
 			@Section(name = "OTA")
 	private Long lockedByCampaignFk;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="Free Memory", 
+			description="Free non volatile memory of the card in bytes, read by a Card Probe campaign")
+			@Section(name = "OTA")
+	private Integer freeNonVolatileMemory;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="Free RAM", 
+			description="Free volatile memory of the card in bytes, read by a Card Probe campaign")
+			@Section(name = "OTA")
+	private Integer freeVolatileMemory;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="Installed Applications", 
+			description="Number of applications installed on the card, read by a Card Probe campaign")
+			@Section(name = "OTA")
+	private Integer installedApplications;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="Card Probe Ts", 
+			description="Last successful card probe")
+			@Section(name = "OTA")
+	@JsonSerialize(using = InstantSerializer.class)
+	@JsonDeserialize(using = InstantDeserializer.class)
+	private Instant cardProbeTs;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="Card Fingerprint", 
+			description="Id of the key data read on the card: cards of one production batch share it")
+			@Section(name = "OTA")
+	private Long cardFingerprintFk;
+
 	
 	
 	
@@ -948,6 +986,36 @@ public class SimVO implements Serializable {
 	}
 	public void setLockedUntilTs(Instant lockedUntilTs) {
 		this.lockedUntilTs = lockedUntilTs;
+	}
+	public Integer getFreeNonVolatileMemory() {
+		return freeNonVolatileMemory;
+	}
+	public void setFreeNonVolatileMemory(Integer freeNonVolatileMemory) {
+		this.freeNonVolatileMemory = freeNonVolatileMemory;
+	}
+	public Integer getFreeVolatileMemory() {
+		return freeVolatileMemory;
+	}
+	public void setFreeVolatileMemory(Integer freeVolatileMemory) {
+		this.freeVolatileMemory = freeVolatileMemory;
+	}
+	public Integer getInstalledApplications() {
+		return installedApplications;
+	}
+	public void setInstalledApplications(Integer installedApplications) {
+		this.installedApplications = installedApplications;
+	}
+	public Instant getCardProbeTs() {
+		return cardProbeTs;
+	}
+	public void setCardProbeTs(Instant cardProbeTs) {
+		this.cardProbeTs = cardProbeTs;
+	}
+	public Long getCardFingerprintFk() {
+		return cardFingerprintFk;
+	}
+	public void setCardFingerprintFk(Long cardFingerprintFk) {
+		this.cardFingerprintFk = cardFingerprintFk;
 	}
 	public Long getLockedByCampaignFk() {
 		return lockedByCampaignFk;

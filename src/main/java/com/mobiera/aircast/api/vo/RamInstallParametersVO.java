@@ -200,6 +200,48 @@ public class RamInstallParametersVO implements Serializable {
 	@TargetClass(type=ClassType.VO, name="AppletVO")
 	private Long ramCreateAppletToSimOnSuccessFk;
 
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Minimum Free Memory", 
+			description="Installed only on sims whose free non volatile memory, read by a Card Probe campaign, is at least this number of bytes. Sims that were not probed are skipped. Empty: no condition")
+	@Validator(minValue="0")
+	private Integer minFreeNonVolatileMemory;
+
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
+			label="Maximum Free Memory", 
+			description="Installed only on sims whose free non volatile memory, read by a Card Probe campaign, is below this number of bytes: for a smaller applet meant for the cards a bigger one does not fit in. Empty: no condition")
+	@Validator(minValue="0")
+	private Integer maxFreeNonVolatileMemory;
+
+	public Integer getMinFreeNonVolatileMemory() {
+		return minFreeNonVolatileMemory;
+	}
+
+	public void setMinFreeNonVolatileMemory(Integer minFreeNonVolatileMemory) {
+		this.minFreeNonVolatileMemory = minFreeNonVolatileMemory;
+	}
+
+	public Integer getMaxFreeNonVolatileMemory() {
+		return maxFreeNonVolatileMemory;
+	}
+
+	public void setMaxFreeNonVolatileMemory(Integer maxFreeNonVolatileMemory) {
+		this.maxFreeNonVolatileMemory = maxFreeNonVolatileMemory;
+	}
+
+	/**
+	 * Whether a sim with this free non volatile memory (null: never probed) is in the band of
+	 * this row. A row without condition accepts every sim.
+	 */
+	public boolean acceptsFreeMemory(Integer freeNonVolatileMemory) {
+		if ((minFreeNonVolatileMemory == null) && (maxFreeNonVolatileMemory == null)) return true;
+		if (freeNonVolatileMemory == null) return false;
+		if ((minFreeNonVolatileMemory != null) && (freeNonVolatileMemory < minFreeNonVolatileMemory)) return false;
+		if ((maxFreeNonVolatileMemory != null) && (freeNonVolatileMemory >= maxFreeNonVolatileMemory)) return false;
+		return true;
+	}
+
 	public Long getSimProfileFk() {
 		return simProfileFk;
 	}

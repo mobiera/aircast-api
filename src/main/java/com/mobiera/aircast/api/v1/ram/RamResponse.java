@@ -29,6 +29,8 @@ public class RamResponse implements Serializable {
 	private String errorMessage;
 	private Boolean testing;
 	private Instant ts;
+	/** Hex, data answered by the last executed APDU (GET DATA...), null when none **/
+	private String responseData;
 	/** Hex dump of the response packet, for diagnostics **/
 	private String rawData;
 
@@ -107,6 +109,13 @@ public class RamResponse implements Serializable {
 	}
 	public void setTs(Instant ts) {
 		this.ts = ts;
+	}
+
+	public String getResponseData() {
+		return responseData;
+	}
+	public void setResponseData(String responseData) {
+		this.responseData = responseData;
 	}
 
 	public String getRawData() {

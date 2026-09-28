@@ -31,6 +31,12 @@ public class SimMS implements Serializable {
 	private Instant nextOtaScheduleTs;
 	private Instant lockedUntilTs;
 	private Long lockedByCampaignFk;
+	/** Card probe: bytes, null when the sim was never probed or the card did not answer it **/
+	private Integer freeNonVolatileMemory;
+	private Integer freeVolatileMemory;
+	private Integer installedApplications;
+	private Instant cardProbeTs;
+	private Long cardFingerprintFk;
 	private String iccid;
 	private String imsi;
 	private String msisdn;
@@ -511,6 +517,36 @@ public class SimMS implements Serializable {
 	}
 	public void setLockedUntilTs(Instant lockedUntilTs) {
 		this.lockedUntilTs = lockedUntilTs;
+	}
+	public Integer getFreeNonVolatileMemory() {
+		return freeNonVolatileMemory;
+	}
+	public void setFreeNonVolatileMemory(Integer freeNonVolatileMemory) {
+		this.freeNonVolatileMemory = freeNonVolatileMemory;
+	}
+	public Integer getFreeVolatileMemory() {
+		return freeVolatileMemory;
+	}
+	public void setFreeVolatileMemory(Integer freeVolatileMemory) {
+		this.freeVolatileMemory = freeVolatileMemory;
+	}
+	public Integer getInstalledApplications() {
+		return installedApplications;
+	}
+	public void setInstalledApplications(Integer installedApplications) {
+		this.installedApplications = installedApplications;
+	}
+	public Instant getCardProbeTs() {
+		return cardProbeTs;
+	}
+	public void setCardProbeTs(Instant cardProbeTs) {
+		this.cardProbeTs = cardProbeTs;
+	}
+	public Long getCardFingerprintFk() {
+		return cardFingerprintFk;
+	}
+	public void setCardFingerprintFk(Long cardFingerprintFk) {
+		this.cardFingerprintFk = cardFingerprintFk;
 	}
 	public Long getLockedByCampaignFk() {
 		return lockedByCampaignFk;
