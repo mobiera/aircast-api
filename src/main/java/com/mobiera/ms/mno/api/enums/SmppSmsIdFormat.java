@@ -8,7 +8,13 @@ public enum SmppSmsIdFormat implements Serializable {
 	SUBMIT_HEX_DLR_LONG(1),
 	SUBMIT_LONG_DLR_HEX(2), 
 	SUBMIT_LONG_DLR_LONG(3), 
-	SUBMIT_STR_DLR_STR(4);
+	SUBMIT_STR_DLR_STR(4),
+	/**
+	 * The SMSC answers a submit with a composite id, "111:/00000100BB06D310/1127642159709"
+	 * (prefix, zero padded message id, then more), and names the same message
+	 * "111:100BB06D310" in its delivery report
+	 */
+	SUBMIT_COMPOSITE_DLR_STR(5);
 
 	private SmppSmsIdFormat(Integer index){
 		this.index = index;
@@ -30,6 +36,7 @@ public enum SmppSmsIdFormat implements Serializable {
 			case 2: return SUBMIT_LONG_DLR_HEX;
 			case 3: return SUBMIT_LONG_DLR_LONG;
 			case 4: return SUBMIT_STR_DLR_STR;
+			case 5: return SUBMIT_COMPOSITE_DLR_STR;
 			default: return null;
 		}
 	}
