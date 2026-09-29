@@ -108,6 +108,14 @@ public class SmppAccountVO implements Serializable {
 	
 	@UI( widgetType = WidgetType.TEXT, 
 			mode = Mode.READ_WRITE, 
+			label="Incoming binary data codings", 
+			description="Optional. Data coding values of incoming messages to be read as 8-bit binary, decimal, separated by commas (example: 2). Needed when the SMSC delivers binary messages sent by the cards with a data coding that has no 8-bit flag. Leave empty otherwise")
+	@Section(name = "BASIC_INFORMATION")
+	@Validator(maxSize=64)
+	private String moBinaryDataCodings;
+	
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_WRITE, 
 			label="Src TON", 
 			description="Type of Number of src address")
 	@Section(name = "BASIC_INFORMATION")
@@ -532,6 +540,12 @@ public class SmppAccountVO implements Serializable {
 	}
 	public final void setSmppSmsIdFormat(SmppSmsIdFormat smppSmsIdFormat) {
 		this.smppSmsIdFormat = smppSmsIdFormat;
+	}
+	public final String getMoBinaryDataCodings() {
+		return moBinaryDataCodings;
+	}
+	public final void setMoBinaryDataCodings(String moBinaryDataCodings) {
+		this.moBinaryDataCodings = moBinaryDataCodings;
 	}
 	public final Boolean getSupportsDlr() {
 		return supportsDlr;

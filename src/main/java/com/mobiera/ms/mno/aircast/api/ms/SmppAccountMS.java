@@ -44,6 +44,7 @@ public class SmppAccountMS implements Serializable {
 	private Long maxValidityPeriod;
 	private Long defaultValidityPeriod;
 	private SmppSmsIdFormat smppSmsIdFormat;
+	private String moBinaryDataCodings;
 	private Boolean supportsDlr;
 	private Integer windowMonitorInterval;
 	private Integer windowSize;
@@ -189,6 +190,12 @@ public class SmppAccountMS implements Serializable {
 	}
 	public void setDefaultValidityPeriod(Long defaultValidityPeriod) {
 		this.defaultValidityPeriod = defaultValidityPeriod;
+	}
+	public String getMoBinaryDataCodings() {
+		return moBinaryDataCodings;
+	}
+	public void setMoBinaryDataCodings(String moBinaryDataCodings) {
+		this.moBinaryDataCodings = moBinaryDataCodings;
 	}
 	public SmppSmsIdFormat getSmppSmsIdFormat() {
 		return smppSmsIdFormat;
