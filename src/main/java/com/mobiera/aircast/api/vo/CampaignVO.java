@@ -979,6 +979,22 @@ public class CampaignVO implements Serializable {
 	@Expertise(knowledge = Knowledge.CONFIRMED)
 	private List<RamDeleteParametersVO> ramDeleteParameters;
 	
+	@UI( widgetType = WidgetType.TABLE, 
+			mode = Mode.READ_WRITE, 
+			label="Candidate OTA Security Configurations", 
+			description="RAM applets (OTA security configurations) tried on each card in the order of their position until one is accepted, which becomes the RAM applet of the sim. ENABLED RAM applets only, 16 at most")
+	@Section(name = "RAM_CONFIGURATION")
+	@Required
+	@Validator(minSize=1, maxSize=16)
+	@DisplayWhen({
+		@Conditions({
+			@Condition(field="type", values = {"RAM"}),
+			@Condition(field="ramCmd", values = {"SECURITY_PROBE"})
+		})
+	})
+	@Expertise(knowledge = Knowledge.CONFIRMED)
+	private List<RamSecurityProbeParametersVO> ramSecurityProbeParameters;
+	
 	
 	
 	/*
@@ -1670,6 +1686,14 @@ public class CampaignVO implements Serializable {
 
 	public void setRamInstallParameters(List<RamInstallParametersVO> ramInstallParameters) {
 		this.ramInstallParameters = ramInstallParameters;
+	}
+
+	public List<RamSecurityProbeParametersVO> getRamSecurityProbeParameters() {
+		return ramSecurityProbeParameters;
+	}
+
+	public void setRamSecurityProbeParameters(List<RamSecurityProbeParametersVO> ramSecurityProbeParameters) {
+		this.ramSecurityProbeParameters = ramSecurityProbeParameters;
 	}
 
 	public List<RamDeleteParametersVO> getRamDeleteParameters() {
