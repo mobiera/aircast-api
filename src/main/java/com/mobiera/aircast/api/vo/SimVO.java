@@ -577,6 +577,13 @@ public class SimVO implements Serializable {
 			@Section(name = "OTA")
 	private Long cardFingerprintFk;
 
+	@UI( widgetType = WidgetType.TEXT, 
+			mode = Mode.READ_ONLY, 
+			label="RAM Applet", 
+			description="RAM applet (OTA security configuration) accepted by the card, found by a Security Probe campaign; empty: the one of the Sim Profile")
+			@Section(name = "OTA")
+	private Long ramAppletFk;
+
 	
 	
 	
@@ -1013,6 +1020,12 @@ public class SimVO implements Serializable {
 	}
 	public Long getCardFingerprintFk() {
 		return cardFingerprintFk;
+	}
+	public Long getRamAppletFk() {
+		return ramAppletFk;
+	}
+	public void setRamAppletFk(Long ramAppletFk) {
+		this.ramAppletFk = ramAppletFk;
 	}
 	public void setCardFingerprintFk(Long cardFingerprintFk) {
 		this.cardFingerprintFk = cardFingerprintFk;

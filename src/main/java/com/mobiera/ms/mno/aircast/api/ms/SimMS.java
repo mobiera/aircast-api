@@ -37,6 +37,8 @@ public class SimMS implements Serializable {
 	private Integer installedApplications;
 	private Instant cardProbeTs;
 	private Long cardFingerprintFk;
+	/** RAM applet (OTA security configuration) found by a security probe, null: the one of the sim profile **/
+	private Long ramAppletFk;
 	private String iccid;
 	private String imsi;
 	private String msisdn;
@@ -547,6 +549,12 @@ public class SimMS implements Serializable {
 	}
 	public void setCardFingerprintFk(Long cardFingerprintFk) {
 		this.cardFingerprintFk = cardFingerprintFk;
+	}
+	public Long getRamAppletFk() {
+		return ramAppletFk;
+	}
+	public void setRamAppletFk(Long ramAppletFk) {
+		this.ramAppletFk = ramAppletFk;
 	}
 	public Long getLockedByCampaignFk() {
 		return lockedByCampaignFk;

@@ -31,6 +31,8 @@ public class RamRequest implements Serializable {
 	private Boolean requestDeliveryReport;
 	/** SMS validity period in seconds, keeps stale packets from reaching the card after an abort **/
 	private Long validityPeriod;
+	/** SECURITY_PROBE: the candidate RAM applet (OTA security configuration) this packet is built with **/
+	private Long ramAppletFk;
 
 	public String getMsisdn() {
 		return msisdn;
@@ -102,4 +104,10 @@ public class RamRequest implements Serializable {
 		this.validityPeriod = validityPeriod;
 	}
 
+	public Long getRamAppletFk() {
+		return ramAppletFk;
+	}
+	public void setRamAppletFk(Long ramAppletFk) {
+		this.ramAppletFk = ramAppletFk;
+	}
 }
